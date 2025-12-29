@@ -2132,7 +2132,7 @@ exports.addMaterial = async (req, res) => {
       });
     }
 
-    let { name, description="", measure, price, isTaxable } = req.body;
+    let { name, description="", measure, price,cost,markup, isTaxable } = req.body;
 
     if (!name) {
       return res.send({
@@ -2170,6 +2170,23 @@ exports.addMaterial = async (req, res) => {
       });
     }
 
+    if(!cost){
+      return res.send({
+        statusCode: 400,
+        success: false,
+        message: "Cost is required",
+        result: {},
+      });
+    }
+    if(!markup){
+      return res.send({
+        statusCode: 400,  
+        success: false,
+        message: "Markup is required",
+        result: {},
+      });
+    }
+
     price = Number.parseFloat(price);
 
     if (!["True", "False", "true", "false"].includes(isTaxable)) {
@@ -2188,6 +2205,8 @@ exports.addMaterial = async (req, res) => {
       existingMaterial.description = description ? description : "";
       existingMaterial.measure = measure;
       existingMaterial.price = price;
+      existingMaterial.cost = cost;
+      existingMaterial.markUp = markup;
       existingMaterial.isTaxable = isTaxable;
       existingMaterial.status = "Active";
       await existingMaterial.save();
@@ -2214,6 +2233,8 @@ exports.addMaterial = async (req, res) => {
       description: description,
       measure,
       price,
+      cost,
+      markup,
       isTaxable,
     });
 
@@ -2371,7 +2392,7 @@ exports.editMaterial = async (req, res) => {
       });
     }
 
-    let { name, description, measure, price, status, isTaxable } = req.body;
+    let { name, description, measure, price,cost, markup, status, isTaxable } = req.body;
     const { materialId } = req.params;
 
     if (!materialId) {
@@ -2425,6 +2446,12 @@ exports.editMaterial = async (req, res) => {
     if (req.body && measure) {
       material.measure = measure;
     }
+    if (req.body && cost ) {
+      material.cost = cost;
+    }
+    if(req.body && markup) {
+      material.markUp = markup
+    }
 
     if (req.body && price) {
       price = Number.parseFloat(price);
@@ -2438,6 +2465,7 @@ exports.editMaterial = async (req, res) => {
       }
       material.price = price;
     }
+    
 
     material.isTaxable = isTaxable || material.isTaxable;
 
@@ -2451,7 +2479,9 @@ exports.editMaterial = async (req, res) => {
         });
       }
       material.status = status;
+    
     }
+    
 
     const updatedMaterial = await material.save();
 

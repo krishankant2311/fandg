@@ -13,6 +13,14 @@ const materialSchema = new mongoose.Schema({
         type : String,
         default : ""
     },
+    cost:{
+        type : String,
+        default : ""
+    },
+    markUp : {
+        type : String,
+        default : "",
+    },
     price : {
         type : Number,
         default : 0,
