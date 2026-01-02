@@ -2189,14 +2189,24 @@ exports.addMaterial = async (req, res) => {
 
     price = Number.parseFloat(price);
 
-    if (!["True", "False", "true", "false"].includes(isTaxable)) {
-      return res.send({
-        statusCode: 400,
-        success: false,
-        message: "Invalid Taxable status. Use 'True' or 'False'",
-        result: {},
-      });
-    }
+   // Validate
+if (
+  !["True", "False", "true", "false", true, false].includes(isTaxable)
+) {
+  return res.send({
+    statusCode: 400,
+    success: false,
+    message: "Invalid Taxable status. Use true or false",
+    result: {},
+  });
+}
+
+// Normalize to Boolean
+isTaxable =
+  isTaxable === true ||
+  isTaxable === "True" ||
+  isTaxable === "true";
+
 
     const existingMaterial = await Material.findOne({ name });
 
@@ -2234,7 +2244,7 @@ exports.addMaterial = async (req, res) => {
       measure,
       price,
       cost,
-      markup,
+      markUp:markup,
       isTaxable,
     });
 
