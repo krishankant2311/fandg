@@ -42,6 +42,12 @@ const otherfieldCopySchema = new mongoose.Schema({
         type: String,
         default: "",
       },
+      // cost: {
+      //   type: Number,
+      //   default: 0,
+      //   min: 0,
+      // },
+
       markup: {
         type: Number,
         default: 0,
@@ -190,23 +196,12 @@ const fieldCopySchema = new mongoose.Schema({
             default: 0,
             min: 0,
           },
-          reference: {
-            type: String,
-            default: "",
-          },
-          measure: {
-            type: String,
-            default: "",
-          },
-          quantity: {
-            type: Number,
-            default: 0,
-          },
-          price: {
+          cost: {
             type: Number,
             default: 0,
             min: 0,
           },
+          
           totalCost: {
             type: Number,
             default: 0,
@@ -323,6 +318,12 @@ const fieldCopySchema = new mongoose.Schema({
             default: 0,
             min: 0,
           },
+          cost: {
+            type: Number,
+            default: 0,
+            min: 0,
+          },
+
           reference: {
             type: String,
             default: "",
@@ -449,6 +450,11 @@ const draftCopySchema = new mongoose.Schema({
           vendorName: {
             type: String,
             default: "",
+          },
+          cost: {
+            type: Number,
+            default: 0,
+            min: 0,
           },
           markup: {
             type: Number,
@@ -593,6 +599,16 @@ const customerCopySchema = new mongoose.Schema({
               default: 0,
             },
             price: {
+              type: Number,
+              default: 0,
+              min: 0,
+            },
+            cost: {
+              type: Number,
+              default: 0,
+              min: 0,
+            },
+            markup: {
               type: Number,
               default: 0,
               min: 0,
