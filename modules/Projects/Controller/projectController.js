@@ -1518,7 +1518,7 @@ exports.editProjects = async (req, res) => {
         const isProjectExist = await Project.findOne({
           projectCode: req.body.projectCode,
           _id: { $ne: projectId },
-          status: { $ne: "Delete" },
+          status: { $nin: ["Delete", "Completed"] },
         });
         if (isProjectExist) {
           return res.send({
