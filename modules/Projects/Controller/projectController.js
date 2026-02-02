@@ -1408,7 +1408,6 @@ exports.getProjectById = async (req, res) => {
 };
 
 
-
 exports.editProjects = async (req, res) => {
   try {
     const token = req.token;
@@ -1506,13 +1505,13 @@ exports.editProjects = async (req, res) => {
         req.body.isProjectStarted = true;
         if (
           req.body.projectCode?.length < 1 &&
-          req.body.projectCode?.length > 12
+          req.body.projectCode?.length > 14
         ) {
           return res.send({
             statusCode: 400,
             success: false,
             message:
-              "Project code must have length between 1 to 12 characters long",
+              "Project code must have length between 1 to 14 characters long",
             result: {},
           });
         }
