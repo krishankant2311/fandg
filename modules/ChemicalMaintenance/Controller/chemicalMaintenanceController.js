@@ -18,6 +18,59 @@ const getActiveStaffFromToken = async (token) => {
 // -------------------------------
 
 // Create / save a chemical-maintenance customer record
+// exports.createChemicalCustomer = async (req, res) => {
+//   try {
+//     const token = req.token;
+//     const staff = await getActiveStaffFromToken(token);
+
+//     if (!staff) {
+//       return res.status(401).json({
+//         success: false,
+//         message: "Unauthorized User",
+//       });
+//     }
+
+//     const {
+//       customerName,
+//       customerEmail,
+//       customerPhone,
+//       jobAddress,
+//       isChemicalMaintenanceEnabled,
+//       annualTreatments = [],
+//       otherTreatments = [],
+//     } = req.body;
+
+//     if (!customerName || !jobAddress) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "Customer name and job address are required",
+//       });
+//     }
+
+//     const customer = await ChemicalCustomer.create({
+//       customerName,
+//       customerEmail,
+//       customerPhone,
+//       jobAddress,
+//       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
+//       annualTreatments,
+//       otherTreatments,
+//     });
+
+//     return res.status(201).json({
+//       success: true,
+//       message: "Chemical customer created successfully",
+//       data: customer,
+//     });
+//   } catch (error) {
+//     console.error("Create chemical customer error:", error);
+//     return res.status(500).json({
+//       success: false,
+//       message: error.message || "Create Chemical Customer",
+//     });
+//   }
+// };
+
 exports.createChemicalCustomer = async (req, res) => {
   try {
     const token = req.token;
@@ -35,6 +88,7 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
       otherTreatments = [],
@@ -52,6 +106,7 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      description: description || "",
       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
       annualTreatments,
       otherTreatments,
@@ -143,6 +198,71 @@ exports.getChemicalCustomerById = async (req, res) => {
 };
 
 // Update chemical customer
+// exports.updateChemicalCustomer = async (req, res) => {
+//   try {
+//     const token = req.token;
+//     const staff = await getActiveStaffFromToken(token);
+
+//     if (!staff) {
+//       return res.status(401).json({
+//         success: false,
+//         message: "Unauthorized User",
+//       });
+//     }
+
+//     const { id } = req.params;
+//     const {
+//       customerName,
+//       customerEmail,
+//       customerPhone,
+//       jobAddress,
+//       isChemicalMaintenanceEnabled,
+//       annualTreatments = [],
+//       otherTreatments = [],
+//     } = req.body;
+
+//     if (!customerName || !jobAddress) {
+//       return res.status(400).json({
+//         success: false,
+//         message: "Customer name and job address are required",
+//       });
+//     }
+
+//     const updated = await ChemicalCustomer.findOneAndUpdate(
+//       { _id: id, status: "Active" },
+//       {
+//         customerName,
+//         customerEmail,
+//         customerPhone,
+//         jobAddress,
+//         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
+//         annualTreatments,
+//         otherTreatments,
+//       },
+//       { new: true }
+//     );
+
+//     if (!updated) {
+//       return res.status(404).json({
+//         success: false,
+//         message: "Customer not found",
+//       });
+//     }
+
+//     return res.status(200).json({
+//       success: true,
+//       message: "Customer updated successfully",
+//       data: updated,
+//     });
+//   } catch (error) {
+//     console.error("Update chemical customer error:", error);
+//     return res.status(500).json({
+//       success: false,
+//       message: error.message || "Update Chemical Customer",
+//     });
+//   }
+// };
+
 exports.updateChemicalCustomer = async (req, res) => {
   try {
     const token = req.token;
@@ -161,6 +281,7 @@ exports.updateChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
       otherTreatments = [],
@@ -180,6 +301,7 @@ exports.updateChemicalCustomer = async (req, res) => {
         customerEmail,
         customerPhone,
         jobAddress,
+        description: description !== undefined ? description : undefined,
         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
         annualTreatments,
         otherTreatments,
