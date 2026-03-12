@@ -27605,6 +27605,131 @@ function compileOfficeAndDraftCopies(data) {
   return officeCopy;
 }
 
+// exports.saveDraftCopyToOfficeCopy = async (req, res) => {
+//   try {
+//     const token = req.token;
+//     const staff = await Staff.findOne({
+//       _id: token._id,
+//       status: "Active",
+//     });
+
+//     if (!staff) {
+//       return res.send({
+//         statusCode: 401,
+//         success: false,
+//         message: "Unauthorized User",
+//         result: {},
+//       });
+//     }
+
+//     const { projectId, date } = req.params;
+//     let { forms, totalManHours } = req.body;
+
+//     if (!forms) {
+//       return res.send({
+//         statusCode: 400,
+//         success: false,
+//         message: "forms are required",
+//         result: {},
+//       });
+//     }
+
+//     forms = JSON.parse(forms);
+
+//     if (!projectId || !date) {
+//       return res.send({
+//         statusCode: 400,
+//         success: false,
+//         message: "Project Id and Date are required",
+//         result: {},
+//       });
+//     }
+
+//     const project = await Project.findOne({
+//       _id: projectId,
+//     });
+
+//     if (!project) {
+//       return res.send({
+//         statusCode: 404,
+//         success: false,
+//         message: "Project not found",
+//         result: {},
+//       });
+//     }
+
+//     const draftCopy = project.draftCopy.find((draft) => {
+//       return draft.entryDate === date;
+//     });
+
+//     if (!draftCopy) {
+//       return res.send({
+//         statusCode: 404,
+//         success: false,
+//         message: "Draft copy not found",
+//         result: {},
+//       });
+//     }
+
+//     const officeCopy = project.officeFieldCopy.find((office) => {
+//       return office.entryDate === date;
+//     });
+
+//     if (!officeCopy) {
+//       return res.send({
+//         statusCode: 404,
+//         success: false,
+//         message: "Please make a field copy first for that date",
+//         result: {},
+//       });
+//     }
+
+//     const data = {
+//       officeCopy,
+//       draftCopy: {
+//         entryDate: draftCopy.entryDate,
+//         draftCopies: forms,
+//       },
+//     };
+
+//     const resultedData = compileOfficeAndDraftCopies(data);
+
+//     project.officeFieldCopy = project.officeFieldCopy.map((office) => {
+//       if (office.entryDate === date) {
+//         resultedData.draftCopies = [...resultedData.draftCopies, ...forms];
+//         return resultedData;
+//       }
+//       return office;
+//     });
+
+//     project.draftCopy = project.draftCopy.filter(
+//       (draft) => draft.entryDate !== date
+//     );
+
+//     // console.log("Total Man Hours", totalManHours)
+
+//     project.totalManHours =
+//       Number.parseFloat(project.totalManHours) +
+//       Number.parseFloat(totalManHours);
+
+//     await project.save();
+
+//     return res.send({
+//       statusCode: 200,
+//       success: true,
+//       message: "Draft Copy saved successfully",
+//       result: {},
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     return res.send({
+//       statusCode: 500,
+//       success: false,
+//       message: err?.message || "Internal Server Error",
+//       result: {},
+//     });
+//   }
+// };
 exports.saveDraftCopyToOfficeCopy = async (req, res) => {
   try {
     const token = req.token;
@@ -27706,11 +27831,11 @@ exports.saveDraftCopyToOfficeCopy = async (req, res) => {
       (draft) => draft.entryDate !== date
     );
 
-    // console.log("Total Man Hours", totalManHours)
-
-    project.totalManHours =
-      Number.parseFloat(project.totalManHours) +
-      Number.parseFloat(totalManHours);
+    // NOTE: Do not adjust project.totalManHours here.
+    // Man-hours for this work were already recorded when the
+    // original field copy was created. This handler only merges
+    // draft line items into the existing office copy; adding
+    // totalManHours again would double-count the same hours.
 
     await project.save();
 
