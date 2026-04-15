@@ -7,6 +7,7 @@ const chemicalItemSchema = new mongoose.Schema(
     quantity: { type: Number, required: true, min: 0 }, // OZ / 100 GAL
     measure: { type: String, default: "OZ / 100 GAL" },
     brandName: { type: String, trim: true },
+    epaRegNo: { type: String, trim: true, default: "" },
     type: { type: String, trim: true },
     cost: { type: Number, default: 0, min: 0 }, // total cost for this chemical
     price: { type: Number, default: 0, min: 0 }, // total price for this chemical
@@ -33,6 +34,11 @@ const chemicalMaintenanceSchema = new mongoose.Schema(
       type: Number,
       default: 0,
       min: 0,
+    },
+    notes: {
+      type: String,
+      trim: true,
+      default: "",
     },
     status: {
       type: String,

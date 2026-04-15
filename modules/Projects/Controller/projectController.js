@@ -8286,6 +8286,7 @@ const Admin = require("../../Admin/Model/adminModel");
 const mongoose = require("mongoose");
 const CopyNumber = require("../Model/projectCopyNumber");
 const FieldCopyHistory = require("../../copies/Model/FieldCopyModel");
+const ChemicalCustomer = require("../../ChemicalMaintenance/Model/customerModel");
 
 const generateCustomId = () => {
   const length = 8;
@@ -8613,11 +8614,11 @@ exports.createProject = async (req, res) => {
       //   })
       // }
 
-      if (!["Bid", "No Bid"].includes(billingType)) {
+      if (!["Bid", "No Bid", "CNB"].includes(billingType)) {
         return res.send({
           statusCode: 400,
           success: false,
-          message: "Invalid Billing Type. Use 'Bid' or 'No Bid'",
+          message: "Invalid Billing Type. Use 'Bid', 'No Bid', or 'CNB'",
           result: {},
         });
       }
@@ -8660,7 +8661,19 @@ exports.createProject = async (req, res) => {
         });
       }
 
-      crew = crew.split(",");
+      // crew may come as a JSON array string (e.g. '["id1","id2"]')
+      // or as a comma-separated string (e.g. 'id1,id2').
+      // Normalize to a clean array of valid ObjectId strings.
+      if (typeof crew === "string") {
+        const raw =
+          crew.trim().startsWith("[") && crew.trim().endsWith("]")
+            ? JSON.parse(crew)
+            : crew.split(",");
+
+        crew = raw
+          .map((c) => (c || "").toString().trim())
+          .filter((c) => mongoose.isValidObjectId(c));
+      }
 
       // if (!truckNo) {
       //   return res.send({
@@ -8996,8 +9009,15 @@ exports.createBid = async (req, res) => {
       //   });
       // }
 
-      if (crew) {
-        crew = crew.split(",");
+      if (crew && typeof crew === "string") {
+        const raw =
+          crew.trim().startsWith("[") && crew.trim().endsWith("]")
+            ? JSON.parse(crew)
+            : crew.split(",");
+
+        crew = raw
+          .map((c) => (c || "").toString().trim())
+          .filter((c) => mongoose.isValidObjectId(c));
       }
 
       // if (!truckNo) {
@@ -9174,7 +9194,7 @@ exports.getProjectList = async (req, res) => {
       const query = {
         $or: [
           {
-            billingType: "No Bid",
+            billingType: { $in: ["No Bid", "CNB"] },
             status: {
               $in: ["Active", "Ongoing", "Completed"],
             },
@@ -9769,7 +9789,22 @@ exports.editProjects = async (req, res) => {
       // }
 
       if (req.body && req.body?.crew) {
-        req.body.crew = req.body.crew.split(",");
+        let raw;
+        if (Array.isArray(req.body.crew)) {
+          raw = req.body.crew;
+        } else if (typeof req.body.crew === "string") {
+          raw =
+            req.body.crew.trim().startsWith("[") &&
+            req.body.crew.trim().endsWith("]")
+              ? JSON.parse(req.body.crew)
+              : req.body.crew.split(",");
+        } else {
+          raw = [req.body.crew];
+        }
+
+        req.body.crew = raw
+          .map((c) => (c || "").toString().trim())
+          .filter((c) => mongoose.isValidObjectId(c));
       }
 
       // if (req.body && req.body?.forms) {
@@ -9875,6 +9910,55 @@ exports.editProjects = async (req, res) => {
 
       if (req.body && req.body.status === "Delete") {
         customMssg = "Project deleted successfully";
+
+        // When a project is deleted, remove its projectCode from any linked
+        // Chemical Maintenance treatments so that code can be reused.
+        if (project.projectCode) {
+          const code = project.projectCode;
+          try {
+            // Find all chemical-maintenance customers that reference this code
+            const linkedCustomers = await ChemicalCustomer.find({
+              $or: [
+                { "annualTreatments.projectCode": code },
+                { "otherTreatments.projectCode": code },
+              ],
+              status: "Active",
+            });
+
+            for (const cust of linkedCustomers) {
+              let changed = false;
+
+              if (Array.isArray(cust.annualTreatments)) {
+                cust.annualTreatments = cust.annualTreatments.map((t) => {
+                  if (t && t.projectCode === code) {
+                    changed = true;
+                    return { ...t.toObject?.() ?? t, projectCode: "" };
+                  }
+                  return t;
+                });
+              }
+
+              if (Array.isArray(cust.otherTreatments)) {
+                cust.otherTreatments = cust.otherTreatments.map((t) => {
+                  if (t && t.projectCode === code) {
+                    changed = true;
+                    return { ...t.toObject?.() ?? t, projectCode: "" };
+                  }
+                  return t;
+                });
+              }
+
+              if (changed) {
+                await cust.save();
+              }
+            }
+          } catch (cleanupErr) {
+            console.error(
+              "Failed to clear chemical project codes for deleted project:",
+              cleanupErr
+            );
+          }
+        }
       }
 
       if (req.body && req.body.isImportant) {
@@ -11045,11 +11129,11 @@ exports.saveDraftCopyToOfficeCopy = async (req, res) => {
       (draft) => draft.entryDate !== date
     );
 
-    // console.log("Total Man Hours", totalManHours)
-
-    project.totalManHours =
-      Number.parseFloat(project.totalManHours) +
-      Number.parseFloat(totalManHours);
+    // NOTE: Do not adjust project.totalManHours here.
+    // Man-hours for this work were already recorded when the
+    // original field copy was created. This handler only merges
+    // draft line items into the existing office copy; adding
+    // totalManHours again would double-count the same hours.
 
     await project.save();
 

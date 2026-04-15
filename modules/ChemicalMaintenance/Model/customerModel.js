@@ -6,12 +6,16 @@ const annualTreatmentSchema = new mongoose.Schema(
     name: { type: String, required: true, trim: true },
     // Quantity selected for this annual treatment (can be empty / optional)
     quantity: { type: Number, default: 0, min: 0 },
-    // Scheduled date for this annual treatment
+    // Scheduled dates for this annual treatment (supports multiple)
+    scheduleDates: { type: [Date], default: [] },
+    // Backward-compat: older clients may still send a single scheduleDate
     scheduleDate: { type: Date },
     // Total monthly additional cost for this treatment (already multiplied by quantity)
     price: { type: Number, default: 0, min: 0 },
     // Total monthly cost (cost * quantity)
     cost: { type: Number, default: 0, min: 0 },
+    // Optional project code linked to this treatment
+    projectCode: { type: String, trim: true },
     // Treatment status (free text, no enum)
     status: { type: String, trim: true },
   },
@@ -30,6 +34,8 @@ const otherTreatmentSchema = new mongoose.Schema(
     chemicals: { type: Array, default: [] }, // Array of chemicals in the mix
     totalCostPerTank: { type: Number, default: 0 },
     totalPricePerTank: { type: Number, default: 0 },
+    // Optional project code linked to this treatment
+    projectCode: { type: String, trim: true },
     // Treatment status (free text, no enum)
     status: { type: String, trim: true },
   },
@@ -57,6 +63,13 @@ const chemicalCustomerSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
+    },
+
+    // Optional description (from Add New Customer form)
+    description: {
+      type: String,
+      trim: true,
+      default: "",
     },
 
     // Whether Chemical Maintenance is enabled for this customer

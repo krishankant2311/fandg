@@ -687,7 +687,8 @@ const projectSchema = new mongoose.Schema(
     },
     billingType: {
       type: String,
-      enum: ["Bid", "No Bid"],
+      // "CNB" is used for Chemical Maintenance No-Bid projects.
+      enum: ["Bid", "No Bid", "CNB"],
     },
     billingName : {
       type : String,

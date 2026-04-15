@@ -1,6 +1,7 @@
 const ChemicalMaintenance = require("../Model/chemicalMaintenanceModel");
 const ChemicalCustomer = require("../Model/customerModel");
 const Staff = require("../../Staff/Model/staffModel");
+const Project = require("../../Projects/Model/projectModel");
 
 // Verify active staff from JWT token (same pattern as chemicals)
 const getActiveStaffFromToken = async (token) => {
@@ -35,6 +36,7 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
       otherTreatments = [],
@@ -47,13 +49,34 @@ exports.createChemicalCustomer = async (req, res) => {
       });
     }
 
+    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[])
+    const normalizedAnnualTreatments = (annualTreatments || []).map((t) => {
+      if (!t) return t;
+      const scheduleDatesRaw = Array.isArray(t.scheduleDates)
+        ? t.scheduleDates
+        : t.scheduleDate
+          ? [t.scheduleDate]
+          : [];
+      const scheduleDates = scheduleDatesRaw
+        .filter(Boolean)
+        .map((d) => new Date(d))
+        .filter((d) => !Number.isNaN(d.getTime()));
+      const first = scheduleDates[0] || (t.scheduleDate ? new Date(t.scheduleDate) : null);
+      return {
+        ...t,
+        scheduleDates,
+        scheduleDate: first && !Number.isNaN(first.getTime()) ? first : undefined,
+      };
+    });
+
     const customer = await ChemicalCustomer.create({
       customerName,
       customerEmail,
       customerPhone,
       jobAddress,
+      description: description || "",
       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
-      annualTreatments,
+      annualTreatments: normalizedAnnualTreatments,
       otherTreatments,
     });
 
@@ -161,16 +184,171 @@ exports.updateChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
       otherTreatments = [],
     } = req.body;
+    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[])
+    const normalizedAnnualTreatments = (annualTreatments || []).map((t) => {
+      if (!t) return t;
+      const scheduleDatesRaw = Array.isArray(t.scheduleDates)
+        ? t.scheduleDates
+        : t.scheduleDate
+          ? [t.scheduleDate]
+          : [];
+      const scheduleDates = scheduleDatesRaw
+        .filter(Boolean)
+        .map((d) => new Date(d))
+        .filter((d) => !Number.isNaN(d.getTime()));
+      const first = scheduleDates[0] || (t.scheduleDate ? new Date(t.scheduleDate) : null);
+      return {
+        ...t,
+        scheduleDates,
+        scheduleDate: first && !Number.isNaN(first.getTime()) ? first : undefined,
+      };
+    });
+
 
     if (!customerName || !jobAddress) {
       return res.status(400).json({
         success: false,
         message: "Customer name and job address are required",
       });
+    }
+
+    // Validate that project codes across all treatments are unique (non-empty)
+    const allCodes = [];
+    (annualTreatments || []).forEach((t) => {
+      if (t && typeof t.projectCode === "string") {
+        const code = t.projectCode.trim();
+        if (code) allCodes.push(code);
+      }
+    });
+    (otherTreatments || []).forEach((t) => {
+      if (t && typeof t.projectCode === "string") {
+        const code = t.projectCode.trim();
+        if (code) allCodes.push(code);
+      }
+    });
+
+    const codeSet = new Set(allCodes);
+    if (codeSet.size !== allCodes.length) {
+      return res.status(400).json({
+        success: false,
+        message: "Each treatment must have a unique Project Code.",
+      });
+    }
+
+    // Fetch existing customer to detect newly assigned project codes per treatment
+    const existingCustomer = await ChemicalCustomer.findOne({
+      _id: id,
+      status: "Active",
+    });
+
+    if (!existingCustomer) {
+      return res.status(404).json({
+        success: false,
+        message: "Customer not found",
+      });
+    }
+
+    const newlyAssignedProjectCodes = [];
+    const changedProjectCodes = [];
+
+    // Check annual treatments
+    (normalizedAnnualTreatments || []).forEach((t, index) => {
+      const newCode =
+        t && typeof t.projectCode === "string"
+          ? t.projectCode.trim()
+          : "";
+      const oldCode =
+        existingCustomer.annualTreatments &&
+        existingCustomer.annualTreatments[index] &&
+        typeof existingCustomer.annualTreatments[index].projectCode ===
+          "string"
+          ? existingCustomer.annualTreatments[index].projectCode.trim()
+          : "";
+
+      if (newCode && !oldCode) {
+        const scheduledDate =
+          (Array.isArray(t.scheduleDates) && t.scheduleDates.length > 0
+            ? t.scheduleDates[0]
+            : t.scheduleDate) || null;
+        newlyAssignedProjectCodes.push({
+          kind: "annual",
+          index,
+          projectCode: newCode,
+          treatmentName: t.name || "",
+          scheduledDate,
+          quantity: t.quantity || 0,
+        });
+      } else if (newCode && oldCode && newCode !== oldCode) {
+        const scheduledDate =
+          (Array.isArray(t.scheduleDates) && t.scheduleDates.length > 0
+            ? t.scheduleDates[0]
+            : t.scheduleDate) || null;
+        changedProjectCodes.push({
+          kind: "annual",
+          index,
+          oldCode,
+          newCode,
+          treatmentName: t.name || "",
+          scheduledDate,
+          quantity: t.quantity || 0,
+        });
+      }
+    });
+
+    // Check other treatments
+    (otherTreatments || []).forEach((t, index) => {
+      const newCode =
+        t && typeof t.projectCode === "string"
+          ? t.projectCode.trim()
+          : "";
+      const oldCode =
+        existingCustomer.otherTreatments &&
+        existingCustomer.otherTreatments[index] &&
+        typeof existingCustomer.otherTreatments[index].projectCode ===
+          "string"
+          ? existingCustomer.otherTreatments[index].projectCode.trim()
+          : "";
+
+      if (newCode && !oldCode) {
+        newlyAssignedProjectCodes.push({
+          kind: "other",
+          index,
+          projectCode: newCode,
+          treatmentName: t.treatment || "",
+          scheduledDate: t.date || null,
+          quantity: t.qty || 0,
+        });
+      } else if (newCode && oldCode && newCode !== oldCode) {
+        changedProjectCodes.push({
+          kind: "other",
+          index,
+          oldCode,
+          newCode,
+          treatmentName: t.treatment || "",
+          scheduledDate: t.date || null,
+          quantity: t.qty || 0,
+        });
+      }
+    });
+
+    // If any project codes are being changed, validate the new codes are not in use
+    // by an active project, and also that there are no duplicates within this update.
+    for (const ch of changedProjectCodes) {
+      const existingProject = await Project.findOne({
+        projectCode: ch.newCode,
+        status: { $nin: ["Delete", "Completed"] },
+      });
+      if (existingProject) {
+        return res.status(400).json({
+          success: false,
+          message: `Project Code "${ch.newCode}" is already in use by an active project and cannot be assigned.`,
+        });
+      }
     }
 
     const updated = await ChemicalCustomer.findOneAndUpdate(
@@ -180,8 +358,9 @@ exports.updateChemicalCustomer = async (req, res) => {
         customerEmail,
         customerPhone,
         jobAddress,
+        description: description !== undefined ? description : undefined,
         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
-        annualTreatments,
+        annualTreatments: normalizedAnnualTreatments,
         otherTreatments,
       },
       { new: true }
@@ -192,6 +371,96 @@ exports.updateChemicalCustomer = async (req, res) => {
         success: false,
         message: "Customer not found",
       });
+    }
+
+    // Billing type for projects created from Chemical Maintenance only.
+    // This does NOT affect normal project flows.
+    const billingTypeForChemicalProjects = isChemicalMaintenanceEnabled
+      ? "CNB"
+      : "No Bid";
+
+    // For each newly assigned project code, create a corresponding Project.
+    // Project codes can be reused only if ALL existing projects with that code
+    // are Completed or Delete. If there is any Active/Ongoing/Billed project
+    // using the same code, we reject the update.
+    for (const item of newlyAssignedProjectCodes) {
+      try {
+        // Check if any non-deleted / non-completed project already uses this code
+        const existingProject = await Project.findOne({
+          projectCode: item.projectCode,
+          status: { $nin: ["Delete", "Completed"] },
+        });
+        if (existingProject) {
+          return res.status(400).json({
+            success: false,
+            message: `Project Code "${item.projectCode}" is already in use by an active project and cannot be assigned.`,
+          });
+        }
+
+        const project = new Project({
+          projectCode: item.projectCode,
+          billingType: billingTypeForChemicalProjects,
+          customerName,
+          customerEmail,
+          customerPhone,
+          jobAddress,
+          jobName: item.treatmentName,
+          description: `Chemical Maintenance - ${item.treatmentName}`,
+        });
+
+        await project.save();
+      } catch (e) {
+        // Log but don't fail the whole request if project creation has an issue
+        console.error(
+          "Failed to create project for chemical treatment:",
+          e
+        );
+      }
+    }
+
+    // Apply changed project codes to existing projects (Chemical Maintenance flow only).
+    for (const item of changedProjectCodes) {
+      try {
+        // Update the corresponding Project for this chemical treatment.
+        // Prefer projects clearly created from Chemical Maintenance, but also allow matching
+        // by (customer + jobAddress + jobName) in case description was edited later.
+        // This still does NOT affect normal project flows because this runs only inside
+        // Chemical Maintenance customer update.
+        const project = await Project.findOne({
+          projectCode: item.oldCode,
+          status: { $nin: ["Delete", "Completed"] },
+          $or: [
+            { description: { $regex: /^Chemical Maintenance\s*-/i } },
+            {
+              customerName,
+              jobAddress,
+              jobName: item.treatmentName || "",
+            },
+          ],
+        });
+
+        if (project) {
+          project.projectCode = item.newCode;
+          // Keep billing type consistent for chemical projects
+          project.billingType = billingTypeForChemicalProjects;
+          await project.save();
+        } else {
+          // If the old project doesn't exist (or is completed/deleted), create a new one for the new code
+          const newProject = new Project({
+            projectCode: item.newCode,
+            billingType: billingTypeForChemicalProjects,
+            customerName,
+            customerEmail,
+            customerPhone,
+            jobAddress,
+            jobName: item.treatmentName,
+            description: `Chemical Maintenance - ${item.treatmentName}`,
+          });
+          await newProject.save();
+        }
+      } catch (e) {
+        console.error("Failed to update project code for chemical treatment:", e);
+      }
     }
 
     return res.status(200).json({
@@ -262,7 +531,7 @@ exports.createChemicalMix = async (req, res) => {
       });
     }
 
-    const { mixName, chemicals = [], totalCostPerTank, totalPricePerTank } =
+    const { mixName, chemicals = [], totalCostPerTank, totalPricePerTank, notes } =
       req.body;
 
     if (!mixName || !Array.isArray(chemicals) || chemicals.length === 0) {
@@ -277,6 +546,7 @@ exports.createChemicalMix = async (req, res) => {
       chemicals,
       totalCostPerTank: totalCostPerTank || 0,
       totalPricePerTank: totalPricePerTank || 0,
+      notes: notes || "",
     });
 
     return res.status(201).json({
@@ -338,7 +608,7 @@ exports.updateChemicalMix = async (req, res) => {
     }
 
     const { id } = req.params;
-    const { mixName, chemicals = [], totalCostPerTank, totalPricePerTank } =
+    const { mixName, chemicals = [], totalCostPerTank, totalPricePerTank, notes } =
       req.body;
 
     if (!mixName || !Array.isArray(chemicals) || chemicals.length === 0) {
@@ -355,6 +625,7 @@ exports.updateChemicalMix = async (req, res) => {
         chemicals,
         totalCostPerTank: totalCostPerTank || 0,
         totalPricePerTank: totalPricePerTank || 0,
+        notes: notes || "",
       },
       { new: true }
     );
