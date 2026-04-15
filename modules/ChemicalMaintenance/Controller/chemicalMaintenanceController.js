@@ -799,16 +799,10 @@ exports.updateChemicalCustomer = async (req, res) => {
     }
 
     const newlyAssignedProjectCodes = [];
-<<<<<<< HEAD
     const changedProjectCodes = [];
 
     // Check annual treatments
     (normalizedAnnualTreatments || []).forEach((t, index) => {
-=======
-
-    // Check annual treatments
-    (annualTreatments || []).forEach((t, index) => {
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
       const newCode =
         t && typeof t.projectCode === "string"
           ? t.projectCode.trim()
@@ -822,19 +816,15 @@ exports.updateChemicalCustomer = async (req, res) => {
           : "";
 
       if (newCode && !oldCode) {
-<<<<<<< HEAD
         const scheduledDate =
           (Array.isArray(t.scheduleDates) && t.scheduleDates.length > 0
             ? t.scheduleDates[0]
             : t.scheduleDate) || null;
-=======
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
         newlyAssignedProjectCodes.push({
           kind: "annual",
           index,
           projectCode: newCode,
           treatmentName: t.name || "",
-<<<<<<< HEAD
           scheduledDate,
           quantity: t.quantity || 0,
         });
@@ -850,9 +840,6 @@ exports.updateChemicalCustomer = async (req, res) => {
           newCode,
           treatmentName: t.name || "",
           scheduledDate,
-=======
-          scheduledDate: t.scheduleDate || null,
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
           quantity: t.quantity || 0,
         });
       }
@@ -881,7 +868,6 @@ exports.updateChemicalCustomer = async (req, res) => {
           scheduledDate: t.date || null,
           quantity: t.qty || 0,
         });
-<<<<<<< HEAD
       } else if (newCode && oldCode && newCode !== oldCode) {
         changedProjectCodes.push({
           kind: "other",
@@ -909,12 +895,6 @@ exports.updateChemicalCustomer = async (req, res) => {
         });
       }
     }
-
-=======
-      }
-    });
-
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
     const updated = await ChemicalCustomer.findOneAndUpdate(
       { _id: id, status: "Active" },
       {
@@ -937,15 +917,11 @@ exports.updateChemicalCustomer = async (req, res) => {
       });
     }
 
-<<<<<<< HEAD
     // Billing type for projects created from Chemical Maintenance only.
     // This does NOT affect normal project flows.
     const billingTypeForChemicalProjects = isChemicalMaintenanceEnabled
       ? "CNB"
       : "No Bid";
-
-=======
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
     // For each newly assigned project code, create a corresponding Project.
     // Project codes can be reused only if ALL existing projects with that code
     // are Completed or Delete. If there is any Active/Ongoing/Billed project
@@ -966,11 +942,7 @@ exports.updateChemicalCustomer = async (req, res) => {
 
         const project = new Project({
           projectCode: item.projectCode,
-<<<<<<< HEAD
           billingType: billingTypeForChemicalProjects,
-=======
-          billingType: "No Bid",
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
           customerName,
           customerEmail,
           customerPhone,
@@ -989,7 +961,6 @@ exports.updateChemicalCustomer = async (req, res) => {
       }
     }
 
-<<<<<<< HEAD
     // Apply changed project codes to existing projects (Chemical Maintenance flow only).
     for (const item of changedProjectCodes) {
       try {
@@ -1034,9 +1005,6 @@ exports.updateChemicalCustomer = async (req, res) => {
         console.error("Failed to update project code for chemical treatment:", e);
       }
     }
-
-=======
->>>>>>> 2d8ea3244392fdcb8b283382e1bdb7d5d9d8e2e2
     return res.status(200).json({
       success: true,
       message: "Customer updated successfully",
