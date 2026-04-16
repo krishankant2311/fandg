@@ -594,8 +594,10 @@ exports.createChemicalCustomer = async (req, res) => {
       });
     }
 
-    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[])
-    const normalizedAnnualTreatments = (annualTreatments || []).map((t) => {
+    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[]),
+    // and EXPAND multi-date annual treatments into multiple entries (1 per date).
+    const normalizedAnnualTreatments = (annualTreatments || [])
+      .map((t) => {
       if (!t) return t;
       const scheduleDatesRaw = Array.isArray(t.scheduleDates)
         ? t.scheduleDates
@@ -612,7 +614,28 @@ exports.createChemicalCustomer = async (req, res) => {
         scheduleDates,
         scheduleDate: first && !Number.isNaN(first.getTime()) ? first : undefined,
       };
-    });
+      })
+      .flatMap((t) => {
+        if (!t) return [];
+        const ds = Array.isArray(t.scheduleDates) ? t.scheduleDates.filter(Boolean) : [];
+        if (ds.length <= 1) {
+          // Ensure scheduleDates is consistent (0 or 1 element)
+          const one = ds[0] || t.scheduleDate || undefined;
+          return [
+            {
+              ...t,
+              scheduleDates: one ? [one] : [],
+              scheduleDate: one,
+            },
+          ];
+        }
+        // Expand: one entry per date
+        return ds.map((d) => ({
+          ...t,
+          scheduleDates: [d],
+          scheduleDate: d,
+        }));
+      });
 
     const customer = await ChemicalCustomer.create({
       customerName,
@@ -734,8 +757,10 @@ exports.updateChemicalCustomer = async (req, res) => {
       annualTreatments = [],
       otherTreatments = [],
     } = req.body;
-    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[])
-    const normalizedAnnualTreatments = (annualTreatments || []).map((t) => {
+    // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[]),
+    // and EXPAND multi-date annual treatments into multiple entries (1 per date).
+    const normalizedAnnualTreatments = (annualTreatments || [])
+      .map((t) => {
       if (!t) return t;
       const scheduleDatesRaw = Array.isArray(t.scheduleDates)
         ? t.scheduleDates
@@ -752,7 +777,26 @@ exports.updateChemicalCustomer = async (req, res) => {
         scheduleDates,
         scheduleDate: first && !Number.isNaN(first.getTime()) ? first : undefined,
       };
-    });
+      })
+      .flatMap((t) => {
+        if (!t) return [];
+        const ds = Array.isArray(t.scheduleDates) ? t.scheduleDates.filter(Boolean) : [];
+        if (ds.length <= 1) {
+          const one = ds[0] || t.scheduleDate || undefined;
+          return [
+            {
+              ...t,
+              scheduleDates: one ? [one] : [],
+              scheduleDate: one,
+            },
+          ];
+        }
+        return ds.map((d) => ({
+          ...t,
+          scheduleDates: [d],
+          scheduleDate: d,
+        }));
+      });
 
 
     if (!customerName || !jobAddress) {
@@ -762,27 +806,65 @@ exports.updateChemicalCustomer = async (req, res) => {
       });
     }
 
-    // Validate that project codes across all treatments are unique (non-empty)
-    const allCodes = [];
-    (annualTreatments || []).forEach((t) => {
-      if (t && typeof t.projectCode === "string") {
-        const code = t.projectCode.trim();
-        if (code) allCodes.push(code);
-      }
-    });
-    (otherTreatments || []).forEach((t) => {
-      if (t && typeof t.projectCode === "string") {
-        const code = t.projectCode.trim();
-        if (code) allCodes.push(code);
-      }
-    });
+    // Helper: normalize a date to YYYY-MM-DD (date-only) key.
+    const toDateKey = (value) => {
+      if (!value) return "";
+      const d = value instanceof Date ? value : new Date(value);
+      if (Number.isNaN(d.getTime())) return "";
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    };
 
-    const codeSet = new Set(allCodes);
-    if (codeSet.size !== allCodes.length) {
-      return res.status(400).json({
-        success: false,
-        message: "Each treatment must have a unique Project Code.",
-      });
+    const getAnnualFirstDateKey = (t) => {
+      if (!t) return "";
+      const sd =
+        Array.isArray(t.scheduleDates) && t.scheduleDates.length > 0
+          ? t.scheduleDates[0]
+          : t.scheduleDate;
+      return toDateKey(sd);
+    };
+
+    const getOtherDateKey = (t) => toDateKey(t?.date);
+
+    // Validate project code uniqueness with an exception:
+    // the SAME Project Code is allowed when the scheduled date is the SAME (date-only).
+    // If date is missing/invalid, we keep strict uniqueness to avoid accidental collisions.
+    const codeToDateKey = new Map(); // code -> first dateKey we saw
+    const pushOrValidate = (code, dateKey) => {
+      if (!code) return true;
+      const prev = codeToDateKey.get(code);
+      if (!prev) {
+        codeToDateKey.set(code, dateKey);
+        return true;
+      }
+      // allow duplicates only when both have a dateKey AND dateKey matches
+      if (prev && dateKey && prev === dateKey) return true;
+      return false;
+    };
+
+    for (const t of normalizedAnnualTreatments || []) {
+      const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
+      const dateKey = getAnnualFirstDateKey(t);
+      if (!pushOrValidate(code, dateKey)) {
+        return res.status(400).json({
+          success: false,
+          message:
+            "Project Code must be unique unless multiple treatments are scheduled on the same date.",
+        });
+      }
+    }
+    for (const t of otherTreatments || []) {
+      const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
+      const dateKey = getOtherDateKey(t);
+      if (!pushOrValidate(code, dateKey)) {
+        return res.status(400).json({
+          success: false,
+          message:
+            "Project Code must be unique unless multiple treatments are scheduled on the same date.",
+        });
+      }
     }
 
     // Fetch existing customer to detect newly assigned project codes per treatment
@@ -883,16 +965,34 @@ exports.updateChemicalCustomer = async (req, res) => {
 
     // If any project codes are being changed, validate the new codes are not in use
     // by an active project, and also that there are no duplicates within this update.
+    const checkedChangedNewCodes = new Set();
     for (const ch of changedProjectCodes) {
+      const newCode = (ch.newCode || "").trim();
+      const dateKey = toDateKey(ch.scheduledDate);
+      const uniq = `${newCode}__${dateKey}`;
+      if (!newCode || checkedChangedNewCodes.has(uniq)) continue;
+      checkedChangedNewCodes.add(uniq);
+
       const existingProject = await Project.findOne({
-        projectCode: ch.newCode,
+        projectCode: newCode,
         status: { $nin: ["Delete", "Completed"] },
       });
       if (existingProject) {
-        return res.status(400).json({
-          success: false,
-          message: `Project Code "${ch.newCode}" is already in use by an active project and cannot be assigned.`,
-        });
+        const isChemicalProject =
+          typeof existingProject.description === "string" &&
+          /^Chemical Maintenance\s*-/i.test(existingProject.description);
+        const isSameCustomerJob =
+          (existingProject.customerName || "") === (customerName || "") &&
+          (existingProject.jobAddress || "") === (jobAddress || "");
+
+        // Allow reuse only for Chemical Maintenance projects (or same customer/jobAddress).
+        // This keeps normal project flows protected.
+        if (!isChemicalProject && !isSameCustomerJob) {
+          return res.status(400).json({
+            success: false,
+            message: `Project Code "${newCode}" is already in use by an active project and cannot be assigned.`,
+          });
+        }
       }
     }
     const updated = await ChemicalCustomer.findOneAndUpdate(
@@ -926,7 +1026,25 @@ exports.updateChemicalCustomer = async (req, res) => {
     // Project codes can be reused only if ALL existing projects with that code
     // are Completed or Delete. If there is any Active/Ongoing/Billed project
     // using the same code, we reject the update.
+    // If multiple treatments on the same date share a code, create only ONE Project.
+    const groupedNewProjects = new Map(); // `${code}__${dateKey}` -> { projectCode, treatmentNames: [] }
     for (const item of newlyAssignedProjectCodes) {
+      const code = (item.projectCode || "").trim();
+      const dateKey = toDateKey(item.scheduledDate);
+      const key = `${code}__${dateKey}`;
+      if (!code) continue;
+      if (!groupedNewProjects.has(key)) {
+        groupedNewProjects.set(key, {
+          projectCode: code,
+          treatmentNames: [],
+        });
+      }
+      const group = groupedNewProjects.get(key);
+      const name = (item.treatmentName || "").trim();
+      if (name && !group.treatmentNames.includes(name)) group.treatmentNames.push(name);
+    }
+
+    for (const item of groupedNewProjects.values()) {
       try {
         // Check if any non-deleted / non-completed project already uses this code
         const existingProject = await Project.findOne({
@@ -934,11 +1052,74 @@ exports.updateChemicalCustomer = async (req, res) => {
           status: { $nin: ["Delete", "Completed"] },
         });
         if (existingProject) {
-          return res.status(400).json({
-            success: false,
-            message: `Project Code "${item.projectCode}" is already in use by an active project and cannot be assigned.`,
-          });
+          const isChemicalProject =
+            typeof existingProject.description === "string" &&
+            /^Chemical Maintenance\s*-/i.test(existingProject.description);
+          const isSameCustomerJob =
+            (existingProject.customerName || "") === (customerName || "") &&
+            (existingProject.jobAddress || "") === (jobAddress || "");
+
+          // Allow attaching additional treatments to an existing Chemical Maintenance project (same code),
+          // but do not allow collisions with unrelated normal projects.
+          if (!isChemicalProject && !isSameCustomerJob) {
+            return res.status(400).json({
+              success: false,
+              message: `Project Code "${item.projectCode}" is already in use by an active project and cannot be assigned.`,
+            });
+          }
+          // If it already exists and is acceptable, update name/description to include grouped treatments.
+          if (isChemicalProject && isSameCustomerJob) {
+            const treatmentNames = Array.isArray(item.treatmentNames)
+              ? item.treatmentNames.filter(Boolean)
+              : [];
+            const first = treatmentNames[0] || existingProject.jobName || "";
+            const rest = treatmentNames.slice(1);
+
+            // Keep wall name as the first treatment (only set if empty).
+            if (!existingProject.jobName && first) {
+              existingProject.jobName = first;
+            }
+
+            // Append other treatments into description (avoid duplicates; preserve any existing edits as much as possible).
+            const currentDesc = String(existingProject.description || "");
+            const basePrefix = first ? `Chemical Maintenance - ${first}` : "Chemical Maintenance";
+            let nextDesc = currentDesc && /^Chemical Maintenance\s*-/i.test(currentDesc)
+              ? currentDesc
+              : basePrefix;
+
+            if (rest.length > 0) {
+              const otherLinePrefix = "Other treatments (same day):";
+              const alreadyHasOtherLine = nextDesc.toLowerCase().includes(otherLinePrefix.toLowerCase());
+              const missing = rest.filter((n) => !nextDesc.toLowerCase().includes(n.toLowerCase()));
+              if (missing.length > 0) {
+                if (alreadyHasOtherLine) {
+                  nextDesc = `${nextDesc}, ${missing.join(", ")}`;
+                } else {
+                  nextDesc = `${nextDesc}\n${otherLinePrefix} ${missing.join(", ")}`;
+                }
+              }
+            }
+
+            if (nextDesc !== currentDesc) {
+              existingProject.description = nextDesc;
+            }
+
+            await existingProject.save();
+          }
+          // If it already exists and is acceptable, don't create another project.
+          continue;
         }
+
+        const treatmentNames = Array.isArray(item.treatmentNames)
+          ? item.treatmentNames.filter(Boolean)
+          : [];
+        const first = treatmentNames[0] || "";
+        const rest = treatmentNames.slice(1);
+
+        const description =
+          rest.length > 0
+            ? `Chemical Maintenance - ${first}\nOther treatments (same day): ${rest.join(", ")}`
+            : `Chemical Maintenance - ${first}`;
 
         const project = new Project({
           projectCode: item.projectCode,
@@ -947,8 +1128,8 @@ exports.updateChemicalCustomer = async (req, res) => {
           customerEmail,
           customerPhone,
           jobAddress,
-          jobName: item.treatmentName,
-          description: `Chemical Maintenance - ${item.treatmentName}`,
+          jobName: first,
+          description,
         });
 
         await project.save();
@@ -988,6 +1169,14 @@ exports.updateChemicalCustomer = async (req, res) => {
           project.billingType = billingTypeForChemicalProjects;
           await project.save();
         } else {
+          // If another project already exists for the new code (same day group), don't create duplicates.
+          const existingNew = await Project.findOne({
+            projectCode: item.newCode,
+            status: { $nin: ["Delete", "Completed"] },
+            description: { $regex: /^Chemical Maintenance\s*-/i },
+          });
+          if (existingNew) continue;
+
           // If the old project doesn't exist (or is completed/deleted), create a new one for the new code
           const newProject = new Project({
             projectCode: item.newCode,
@@ -1119,7 +1308,8 @@ exports.getAllChemicalMixes = async (req, res) => {
     }
 
     const mixes = await ChemicalMaintenance.find({ status: "Active" }).sort({
-      createdAt: -1,
+      pdfOrder: 1,
+      createdAt: 1,
     });
 
     return res.status(200).json({

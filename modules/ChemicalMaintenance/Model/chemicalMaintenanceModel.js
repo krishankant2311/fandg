@@ -40,6 +40,12 @@ const chemicalMaintenanceSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+    // Preserves the mix order as it appears in the client PDF.
+    pdfOrder: {
+      type: Number,
+      default: 999999,
+      index: true,
+    },
     status: {
       type: String,
       enum: ["Active", "Deleted"],
