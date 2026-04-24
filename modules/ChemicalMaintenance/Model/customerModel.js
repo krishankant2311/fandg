@@ -255,6 +255,12 @@ const chemicalCustomerSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    // Optional contract total entered from Add Customer form
+    contractTotal: {
+      type: Number,
+      min: 0,
+      default: 0,
+    },
 
     // Optional description (from Add New Customer form)
     description: {

@@ -581,6 +581,7 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      contractTotal,
       description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
@@ -642,6 +643,10 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      contractTotal:
+        contractTotal !== undefined && contractTotal !== null && contractTotal !== ""
+          ? Number(contractTotal)
+          : 0,
       description: description || "",
       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
       annualTreatments: normalizedAnnualTreatments,
@@ -752,6 +757,7 @@ exports.updateChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
+      contractTotal,
       description,
       isChemicalMaintenanceEnabled,
       annualTreatments = [],
@@ -1002,6 +1008,10 @@ exports.updateChemicalCustomer = async (req, res) => {
         customerEmail,
         customerPhone,
         jobAddress,
+        contractTotal:
+          contractTotal !== undefined && contractTotal !== null && contractTotal !== ""
+            ? Number(contractTotal)
+            : 0,
         description: description !== undefined ? description : undefined,
         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
         annualTreatments: normalizedAnnualTreatments,
