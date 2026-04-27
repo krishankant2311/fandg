@@ -559,6 +559,13 @@ const getActiveStaffFromToken = async (token) => {
   });
 };
 
+const toMoneyNumber = (value, fallback = 0) => {
+  if (value === undefined || value === null || value === "") return fallback;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0) return fallback;
+  return Math.round((parsed + Number.EPSILON) * 100) / 100;
+};
+
 // -------------------------------
 // Chemical Customer APIs
 // -------------------------------
@@ -643,10 +650,7 @@ exports.createChemicalCustomer = async (req, res) => {
       customerEmail,
       customerPhone,
       jobAddress,
-      contractTotal:
-        contractTotal !== undefined && contractTotal !== null && contractTotal !== ""
-          ? Number(contractTotal)
-          : 0,
+      contractTotal: toMoneyNumber(contractTotal, 0),
       description: description || "",
       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
       annualTreatments: normalizedAnnualTreatments,
@@ -760,12 +764,24 @@ exports.updateChemicalCustomer = async (req, res) => {
       contractTotal,
       description,
       isChemicalMaintenanceEnabled,
-      annualTreatments = [],
-      otherTreatments = [],
+      annualTreatments,
+      otherTreatments,
     } = req.body;
+    const hasAnnualTreatmentsInPayload = Object.prototype.hasOwnProperty.call(
+      req.body,
+      "annualTreatments"
+    );
+    const hasOtherTreatmentsInPayload = Object.prototype.hasOwnProperty.call(
+      req.body,
+      "otherTreatments"
+    );
     // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[]),
     // and EXPAND multi-date annual treatments into multiple entries (1 per date).
-    const normalizedAnnualTreatments = (annualTreatments || [])
+    const normalizedAnnualTreatments = (
+      hasAnnualTreatmentsInPayload && Array.isArray(annualTreatments)
+        ? annualTreatments
+        : []
+    )
       .map((t) => {
       if (!t) return t;
       const scheduleDatesRaw = Array.isArray(t.scheduleDates)
@@ -850,26 +866,30 @@ exports.updateChemicalCustomer = async (req, res) => {
       return false;
     };
 
-    for (const t of normalizedAnnualTreatments || []) {
-      const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
-      const dateKey = getAnnualFirstDateKey(t);
-      if (!pushOrValidate(code, dateKey)) {
-        return res.status(400).json({
-          success: false,
-          message:
-            "Project Code must be unique unless multiple treatments are scheduled on the same date.",
-        });
+    if (hasAnnualTreatmentsInPayload) {
+      for (const t of normalizedAnnualTreatments || []) {
+        const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
+        const dateKey = getAnnualFirstDateKey(t);
+        if (!pushOrValidate(code, dateKey)) {
+          return res.status(400).json({
+            success: false,
+            message:
+              "Project Code must be unique unless multiple treatments are scheduled on the same date.",
+          });
+        }
       }
     }
-    for (const t of otherTreatments || []) {
-      const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
-      const dateKey = getOtherDateKey(t);
-      if (!pushOrValidate(code, dateKey)) {
-        return res.status(400).json({
-          success: false,
-          message:
-            "Project Code must be unique unless multiple treatments are scheduled on the same date.",
-        });
+    if (hasOtherTreatmentsInPayload) {
+      for (const t of otherTreatments || []) {
+        const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
+        const dateKey = getOtherDateKey(t);
+        if (!pushOrValidate(code, dateKey)) {
+          return res.status(400).json({
+            success: false,
+            message:
+              "Project Code must be unique unless multiple treatments are scheduled on the same date.",
+          });
+        }
       }
     }
 
@@ -890,7 +910,7 @@ exports.updateChemicalCustomer = async (req, res) => {
     const changedProjectCodes = [];
 
     // Check annual treatments
-    (normalizedAnnualTreatments || []).forEach((t, index) => {
+    (hasAnnualTreatmentsInPayload ? normalizedAnnualTreatments : []).forEach((t, index) => {
       const newCode =
         t && typeof t.projectCode === "string"
           ? t.projectCode.trim()
@@ -934,7 +954,7 @@ exports.updateChemicalCustomer = async (req, res) => {
     });
 
     // Check other treatments
-    (otherTreatments || []).forEach((t, index) => {
+    (hasOtherTreatmentsInPayload ? otherTreatments : []).forEach((t, index) => {
       const newCode =
         t && typeof t.projectCode === "string"
           ? t.projectCode.trim()
@@ -1008,14 +1028,13 @@ exports.updateChemicalCustomer = async (req, res) => {
         customerEmail,
         customerPhone,
         jobAddress,
-        contractTotal:
-          contractTotal !== undefined && contractTotal !== null && contractTotal !== ""
-            ? Number(contractTotal)
-            : 0,
+        contractTotal: toMoneyNumber(contractTotal, 0),
         description: description !== undefined ? description : undefined,
         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
-        annualTreatments: normalizedAnnualTreatments,
-        otherTreatments,
+        ...(hasAnnualTreatmentsInPayload
+          ? { annualTreatments: normalizedAnnualTreatments }
+          : {}),
+        ...(hasOtherTreatmentsInPayload ? { otherTreatments } : {}),
       },
       { new: true }
     );
