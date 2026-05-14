@@ -566,6 +566,39 @@ const toMoneyNumber = (value, fallback = 0) => {
   return Math.round((parsed + Number.EPSILON) * 100) / 100;
 };
 
+// Client PDF order: MULTI-PURPOSE ROOT DRENCH #1 … #7, then SOD SPRAY #…, then other mixes by pdfOrder.
+const sortChemicalMixesForDisplay = (docs) => {
+  const drenchSeq = (name) => {
+    const m = String(name || "").match(/^DRENCH\s*#\s*(\d+)/i);
+    return m ? Number(m[1]) : null;
+  };
+  const sodSeq = (name) => {
+    const m = String(name || "").match(/^SOD\s*SPRAY\s*#\s*(\d+)/i);
+    return m ? Number(m[1]) : null;
+  };
+  const category = (name) => {
+    if (drenchSeq(name) != null) return 0;
+    if (sodSeq(name) != null) return 1;
+    return 2;
+  };
+
+  const arr = Array.isArray(docs) ? [...docs] : [];
+  arr.sort((a, b) => {
+    const na = a.mixName;
+    const nb = b.mixName;
+    const ca = category(na);
+    const cb = category(nb);
+    if (ca !== cb) return ca - cb;
+    if (ca === 0) return drenchSeq(na) - drenchSeq(nb);
+    if (ca === 1) return sodSeq(na) - sodSeq(nb);
+    const pa = Number(a.pdfOrder ?? 999999);
+    const pb = Number(b.pdfOrder ?? 999999);
+    if (pa !== pb) return pa - pb;
+    return new Date(a.createdAt || 0) - new Date(b.createdAt || 0);
+  });
+  return arr;
+};
+
 // -------------------------------
 // Chemical Customer APIs
 // -------------------------------
@@ -1336,10 +1369,8 @@ exports.getAllChemicalMixes = async (req, res) => {
       });
     }
 
-    const mixes = await ChemicalMaintenance.find({ status: "Active" }).sort({
-      pdfOrder: 1,
-      createdAt: 1,
-    });
+    const mixesRaw = await ChemicalMaintenance.find({ status: "Active" });
+    const mixes = sortChemicalMixesForDisplay(mixesRaw);
 
     return res.status(200).json({
       success: true,

@@ -1,13 +1,8 @@
 /* eslint-disable no-console */
 /**
- * Upsert MULTI-PURPOSE ROOT DRENCH mixes #1–#7 into ChemicalMaintenance collection.
+ * Upsert MULTI-PURPOSE ROOT DRENCH mixes #1–#7 (PDF). Uses ../config/db.js — same Mongo as API.
  *
- * Source: CHEM MIX FORM updated PDF (MULTI-PURPOSE ROOT DRENCH formulations).
- *
- * Usage (from repo root):
- *   cd node_backendFandG && node scripts/upsert-multi-purpose-root-drenchs.updated.js
- *
- * Uses the same MongoDB connection as ./config/db.js.
+ * Usage: cd node_backendFandG && node scripts/upsert-multi-purpose-root-drenchs.updated.js
  */
 const mongoose = require("mongoose");
 const { connectDB } = require("../config/db");

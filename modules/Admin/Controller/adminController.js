@@ -25,6 +25,64 @@ const isValidEmail = (email) => {
   return false;
 };
 
+/** When cost & markup are both unset, use: cost = 50% of price, markup = 100%. */
+const STANDARD_MATERIAL_MARKUP_PERCENT = "100";
+
+function strFieldEmpty(v) {
+  return (
+    v === null ||
+    v === undefined ||
+    (typeof v === "string" && v.trim() === "")
+  );
+}
+
+/** True when admin has not set both cost and markup (defaults apply). */
+function materialCostAndMarkupUnset(m) {
+  if (!m || typeof m !== "object") return true;
+  const mu = m.markUp ?? m.markup;
+  return strFieldEmpty(m.cost) && strFieldEmpty(mu);
+}
+
+function deriveMaterialCostAndMarkupFromPrice(price) {
+  const p = Number(price);
+  if (!Number.isFinite(p) || p < 0) {
+    return { cost: "", markUp: STANDARD_MATERIAL_MARKUP_PERCENT };
+  }
+  return {
+    cost: (p / 2).toFixed(2),
+    markUp: STANDARD_MATERIAL_MARKUP_PERCENT,
+  };
+}
+
+function resolveMaterialCostAndMarkupForSave(price, cost, markup) {
+  const costTrim = cost != null ? String(cost).trim() : "";
+  const markupTrim = markup != null ? String(markup).trim() : "";
+  if (costTrim !== "" && markupTrim !== "") {
+    return { cost: costTrim, markUp: markupTrim };
+  }
+  return deriveMaterialCostAndMarkupFromPrice(price);
+}
+
+function enrichMaterialWithStandardPricing(material) {
+  if (!material || typeof material !== "object") return material;
+  if (!materialCostAndMarkupUnset(material)) {
+    const mu = material.markUp ?? material.markup;
+    return {
+      ...material,
+      markup: mu,
+    };
+  }
+  const { cost, markUp } = deriveMaterialCostAndMarkupFromPrice(
+    material.price
+  );
+  return {
+    ...material,
+    cost,
+    markUp,
+    markup: markUp,
+  };
+}
+
 function isStrongPassword(password) {
   const options = {
     minLength: 8, // Minimum length
@@ -2132,7 +2190,8 @@ exports.addMaterial = async (req, res) => {
       });
     }
 
-    let { name, description="", measure, price,cost,markup, isTaxable } = req.body;
+    let { name, description = "", measure, price, cost, markup, isTaxable } =
+      req.body;
 
     if (!name) {
       return res.send({
@@ -2161,7 +2220,7 @@ exports.addMaterial = async (req, res) => {
       });
     }
 
-    if (!price) {
+    if (price === undefined || price === null || price === "") {
       return res.send({
         statusCode: 400,
         success: false,
@@ -2170,24 +2229,18 @@ exports.addMaterial = async (req, res) => {
       });
     }
 
-    if(!cost){
+    price = Number.parseFloat(price);
+    if (!Number.isFinite(price) || price < 0) {
       return res.send({
         statusCode: 400,
         success: false,
-        message: "Cost is required",
-        result: {},
-      });
-    }
-    if(!markup){
-      return res.send({
-        statusCode: 400,  
-        success: false,
-        message: "Markup is required",
+        message: "Price must be a valid non-negative number",
         result: {},
       });
     }
 
-    price = Number.parseFloat(price);
+    const { cost: finalCost, markUp: finalMarkUp } =
+      resolveMaterialCostAndMarkupForSave(price, cost, markup);
 
    // Validate
 if (
@@ -2218,8 +2271,8 @@ isTaxable =
       existingMaterial.description = description ? description : "";
       existingMaterial.measure = measure;
       existingMaterial.price = price;
-      existingMaterial.cost = cost;
-      existingMaterial.markUp = markup;
+      existingMaterial.cost = finalCost;
+      existingMaterial.markUp = finalMarkUp;
       existingMaterial.isTaxable = isTaxable;
       existingMaterial.status = "Active";
       await existingMaterial.save();
@@ -2246,8 +2299,8 @@ isTaxable =
       description: description,
       measure,
       price,
-      cost,
-      markUp:markup,
+      cost: finalCost,
+      markUp: finalMarkUp,
       isTaxable,
     });
 
@@ -2318,7 +2371,7 @@ exports.getMaterialById = async (req, res) => {
       statusCode: 200,
       success: true,
       message: "Material fetched successfully",
-      result: material,
+      result: enrichMaterialWithStandardPricing(material),
     });
   } catch (error) {
     console.error(error);
@@ -2366,6 +2419,8 @@ exports.getAllMaterials = async (req, res) => {
       .limit(limit)
       .lean();
 
+    const materialsOut = materials.map(enrichMaterialWithStandardPricing);
+
     const totalRecords = await Material.countDocuments(query);
     const totalPages = Math.ceil(totalRecords / limit);
 
@@ -2374,7 +2429,7 @@ exports.getAllMaterials = async (req, res) => {
       success: true,
       message: "Materials fetched successfully",
       result: {
-        materials,
+        materials: materialsOut,
         totalPages,
         currentPage: page,
         totalRecords,
@@ -2405,7 +2460,8 @@ exports.editMaterial = async (req, res) => {
       });
     }
 
-    let { name, description, measure, price,cost, markup, status, isTaxable } = req.body;
+    let { name, description, measure, price, cost, markup, status, isTaxable } =
+      req.body;
     const { materialId } = req.params;
 
     if (!materialId) {
@@ -2459,26 +2515,32 @@ exports.editMaterial = async (req, res) => {
     if (req.body && measure) {
       material.measure = measure;
     }
-    if (req.body && cost ) {
-      material.cost = cost;
+
+    if (req.body && cost !== undefined) {
+      material.cost =
+        cost === null || String(cost).trim() === ""
+          ? ""
+          : String(cost).trim();
     }
-    if(req.body && markup) {
-      material.markUp = markup
+    if (req.body && markup !== undefined) {
+      material.markUp =
+        markup === null || String(markup).trim() === ""
+          ? ""
+          : String(markup).trim();
     }
 
-    if (req.body && price) {
+    if (req.body && price !== undefined && price !== null && price !== "") {
       price = Number.parseFloat(price);
-      if (price < 0) {
+      if (!Number.isFinite(price) || price < 0) {
         return res.send({
           statusCode: 400,
           success: false,
-          message: "Price cannot be negative",
+          message: "Price must be a valid non-negative number",
           result: {},
         });
       }
       material.price = price;
     }
-    
 
     material.isTaxable = isTaxable || material.isTaxable;
 
@@ -2494,7 +2556,12 @@ exports.editMaterial = async (req, res) => {
       material.status = status;
     
     }
-    
+
+    if (materialCostAndMarkupUnset(material)) {
+      const derived = deriveMaterialCostAndMarkupFromPrice(material.price);
+      material.cost = derived.cost;
+      material.markUp = derived.markUp;
+    }
 
     const updatedMaterial = await material.save();
 
@@ -2568,7 +2635,10 @@ exports.searchMaterialByTerm = async (req, res) => {
     const materials = await Material.find(filter)
       .sort({ name: 1 })
       .skip(skip)
-      .limit(limit);
+      .limit(limit)
+      .lean();
+
+    const materialsOut = materials.map(enrichMaterialWithStandardPricing);
 
     // Get the total count of notifications
     const totalCount = await Material.countDocuments(filter);
@@ -2578,7 +2648,7 @@ exports.searchMaterialByTerm = async (req, res) => {
       success: true,
       message: "Materials fetched successfully.",
       result: {
-        materials,
+        materials: materialsOut,
         totalRecords: totalCount,
         currentPage: page,
         totalPages: Math.ceil(totalCount / limit),
