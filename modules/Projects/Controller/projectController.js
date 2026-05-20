@@ -25765,7 +25765,7 @@ exports.getProjectList = async (req, res) => {
       const pageNumber = parseInt(page, 10);
       const pageSizeNumber = parseInt(limit, 10);
 
-      sortBy = sortBy ? sortBy : "projectStartDate";
+      sortBy = sortBy ? sortBy : "createdAt";
       sortOrder = Number.parseInt(sortOrder) || -1;
 
       const query = {
