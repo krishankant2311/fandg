@@ -25765,7 +25765,17 @@ exports.getProjectList = async (req, res) => {
       const pageNumber = parseInt(page, 10);
       const pageSizeNumber = parseInt(limit, 10);
 
-      sortBy = sortBy ? sortBy : "createdAt";
+      const validSortFields = new Set([
+        "createdAt",
+        "projectCode",
+        "customerName",
+        "jobName",
+        "billingType",
+        "status",
+        "projectCompletedDate",
+      ]);
+      sortBy =
+        sortBy && validSortFields.has(sortBy) ? sortBy : "createdAt";
       sortOrder = Number.parseInt(sortOrder) || -1;
 
       const query = {
@@ -25812,8 +25822,13 @@ exports.getProjectList = async (req, res) => {
       //     $in: ["Active", "Completed", "Ongoing"],
       //   },
       // })
+      const sortSpec =
+        sortBy === "createdAt"
+          ? { createdAt: -1, _id: -1 }
+          : { [sortBy]: sortOrder, createdAt: -1, _id: -1 };
+
       const projects = await Project.find(query)
-        .sort({ [sortBy]: sortOrder })
+        .sort(sortSpec)
         .skip((pageNumber - 1) * pageSizeNumber)
         .limit(pageSizeNumber);
 
