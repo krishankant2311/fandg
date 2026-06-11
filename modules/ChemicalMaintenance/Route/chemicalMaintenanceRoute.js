@@ -3,6 +3,7 @@ const router = express.Router();
 const { verifyJWT } = require("../../../middleware/jwt");
 
 const chemicalMaintenanceController = require("../Controller/chemicalMaintenanceController");
+const otherTreatmentController = require("../Controller/otherTreatmentController");
 
 // -------------------------------
 // Chemical Customer APIs
@@ -68,6 +69,35 @@ router.delete(
   "/mixes/:id",
   verifyJWT,
   chemicalMaintenanceController.deleteChemicalMix
+);
+
+// -------------------------------
+// Other Treatments master list
+// -------------------------------
+router.post(
+  "/add-other-treatment",
+  verifyJWT,
+  otherTreatmentController.addOtherTreatment
+);
+router.get(
+  "/get-all-other-treatment",
+  verifyJWT,
+  otherTreatmentController.getAllOtherTreatments
+);
+router.put(
+  "/update-other-treatment/:id",
+  verifyJWT,
+  otherTreatmentController.updateOtherTreatment
+);
+router.delete(
+  "/delete-other-treatment/:id",
+  verifyJWT,
+  otherTreatmentController.deleteOtherTreatment
+);
+router.post(
+  "/seed-other-treatments",
+  verifyJWT,
+  otherTreatmentController.seedDefaultOtherTreatments
 );
 
 module.exports = router;
