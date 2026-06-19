@@ -1,56 +1,38 @@
 /* eslint-disable no-console */
 /**
- * Upsert MULTI-PURPOSE ROOT DRENCH mixes #1–#7 (PDF). Uses ../config/db.js — same Mongo as API.
- *
- * Usage: cd node_backendFandG && node scripts/upsert-multi-purpose-root-drenchs.updated.js
+ * Upsert DEEP ROOT INJECTION #1–#3 + FUNGAL SPRAY #1–#3
+ * Usage: cd node_backendFandG && node scripts/upsert-deep-root-fungal-mixes.js
  */
 const mongoose = require("mongoose");
 const { connectDB } = require("../config/db");
 const ChemicalMaintenance = require("../modules/ChemicalMaintenance/Model/chemicalMaintenanceModel");
-const { mixes, duplicateMixNamesToRetire } = require("./data/multiPurposeRootDrenchMixes.updated");
+const { mixes, duplicateMixNamesToRetire } = require("./data/deepRootAndFungalSprayMixes");
 
 async function upsertMix(doc) {
-  const {
-    pdfOrder,
-    mixName,
-    chemicals,
-    totalCostPerTank,
-    totalPricePerTank,
-    notes,
-  } = doc;
-
   const payload = {
-    mixName,
-    chemicals,
-    totalCostPerTank,
-    totalPricePerTank,
-    notes: notes || "",
-    pdfOrder,
+    mixName: doc.mixName,
+    chemicals: doc.chemicals,
+    totalCostPerTank: doc.totalCostPerTank,
+    totalPricePerTank: doc.totalPricePerTank,
+    notes: doc.notes || "",
+    pdfOrder: doc.pdfOrder,
     status: "Active",
   };
 
-  let existing = await ChemicalMaintenance.findOne({
-    mixName,
+  const existing = await ChemicalMaintenance.findOne({
+    mixName: doc.mixName,
     status: "Active",
   });
-
-  const altDrench7Names = ["DRENCH #7"];
-  if (!existing && /^DRENCH #7\b/i.test(mixName)) {
-    existing = await ChemicalMaintenance.findOne({
-      mixName: { $in: altDrench7Names },
-      status: "Active",
-    });
-  }
 
   if (existing) {
     existing.set(payload);
     await existing.save();
-    console.log(`Updated mix: ${mixName} (_id: ${existing._id})`);
+    console.log(`Updated: ${doc.mixName}`);
     return existing;
   }
 
   const created = await ChemicalMaintenance.create(payload);
-  console.log(`Created mix: ${mixName} (_id: ${created._id})`);
+  console.log(`Created: ${doc.mixName}`);
   return created;
 }
 
@@ -59,6 +41,9 @@ async function upsertMix(doc) {
     await connectDB();
     for (const doc of mixes) {
       await upsertMix(doc);
+      console.log(
+        `  ${doc.mixName} → COST $${doc.totalCostPerTank} | PRICE $${doc.totalPricePerTank} | ${doc.chemicals.length} chemicals`
+      );
     }
     for (const name of duplicateMixNamesToRetire || []) {
       const dup = await ChemicalMaintenance.findOne({ mixName: name, status: "Active" });
@@ -69,7 +54,7 @@ async function upsertMix(doc) {
       }
     }
 
-    console.log(`Done. Processed ${mixes.length} drench mixes.`);
+    console.log(`\nDone. ${mixes.length} mixes upserted.`);
   } catch (e) {
     console.error(e);
     process.exitCode = 1;

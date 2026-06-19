@@ -1,13 +1,13 @@
 /* eslint-disable no-console */
 /**
- * Upsert MULTI-PURPOSE ROOT DRENCH mixes #1–#7 (PDF). Uses ../config/db.js — same Mongo as API.
+ * Upsert SOD SPRAY mixes from scripts/data/sodSprayMixes.js
  *
- * Usage: cd node_backendFandG && node scripts/upsert-multi-purpose-root-drenchs.updated.js
+ * Usage: cd node_backendFandG && node scripts/upsert-sod-spray-mixes.js
  */
 const mongoose = require("mongoose");
 const { connectDB } = require("../config/db");
 const ChemicalMaintenance = require("../modules/ChemicalMaintenance/Model/chemicalMaintenanceModel");
-const { mixes, duplicateMixNamesToRetire } = require("./data/multiPurposeRootDrenchMixes.updated");
+const { mixes } = require("./data/sodSprayMixes");
 
 async function upsertMix(doc) {
   const {
@@ -29,18 +29,10 @@ async function upsertMix(doc) {
     status: "Active",
   };
 
-  let existing = await ChemicalMaintenance.findOne({
+  const existing = await ChemicalMaintenance.findOne({
     mixName,
     status: "Active",
   });
-
-  const altDrench7Names = ["DRENCH #7"];
-  if (!existing && /^DRENCH #7\b/i.test(mixName)) {
-    existing = await ChemicalMaintenance.findOne({
-      mixName: { $in: altDrench7Names },
-      status: "Active",
-    });
-  }
 
   if (existing) {
     existing.set(payload);
@@ -59,17 +51,16 @@ async function upsertMix(doc) {
     await connectDB();
     for (const doc of mixes) {
       await upsertMix(doc);
+      console.log(
+        `  → ${doc.mixName}: COST PER TANK $${doc.totalCostPerTank}, PRICE PER TANK $${doc.totalPricePerTank}`
+      );
+      doc.chemicals.forEach((c) => {
+        console.log(
+          `     ${c.brandName} | ${c.type} | ${c.quantity} oz | COST/OZ $${c.costPerOz} | TOTAL COST $${c.cost} | PRICE/OZ $${c.pricePerOz} | TOTAL PRICE $${c.price}`
+        );
+      });
     }
-    for (const name of duplicateMixNamesToRetire || []) {
-      const dup = await ChemicalMaintenance.findOne({ mixName: name, status: "Active" });
-      if (dup) {
-        dup.status = "Deleted";
-        await dup.save();
-        console.log(`Retired corrupt duplicate: ${name}`);
-      }
-    }
-
-    console.log(`Done. Processed ${mixes.length} drench mixes.`);
+    console.log(`Done. Processed ${mixes.length} SOD SPRAY mix(es).`);
   } catch (e) {
     console.error(e);
     process.exitCode = 1;

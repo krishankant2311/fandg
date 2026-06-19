@@ -155,4 +155,9 @@ mixes.forEach((m) => {
   m.totalPricePerTank = Number(tp.toFixed(2));
 });
 
-module.exports = { mixes };
+const duplicateMixNamesToRetire = [
+  "DRENCH #7",
+  "DRENCH #7:(DROUGHT / SOAKER MIX)",
+];
+
+module.exports = { mixes, duplicateMixNamesToRetire };
