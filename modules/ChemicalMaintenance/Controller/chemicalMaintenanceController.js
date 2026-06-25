@@ -854,10 +854,10 @@ exports.updateChemicalCustomer = async (req, res) => {
       });
 
 
-    if (!customerName || !jobAddress) {
+    if (!customerName || !String(customerName).trim()) {
       return res.status(400).json({
         success: false,
-        message: "Customer name and job address are required",
+        message: "Customer name is required",
       });
     }
 
