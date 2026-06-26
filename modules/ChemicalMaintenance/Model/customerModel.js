@@ -217,7 +217,7 @@ const annualTreatmentSchema = new mongoose.Schema(
 const otherTreatmentSchema = new mongoose.Schema(
   {
     treatment: { type: String, required: true, trim: true },
-    qty: { type: Number, required: true, min: 1 },
+    qty: { type: Number, required: true, min: 0 },
     date: { type: Date, required: true },
     // Full chemical mix data (optional, if mix was selected)
     mixName: { type: String, trim: true },
@@ -225,6 +225,10 @@ const otherTreatmentSchema = new mongoose.Schema(
     chemicals: { type: Array, default: [] }, // Array of chemicals in the mix
     totalCostPerTank: { type: Number, default: 0 },
     totalPricePerTank: { type: Number, default: 0 },
+    materialId: { type: String, trim: true },
+    treatmentCatalogId: { type: String, trim: true },
+    // false = non-chemical material (no labor); true = chemical mix/catalog
+    isChemicalTreatment: { type: Boolean, default: true },
     // Optional project code linked to this treatment
     projectCode: { type: String, trim: true },
     // Treatment status (free text, no enum)
