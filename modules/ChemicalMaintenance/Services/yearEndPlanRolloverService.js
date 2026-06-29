@@ -34,44 +34,91 @@ const computeUsedAmount = (customer) => {
   return toMoneyNumber(Math.max(calculated, Number.isFinite(stored) ? stored : 0));
 };
 
-const extractCompletedTreatments = (customer) => {
-  const completed = [];
+const isPausedStatus = (status) =>
+  String(status || "")
+    .trim()
+    .toLowerCase() === "paused";
+
+const isOverdueStatus = (status) =>
+  String(status || "")
+    .trim()
+    .toLowerCase() === "overdue";
+
+const hasAnnualTreatmentActivity = (at) => {
+  const qty = Number(at.quantity || 0);
+  const dates = Array.isArray(at.scheduleDates)
+    ? at.scheduleDates.filter(Boolean)
+    : at.scheduleDate
+      ? [at.scheduleDate]
+      : [];
+  const status = String(at.status || "").trim();
+  return (
+    qty > 0 ||
+    dates.length > 0 ||
+    isCompletedStatus(status) ||
+    isPausedStatus(status) ||
+    isOverdueStatus(status) ||
+    Number(at.price || 0) > 0 ||
+    Number(at.cost || 0) > 0 ||
+    String(at.projectCode || "").trim().length > 0
+  );
+};
+
+const hasOtherTreatmentActivity = (ot) => {
+  const qty = Number(ot.qty || 0);
+  const status = String(ot.status || "").trim();
+  return (
+    qty > 0 ||
+    ot.date != null ||
+    isCompletedStatus(status) ||
+    isPausedStatus(status) ||
+    isOverdueStatus(status) ||
+    Number(ot.totalPricePerTank || 0) > 0 ||
+    Number(ot.totalCostPerTank || 0) > 0 ||
+    String(ot.projectCode || "").trim().length > 0
+  );
+};
+
+const extractYearEndTreatments = (customer) => {
+  const rows = [];
 
   (customer.annualTreatments || []).forEach((at) => {
-    if (!isCompletedStatus(at.status)) return;
+    if (!hasAnnualTreatmentActivity(at)) return;
     const dates = Array.isArray(at.scheduleDates)
-      ? at.scheduleDates
+      ? at.scheduleDates.filter(Boolean)
       : at.scheduleDate
         ? [at.scheduleDate]
         : [];
-    completed.push({
+    rows.push({
       type: "annual",
       treatment: at.name,
       qty: Number(at.quantity || 0),
       date: dates[0] || at.scheduleDate || null,
       price: Number(at.price || 0),
       cost: Number(at.cost || 0),
-      status: at.status,
+      status: "Completed",
+      projectCode: String(at.projectCode || "").trim(),
     });
   });
 
   (customer.otherTreatments || []).forEach((ot) => {
-    if (!isCompletedStatus(ot.status)) return;
+    if (!hasOtherTreatmentActivity(ot)) return;
     const qty = Number(ot.qty || 0);
     const pricePerTank = Number(ot.totalPricePerTank || 0);
     const costPerTank = Number(ot.totalCostPerTank || 0);
-    completed.push({
+    rows.push({
       type: "other",
       treatment: ot.treatment || ot.mixName || "Other",
       qty,
       date: ot.date || null,
       price: qty * pricePerTank,
       cost: qty * costPerTank,
-      status: ot.status,
+      status: "Completed",
+      projectCode: String(ot.projectCode || "").trim(),
     });
   });
 
-  return completed;
+  return rows;
 };
 
 const buildFreshAnnualTreatments = (annualTreatments = []) => {
@@ -143,6 +190,7 @@ const rolloverCustomerPlanRecord = async (
   const contractTotal = toMoneyNumber(customer.contractTotal);
   const usedAmount = computeUsedAmount(customer);
   const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
+  const yearEndTreatments = extractYearEndTreatments(customer);
 
   const archivedPlan = await ArchivedPlan.create({
     customerId: customer._id,
@@ -159,11 +207,25 @@ const rolloverCustomerPlanRecord = async (
     description: customer.description || "",
     annualTreatments: JSON.parse(JSON.stringify(customer.annualTreatments || [])),
     otherTreatments: JSON.parse(JSON.stringify(customer.otherTreatments || [])),
-    completedTreatments: extractCompletedTreatments(customer),
+    completedTreatments: yearEndTreatments,
     expiredAt: new Date(`${currentYear}-12-31T23:59:59.000Z`),
     archivedAt: new Date(),
     archivedBy: archivedBy || undefined,
   });
+
+  if (yearEndTreatments.length > 0) {
+    const history = Array.isArray(customer.completedTreatmentsHistory)
+      ? customer.completedTreatmentsHistory.filter(
+          (block) => Number(block.planYear) !== currentYear
+        )
+      : [];
+    history.push({
+      planYear: currentYear,
+      archivedAt: new Date(),
+      treatments: yearEndTreatments,
+    });
+    customer.completedTreatmentsHistory = history;
+  }
 
   applyRolloverToCustomer(customer, nextYear, contractTotal);
   await customer.save();
@@ -290,6 +352,10 @@ const restoreArchivedPlanRecord = async (archivedPlan) => {
   if (archivedPlan.description != null) {
     customer.description = archivedPlan.description;
   }
+
+  customer.completedTreatmentsHistory = (
+    customer.completedTreatmentsHistory || []
+  ).filter((block) => Number(block.planYear) !== archivedYear);
 
   await customer.save();
   await ArchivedPlan.findByIdAndDelete(archivedPlan._id);

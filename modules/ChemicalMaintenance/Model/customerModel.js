@@ -237,6 +237,30 @@ const otherTreatmentSchema = new mongoose.Schema(
   { _id: false }
 );
 
+// Snapshot row stored when a plan year expires (shown on Completed Treatments)
+const completedTreatmentHistoryItemSchema = new mongoose.Schema(
+  {
+    type: { type: String, trim: true },
+    treatment: { type: String, trim: true },
+    qty: { type: Number, default: 0 },
+    date: { type: Date },
+    price: { type: Number, default: 0 },
+    cost: { type: Number, default: 0 },
+    status: { type: String, trim: true, default: "Completed" },
+    projectCode: { type: String, trim: true, default: "" },
+  },
+  { _id: false }
+);
+
+const completedTreatmentsHistoryBlockSchema = new mongoose.Schema(
+  {
+    planYear: { type: Number, required: true },
+    archivedAt: { type: Date, default: Date.now },
+    treatments: { type: [completedTreatmentHistoryItemSchema], default: [] },
+  },
+  { _id: false }
+);
+
 const chemicalCustomerSchema = new mongoose.Schema(
   {
     // Basic customer info (duplicated from main Customer for isolation)
@@ -297,6 +321,12 @@ const chemicalCustomerSchema = new mongoose.Schema(
 
     // Additional / custom treatments from "OTHER TREATMENTS" table
     otherTreatments: [otherTreatmentSchema],
+
+    // Year-end completed treatments kept after rollover (shown on Completed Treatments)
+    completedTreatmentsHistory: {
+      type: [completedTreatmentsHistoryBlockSchema],
+      default: [],
+    },
 
     status: {
       type: String,
