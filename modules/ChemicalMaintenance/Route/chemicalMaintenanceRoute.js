@@ -100,4 +100,25 @@ router.post(
   otherTreatmentController.seedDefaultOtherTreatments
 );
 
+// -------------------------------
+// Archived Plans (year-end Option B)
+// -------------------------------
+router.get(
+  "/archived-plans",
+  verifyJWT,
+  chemicalMaintenanceController.getArchivedPlans
+);
+
+router.get(
+  "/archived-plans/:id",
+  verifyJWT,
+  chemicalMaintenanceController.getArchivedPlanById
+);
+
+router.post(
+  "/customers/:id/rollover",
+  verifyJWT,
+  chemicalMaintenanceController.rolloverCustomerPlan
+);
+
 module.exports = router;

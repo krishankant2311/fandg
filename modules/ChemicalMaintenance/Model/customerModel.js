@@ -279,6 +279,12 @@ const chemicalCustomerSchema = new mongoose.Schema(
       default: false,
     },
 
+    // Active plan year (e.g. 2027). Archived years live in ArchivedPlan collection.
+    planYear: {
+      type: Number,
+      default: () => new Date().getFullYear(),
+    },
+
     // Annual treatment program rows (fixed table)
     annualTreatments: [annualTreatmentSchema],
 

@@ -545,6 +545,7 @@
 
 const ChemicalMaintenance = require("../Model/chemicalMaintenanceModel");
 const ChemicalCustomer = require("../Model/customerModel");
+const ArchivedPlan = require("../Model/archivedPlanModel");
 const Staff = require("../../Staff/Model/staffModel");
 const Project = require("../../Projects/Model/projectModel");
 
@@ -1480,6 +1481,260 @@ exports.deleteChemicalMix = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: error.message || "Delete Chemical Mix",
+    });
+  }
+};
+
+// -------------------------------
+// Archived Plans (Option B — year-end)
+// -------------------------------
+
+const isCompletedStatus = (status) =>
+  String(status || "")
+    .trim()
+    .toLowerCase() === "completed";
+
+const computeUsedAmount = (customer) => {
+  const annualUsed = (customer.annualTreatments || [])
+    .filter((at) => isCompletedStatus(at.status))
+    .reduce((sum, at) => sum + Number(at.price || 0), 0);
+
+  const otherUsed = (customer.otherTreatments || [])
+    .filter((ot) => isCompletedStatus(ot.status))
+    .reduce((sum, ot) => {
+      const qty = Number(ot.qty || 0);
+      const pricePerTank = Number(ot.totalPricePerTank || 0);
+      return sum + qty * pricePerTank;
+    }, 0);
+
+  const stored = Number(customer.materialsUsedToDate || 0);
+  const calculated = annualUsed + otherUsed;
+  return toMoneyNumber(Math.max(calculated, Number.isFinite(stored) ? stored : 0));
+};
+
+const extractCompletedTreatments = (customer) => {
+  const completed = [];
+
+  (customer.annualTreatments || []).forEach((at) => {
+    if (!isCompletedStatus(at.status)) return;
+    const dates = Array.isArray(at.scheduleDates)
+      ? at.scheduleDates
+      : at.scheduleDate
+        ? [at.scheduleDate]
+        : [];
+    completed.push({
+      type: "annual",
+      treatment: at.name,
+      qty: Number(at.quantity || 0),
+      date: dates[0] || at.scheduleDate || null,
+      price: Number(at.price || 0),
+      cost: Number(at.cost || 0),
+      status: at.status,
+    });
+  });
+
+  (customer.otherTreatments || []).forEach((ot) => {
+    if (!isCompletedStatus(ot.status)) return;
+    const qty = Number(ot.qty || 0);
+    const pricePerTank = Number(ot.totalPricePerTank || 0);
+    const costPerTank = Number(ot.totalCostPerTank || 0);
+    completed.push({
+      type: "other",
+      treatment: ot.treatment || ot.mixName || "Other",
+      qty,
+      date: ot.date || null,
+      price: qty * pricePerTank,
+      cost: qty * costPerTank,
+      status: ot.status,
+    });
+  });
+
+  return completed;
+};
+
+const buildFreshAnnualTreatments = (annualTreatments = []) => {
+  const seen = new Set();
+  const fresh = [];
+
+  (annualTreatments || []).forEach((at) => {
+    const name = String(at.name || "").trim();
+    if (!name || seen.has(name.toLowerCase())) return;
+    seen.add(name.toLowerCase());
+    fresh.push({
+      name,
+      quantity: 0,
+      scheduleDates: [],
+      scheduleDate: null,
+      price: 0,
+      cost: 0,
+      projectCode: "",
+      status: "Scheduled",
+    });
+  });
+
+  return fresh;
+};
+
+exports.getArchivedPlans = async (req, res) => {
+  try {
+    const staff = await getActiveStaffFromToken(req.token);
+    if (!staff) {
+      return res.status(401).json({ success: false, message: "Unauthorized User" });
+    }
+
+    const {
+      planYear,
+      search = "",
+      page = 1,
+      limit = 50,
+      sortby = "archivedAt",
+      sortorder = -1,
+    } = req.query;
+
+    const filter = {};
+    if (planYear && planYear !== "all") {
+      filter.planYear = Number(planYear);
+    }
+    if (search && String(search).trim()) {
+      const term = String(search).trim();
+      filter.customerName = { $regex: term, $options: "i" };
+    }
+
+    const pageNum = Math.max(1, Number(page) || 1);
+    const limitNum = Math.min(200, Math.max(1, Number(limit) || 50));
+    const skip = (pageNum - 1) * limitNum;
+    const sortField = ["customerName", "planYear", "archivedAt", "contractTotal", "usedAmount"].includes(sortby)
+      ? sortby
+      : "archivedAt";
+    const sortDir = Number(sortorder) === 1 ? 1 : -1;
+
+    const [plans, totalRecords] = await Promise.all([
+      ArchivedPlan.find(filter)
+        .sort({ [sortField]: sortDir })
+        .skip(skip)
+        .limit(limitNum)
+        .lean(),
+      ArchivedPlan.countDocuments(filter),
+    ]);
+
+    const years = await ArchivedPlan.distinct("planYear");
+
+    return res.status(200).json({
+      success: true,
+      message: "Archived plans fetched successfully",
+      data: {
+        plans,
+        totalRecords,
+        totalPages: Math.max(1, Math.ceil(totalRecords / limitNum)),
+        availableYears: years.sort((a, b) => b - a),
+      },
+    });
+  } catch (error) {
+    console.error("Get archived plans error:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Get Archived Plans",
+    });
+  }
+};
+
+exports.getArchivedPlanById = async (req, res) => {
+  try {
+    const staff = await getActiveStaffFromToken(req.token);
+    if (!staff) {
+      return res.status(401).json({ success: false, message: "Unauthorized User" });
+    }
+
+    const plan = await ArchivedPlan.findById(req.params.id).lean();
+    if (!plan) {
+      return res.status(404).json({ success: false, message: "Archived plan not found" });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Archived plan fetched successfully",
+      data: plan,
+    });
+  } catch (error) {
+    console.error("Get archived plan by ID error:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Get Archived Plan",
+    });
+  }
+};
+
+exports.rolloverCustomerPlan = async (req, res) => {
+  try {
+    const staff = await getActiveStaffFromToken(req.token);
+    if (!staff) {
+      return res.status(401).json({ success: false, message: "Unauthorized User" });
+    }
+
+    const { id } = req.params;
+    const customer = await ChemicalCustomer.findOne({ _id: id, status: "Active" });
+    if (!customer) {
+      return res.status(404).json({ success: false, message: "Customer not found" });
+    }
+
+    const currentYear = Number(customer.planYear) || new Date().getFullYear();
+    const nextYear = currentYear + 1;
+
+    const existingArchive = await ArchivedPlan.findOne({
+      customerId: customer._id,
+      planYear: currentYear,
+    });
+    if (existingArchive) {
+      return res.status(409).json({
+        success: false,
+        message: `${currentYear} plan is already archived for this customer`,
+      });
+    }
+
+    const contractTotal = toMoneyNumber(customer.contractTotal);
+    const usedAmount = computeUsedAmount(customer);
+    const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
+
+    const archivedPlan = await ArchivedPlan.create({
+      customerId: customer._id,
+      customerName: customer.customerName,
+      customerEmail: customer.customerEmail,
+      customerPhone: customer.customerPhone,
+      jobAddress: customer.jobAddress,
+      planYear: currentYear,
+      status: "Archived",
+      contractTotal,
+      usedAmount,
+      remainingAmount,
+      isChemicalMaintenanceEnabled: !!customer.isChemicalMaintenanceEnabled,
+      description: customer.description || "",
+      annualTreatments: JSON.parse(JSON.stringify(customer.annualTreatments || [])),
+      otherTreatments: JSON.parse(JSON.stringify(customer.otherTreatments || [])),
+      completedTreatments: extractCompletedTreatments(customer),
+      expiredAt: new Date(`${currentYear}-12-31T23:59:59.000Z`),
+      archivedAt: new Date(),
+      archivedBy: staff._id,
+    });
+
+    customer.planYear = nextYear;
+    customer.annualTreatments = buildFreshAnnualTreatments(customer.annualTreatments);
+    customer.otherTreatments = [];
+    customer.contractTotal = contractTotal;
+    await customer.save();
+
+    return res.status(200).json({
+      success: true,
+      message: `${currentYear} plan archived. ${nextYear} active plan started.`,
+      data: {
+        archivedPlan,
+        customer,
+      },
+    });
+  } catch (error) {
+    console.error("Rollover customer plan error:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Rollover Customer Plan",
     });
   }
 };
