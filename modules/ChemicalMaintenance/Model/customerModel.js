@@ -266,6 +266,13 @@ const chemicalCustomerSchema = new mongoose.Schema(
       default: 0,
     },
 
+    // Materials used to date (billing summary / imported sheet value)
+    materialsUsedToDate: {
+      type: Number,
+      min: 0,
+      default: 0,
+    },
+
     // Optional description (from Add New Customer form)
     description: {
       type: String,

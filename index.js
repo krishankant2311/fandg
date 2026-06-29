@@ -130,7 +130,11 @@ app.use("/office", officeRenderRoute)
 const PORT = process.env.PORT || 5000;
 
 // DB CONNECTION
-(async () => await connectDB())();
+(async () => {
+  await connectDB();
+  const { startYearEndPlanJob } = require("./jobs/yearEndPlanJob");
+  startYearEndPlanJob();
+})();
 
 app.get("/api", (req, res) => {
     // console.log("Authorization", req.headers.authorization)

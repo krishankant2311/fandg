@@ -116,6 +116,18 @@ router.get(
 );
 
 router.post(
+  "/archived-plans/:id/restore",
+  verifyJWT,
+  chemicalMaintenanceController.restoreArchivedPlan
+);
+
+router.delete(
+  "/archived-plans/:id",
+  verifyJWT,
+  chemicalMaintenanceController.deleteArchivedPlan
+);
+
+router.post(
   "/customers/:id/rollover",
   verifyJWT,
   chemicalMaintenanceController.rolloverCustomerPlan

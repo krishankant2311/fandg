@@ -548,6 +548,10 @@ const ChemicalCustomer = require("../Model/customerModel");
 const ArchivedPlan = require("../Model/archivedPlanModel");
 const Staff = require("../../Staff/Model/staffModel");
 const Project = require("../../Projects/Model/projectModel");
+const {
+  rolloverCustomerPlanRecord,
+  restoreArchivedPlanRecord,
+} = require("../Services/yearEndPlanRolloverService");
 
 // Verify active staff from JWT token (same pattern as chemicals)
 const getActiveStaffFromToken = async (token) => {
@@ -1489,92 +1493,6 @@ exports.deleteChemicalMix = async (req, res) => {
 // Archived Plans (Option B — year-end)
 // -------------------------------
 
-const isCompletedStatus = (status) =>
-  String(status || "")
-    .trim()
-    .toLowerCase() === "completed";
-
-const computeUsedAmount = (customer) => {
-  const annualUsed = (customer.annualTreatments || [])
-    .filter((at) => isCompletedStatus(at.status))
-    .reduce((sum, at) => sum + Number(at.price || 0), 0);
-
-  const otherUsed = (customer.otherTreatments || [])
-    .filter((ot) => isCompletedStatus(ot.status))
-    .reduce((sum, ot) => {
-      const qty = Number(ot.qty || 0);
-      const pricePerTank = Number(ot.totalPricePerTank || 0);
-      return sum + qty * pricePerTank;
-    }, 0);
-
-  const stored = Number(customer.materialsUsedToDate || 0);
-  const calculated = annualUsed + otherUsed;
-  return toMoneyNumber(Math.max(calculated, Number.isFinite(stored) ? stored : 0));
-};
-
-const extractCompletedTreatments = (customer) => {
-  const completed = [];
-
-  (customer.annualTreatments || []).forEach((at) => {
-    if (!isCompletedStatus(at.status)) return;
-    const dates = Array.isArray(at.scheduleDates)
-      ? at.scheduleDates
-      : at.scheduleDate
-        ? [at.scheduleDate]
-        : [];
-    completed.push({
-      type: "annual",
-      treatment: at.name,
-      qty: Number(at.quantity || 0),
-      date: dates[0] || at.scheduleDate || null,
-      price: Number(at.price || 0),
-      cost: Number(at.cost || 0),
-      status: at.status,
-    });
-  });
-
-  (customer.otherTreatments || []).forEach((ot) => {
-    if (!isCompletedStatus(ot.status)) return;
-    const qty = Number(ot.qty || 0);
-    const pricePerTank = Number(ot.totalPricePerTank || 0);
-    const costPerTank = Number(ot.totalCostPerTank || 0);
-    completed.push({
-      type: "other",
-      treatment: ot.treatment || ot.mixName || "Other",
-      qty,
-      date: ot.date || null,
-      price: qty * pricePerTank,
-      cost: qty * costPerTank,
-      status: ot.status,
-    });
-  });
-
-  return completed;
-};
-
-const buildFreshAnnualTreatments = (annualTreatments = []) => {
-  const seen = new Set();
-  const fresh = [];
-
-  (annualTreatments || []).forEach((at) => {
-    const name = String(at.name || "").trim();
-    if (!name || seen.has(name.toLowerCase())) return;
-    seen.add(name.toLowerCase());
-    fresh.push({
-      name,
-      quantity: 0,
-      scheduleDates: [],
-      scheduleDate: null,
-      price: 0,
-      cost: 0,
-      projectCode: "",
-      status: "Scheduled",
-    });
-  });
-
-  return fresh;
-};
-
 exports.getArchivedPlans = async (req, res) => {
   try {
     const staff = await getActiveStaffFromToken(req.token);
@@ -1677,57 +1595,32 @@ exports.rolloverCustomerPlan = async (req, res) => {
       return res.status(404).json({ success: false, message: "Customer not found" });
     }
 
-    const currentYear = Number(customer.planYear) || new Date().getFullYear();
-    const nextYear = currentYear + 1;
-
-    const existingArchive = await ArchivedPlan.findOne({
-      customerId: customer._id,
-      planYear: currentYear,
+    const result = await rolloverCustomerPlanRecord(customer, {
+      archivedBy: staff._id,
+      archiveStatus: "Archived",
     });
-    if (existingArchive) {
+
+    if (result.skipped) {
       return res.status(409).json({
         success: false,
-        message: `${currentYear} plan is already archived for this customer`,
+        message: `${result.planYear} plan is already archived for this customer`,
       });
     }
 
-    const contractTotal = toMoneyNumber(customer.contractTotal);
-    const usedAmount = computeUsedAmount(customer);
-    const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
-
-    const archivedPlan = await ArchivedPlan.create({
-      customerId: customer._id,
-      customerName: customer.customerName,
-      customerEmail: customer.customerEmail,
-      customerPhone: customer.customerPhone,
-      jobAddress: customer.jobAddress,
-      planYear: currentYear,
-      status: "Archived",
-      contractTotal,
-      usedAmount,
-      remainingAmount,
-      isChemicalMaintenanceEnabled: !!customer.isChemicalMaintenanceEnabled,
-      description: customer.description || "",
-      annualTreatments: JSON.parse(JSON.stringify(customer.annualTreatments || [])),
-      otherTreatments: JSON.parse(JSON.stringify(customer.otherTreatments || [])),
-      completedTreatments: extractCompletedTreatments(customer),
-      expiredAt: new Date(`${currentYear}-12-31T23:59:59.000Z`),
-      archivedAt: new Date(),
-      archivedBy: staff._id,
-    });
-
-    customer.planYear = nextYear;
-    customer.annualTreatments = buildFreshAnnualTreatments(customer.annualTreatments);
-    customer.otherTreatments = [];
-    customer.contractTotal = contractTotal;
-    await customer.save();
+    const { fromYear, toYear, contractTotal, archivedPlan, customer: updatedCustomer } =
+      result;
 
     return res.status(200).json({
       success: true,
-      message: `${currentYear} plan archived. ${nextYear} active plan started.`,
+      message: `${fromYear} plan archived. ${toYear} plan started with same contract total ($${contractTotal.toFixed(2)}).`,
       data: {
         archivedPlan,
-        customer,
+        customer: updatedCustomer,
+        carriedForward: {
+          contractTotal,
+          materialsUsedToDate: 0,
+          planYear: toYear,
+        },
       },
     });
   } catch (error) {
@@ -1735,6 +1628,70 @@ exports.rolloverCustomerPlan = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: error.message || "Rollover Customer Plan",
+    });
+  }
+};
+
+exports.deleteArchivedPlan = async (req, res) => {
+  try {
+    const staff = await getActiveStaffFromToken(req.token);
+    if (!staff) {
+      return res.status(401).json({ success: false, message: "Unauthorized User" });
+    }
+
+    const plan = await ArchivedPlan.findById(req.params.id);
+    if (!plan) {
+      return res.status(404).json({ success: false, message: "Archived plan not found" });
+    }
+
+    await ArchivedPlan.findByIdAndDelete(plan._id);
+
+    return res.status(200).json({
+      success: true,
+      message: `Archived plan for ${plan.customerName} (${plan.planYear}) deleted.`,
+    });
+  } catch (error) {
+    console.error("Delete archived plan error:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Delete Archived Plan",
+    });
+  }
+};
+
+exports.restoreArchivedPlan = async (req, res) => {
+  try {
+    const staff = await getActiveStaffFromToken(req.token);
+    if (!staff) {
+      return res.status(401).json({ success: false, message: "Unauthorized User" });
+    }
+
+    const plan = await ArchivedPlan.findById(req.params.id);
+    if (!plan) {
+      return res.status(404).json({ success: false, message: "Archived plan not found" });
+    }
+
+    const result = await restoreArchivedPlanRecord(plan);
+    if (!result.ok) {
+      return res.status(409).json({
+        success: false,
+        message: result.message || "Could not restore archived plan",
+      });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: `${result.customerName} plan restored to ${result.restoredYear}.`,
+      data: {
+        customer: result.customer,
+        restoredYear: result.restoredYear,
+      },
+    });
+  } catch (error) {
+    console.error("Restore archived plan error:", error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || "Restore Archived Plan",
     });
   }
 };
