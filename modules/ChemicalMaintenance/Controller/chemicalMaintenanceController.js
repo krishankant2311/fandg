@@ -551,6 +551,7 @@ const Project = require("../../Projects/Model/projectModel");
 const {
   rolloverCustomerPlanRecord,
   restoreArchivedPlanRecord,
+  resolveArchivedPlanBilling,
 } = require("../Services/yearEndPlanRolloverService");
 
 // Verify active staff from JWT token (same pattern as chemicals)
@@ -1535,13 +1536,23 @@ exports.getArchivedPlans = async (req, res) => {
       ArchivedPlan.countDocuments(filter),
     ]);
 
+    const plansWithBilling = (plans || []).map((plan) => {
+      const billing = resolveArchivedPlanBilling(plan);
+      return {
+        ...plan,
+        contractTotal: billing.contractTotal,
+        usedAmount: billing.usedAmount,
+        remainingAmount: billing.remainingAmount,
+      };
+    });
+
     const years = await ArchivedPlan.distinct("planYear");
 
     return res.status(200).json({
       success: true,
       message: "Archived plans fetched successfully",
       data: {
-        plans,
+        plans: plansWithBilling,
         totalRecords,
         totalPages: Math.max(1, Math.ceil(totalRecords / limitNum)),
         availableYears: years.sort((a, b) => b - a),
@@ -1568,10 +1579,17 @@ exports.getArchivedPlanById = async (req, res) => {
       return res.status(404).json({ success: false, message: "Archived plan not found" });
     }
 
+    const billing = resolveArchivedPlanBilling(plan);
+
     return res.status(200).json({
       success: true,
       message: "Archived plan fetched successfully",
-      data: plan,
+      data: {
+        ...plan,
+        contractTotal: billing.contractTotal,
+        usedAmount: billing.usedAmount,
+        remainingAmount: billing.remainingAmount,
+      },
     });
   } catch (error) {
     console.error("Get archived plan by ID error:", error);

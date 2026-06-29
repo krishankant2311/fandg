@@ -34,6 +34,26 @@ const computeUsedAmount = (customer) => {
   return toMoneyNumber(Math.max(calculated, Number.isFinite(stored) ? stored : 0));
 };
 
+const sumTreatmentPrices = (treatments = []) =>
+  toMoneyNumber(
+    (treatments || []).reduce((sum, row) => sum + Number(row.price || 0), 0)
+  );
+
+const computeArchiveUsedAmount = (customer, yearEndTreatments = []) => {
+  const fromCompletedStatus = computeUsedAmount(customer);
+  const fromYearEndTreatments = sumTreatmentPrices(yearEndTreatments);
+  return toMoneyNumber(Math.max(fromCompletedStatus, fromYearEndTreatments));
+};
+
+const resolveArchivedPlanBilling = (plan) => {
+  const contractTotal = toMoneyNumber(plan?.contractTotal);
+  const storedUsed = toMoneyNumber(plan?.usedAmount);
+  const fromCompletedTreatments = sumTreatmentPrices(plan?.completedTreatments);
+  const usedAmount = toMoneyNumber(Math.max(storedUsed, fromCompletedTreatments));
+  const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
+  return { contractTotal, usedAmount, remainingAmount };
+};
+
 const isPausedStatus = (status) =>
   String(status || "")
     .trim()
@@ -121,32 +141,53 @@ const extractYearEndTreatments = (customer) => {
   return rows;
 };
 
-const buildFreshAnnualTreatments = (annualTreatments = []) => {
+const normalizeTreatmentKey = (name) =>
+  String(name || "")
+    .trim()
+    .toLowerCase();
+
+const emptyAnnualTreatmentRow = (name) => ({
+  name: String(name || "").trim(),
+  quantity: 0,
+  scheduleDates: [],
+  scheduleDate: null,
+  price: 0,
+  cost: 0,
+  projectCode: "",
+  status: "Scheduled",
+});
+
+/**
+ * Start the new plan year with every treatment from the ending plan:
+ * - all annual program rows (deduped by name, including multi-date duplicates)
+ * - all other / other-chemical rows (merged in as annual rows so they stay visible)
+ * Quantities, schedules, prices, and project codes are cleared.
+ */
+const buildFreshAnnualTreatments = (annualTreatments = [], otherTreatments = []) => {
   const seen = new Set();
   const fresh = [];
 
-  (annualTreatments || []).forEach((at) => {
-    const name = String(at.name || "").trim();
-    if (!name || seen.has(name.toLowerCase())) return;
-    seen.add(name.toLowerCase());
-    fresh.push({
-      name,
-      quantity: 0,
-      scheduleDates: [],
-      scheduleDate: null,
-      price: 0,
-      cost: 0,
-      projectCode: "",
-      status: "Scheduled",
-    });
-  });
+  const pushName = (rawName) => {
+    const name = String(rawName || "").trim();
+    if (!name) return;
+    const key = normalizeTreatmentKey(name);
+    if (seen.has(key)) return;
+    seen.add(key);
+    fresh.push(emptyAnnualTreatmentRow(name));
+  };
+
+  (annualTreatments || []).forEach((at) => pushName(at.name));
+  (otherTreatments || []).forEach((ot) => pushName(ot.treatment || ot.mixName));
 
   return fresh;
 };
 
 const applyRolloverToCustomer = (customer, nextYear, contractTotal) => {
   customer.planYear = nextYear;
-  customer.annualTreatments = buildFreshAnnualTreatments(customer.annualTreatments);
+  customer.annualTreatments = buildFreshAnnualTreatments(
+    customer.annualTreatments,
+    customer.otherTreatments
+  );
   customer.otherTreatments = [];
   customer.contractTotal = contractTotal;
   customer.materialsUsedToDate = 0;
@@ -188,9 +229,9 @@ const rolloverCustomerPlanRecord = async (
   }
 
   const contractTotal = toMoneyNumber(customer.contractTotal);
-  const usedAmount = computeUsedAmount(customer);
-  const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
   const yearEndTreatments = extractYearEndTreatments(customer);
+  const usedAmount = computeArchiveUsedAmount(customer, yearEndTreatments);
+  const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
 
   const archivedPlan = await ArchivedPlan.create({
     customerId: customer._id,
@@ -340,8 +381,9 @@ const restoreArchivedPlanRecord = async (archivedPlan) => {
   }
 
   customer.planYear = archivedYear;
-  customer.contractTotal = toMoneyNumber(archivedPlan.contractTotal);
-  customer.materialsUsedToDate = toMoneyNumber(archivedPlan.usedAmount);
+  const billing = resolveArchivedPlanBilling(archivedPlan);
+  customer.contractTotal = billing.contractTotal;
+  customer.materialsUsedToDate = billing.usedAmount;
   customer.annualTreatments = JSON.parse(
     JSON.stringify(archivedPlan.annualTreatments || [])
   );
@@ -372,6 +414,7 @@ module.exports = {
   rolloverCustomerPlanRecord,
   processDuePlanRollovers,
   restoreArchivedPlanRecord,
+  resolveArchivedPlanBilling,
   getYearInTimeZone,
   DEFAULT_TIMEZONE,
 };

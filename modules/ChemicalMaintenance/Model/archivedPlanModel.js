@@ -9,6 +9,7 @@ const completedTreatmentSchema = new mongoose.Schema(
     price: { type: Number, default: 0 },
     cost: { type: Number, default: 0 },
     status: { type: String, trim: true },
+    projectCode: { type: String, trim: true, default: "" },
   },
   { _id: false }
 );
