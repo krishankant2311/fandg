@@ -28534,10 +28534,6 @@ exports.editCustomerCopyName = async (req, res) => {
   }
 };
 
-    });
-  }
-};
-
 const isLatestCustomerCopyIndex = (project, entryDate, index) => {
   const blocks = project?.customerFieldCopy || [];
   if (!blocks.length) return false;
