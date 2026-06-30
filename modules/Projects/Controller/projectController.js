@@ -28534,6 +28534,139 @@ exports.editCustomerCopyName = async (req, res) => {
   }
 };
 
+    });
+  }
+};
+
+const isLatestCustomerCopyIndex = (project, entryDate, index) => {
+  const blocks = project?.customerFieldCopy || [];
+  if (!blocks.length) return false;
+  const lastBlock = blocks[blocks.length - 1];
+  if (String(lastBlock.entryDate) !== String(entryDate)) return false;
+  const copyIndex = Number(index);
+  if (!Number.isFinite(copyIndex) || copyIndex < 0) return false;
+  return copyIndex === (lastBlock.customerCopies?.length || 0) - 1;
+};
+
+exports.updateCustomerCopyByIndex = async (req, res) => {
+  try {
+    const token = req.token;
+    const staff = await Staff.findOne({
+      _id: token._id,
+      status: "Active",
+    });
+
+    if (!staff) {
+      return res.send({
+        statusCode: 401,
+        success: false,
+        message: "Unauthorized User",
+        result: {},
+      });
+    }
+
+    const { projectId, entryDate, index } = req.params;
+
+    if (!projectId || !entryDate || index === undefined || index === null) {
+      return res.send({
+        statusCode: 404,
+        success: false,
+        message: "Project Id, Entry Date and Index are required",
+        result: {},
+      });
+    }
+
+    const project = await Project.findById(projectId);
+
+    if (!project) {
+      return res.send({
+        statusCode: 404,
+        success: false,
+        message: "Project not found",
+        result: {},
+      });
+    }
+
+    if (!isLatestCustomerCopyIndex(project, entryDate, index)) {
+      return res.send({
+        statusCode: 403,
+        success: false,
+        message: "Only the latest customer copy can be edited",
+        result: {},
+      });
+    }
+
+    const fieldCopyIndex = project.customerFieldCopy.findIndex(
+      (block) => String(block.entryDate) === String(entryDate)
+    );
+
+    if (fieldCopyIndex === -1) {
+      return res.send({
+        statusCode: 404,
+        success: false,
+        message: "Field Copy not found for the given entry date",
+        result: {},
+      });
+    }
+
+    const copyIndex = Number(index);
+    const fieldCopy = project.customerFieldCopy[fieldCopyIndex];
+
+    if (copyIndex >= (fieldCopy.customerCopies?.length || 0)) {
+      return res.send({
+        statusCode: 404,
+        success: false,
+        message: "Index out of range",
+        result: {},
+      });
+    }
+
+    let { forms } = req.body;
+
+    if (!forms) {
+      return res.send({
+        statusCode: 400,
+        success: false,
+        message: "Field Copy is required",
+        result: {},
+      });
+    }
+
+    try {
+      forms = JSON.parse(forms);
+      if (!Array.isArray(forms)) {
+        throw new Error("Invalid data format");
+      }
+    } catch (error) {
+      return res.send({
+        statusCode: 400,
+        success: false,
+        message: "Invalid JSON format for forms",
+        result: {},
+      });
+    }
+
+    project.customerFieldCopy[fieldCopyIndex].customerCopies[copyIndex] = forms;
+    project.markModified("customerFieldCopy");
+    await project.save();
+
+    return res.send({
+      statusCode: 200,
+      success: true,
+      message: "Latest customer copy updated successfully",
+      result: {},
+    });
+  } catch (err) {
+    console.error(err);
+    return res.send({
+      statusCode: 500,
+      success: false,
+      message: err.message || "Internal Server Error",
+      result: {},
+    });
+  }
+};
+
 exports.getCustomerCopyByIndex = async (req, res) => {
   try {
     const token = req.token;

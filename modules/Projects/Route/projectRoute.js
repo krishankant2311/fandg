@@ -37,6 +37,7 @@ router.post("/generate-customer-copy/:projectId", upload.none(), verifyJWT, proj
 router.get("/get-customer-list/:projectId", upload.none(), verifyJWT, projectController.getCustomerCopyList);
 router.get("/get-customer-copy/:projectId/:entryDate/:index", upload.none(), verifyJWT, projectController.getCustomerCopyByIndex);
 router.post("/edit-customer-copy-name/:projectId/:entryDate/:index", upload.none(), verifyJWT, projectController.editCustomerCopyName);
+router.post("/update-customer-copy/:projectId/:entryDate/:index", upload.none(), verifyJWT, projectController.updateCustomerCopyByIndex);
 
 // Draft Copy
 
