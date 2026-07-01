@@ -918,7 +918,7 @@ exports.getCustomerProjects = async (req, res) => {
     }
 
     let { customerId } = req.params;
-    let { page = 1, limit = 10, sortOrder, sortBy, search, statusTab } = req.query;
+    let { page = 1, limit = 10, sortOrder, sortBy, search, statusTab, statusTabs } = req.query;
     page = parseInt(page);
     limit = parseInt(limit);
     const skip = (page - 1) * limit;
@@ -950,10 +950,20 @@ exports.getCustomerProjects = async (req, res) => {
       ONGOING: ["Ongoing"],
       COMPLETED: ["Completed"],
       BILLED: ["Billed"],
-      COST: ["Ongoing", "Completed", "Billed"],
     };
-    const normalizedTab = String(statusTab || "ONGOING").toUpperCase();
-    const statuses = statusMap[normalizedTab] || statusMap.ONGOING;
+    const tabInput = statusTabs || statusTab || "ONGOING";
+    const tabList = String(tabInput)
+      .split(",")
+      .map((t) => t.trim().toUpperCase())
+      .filter((t) => t && t !== "COST");
+    const statuses = [
+      ...new Set(
+        tabList.flatMap((tab) => statusMap[tab] || []).filter(Boolean)
+      ),
+    ];
+    if (!statuses.length) {
+      statuses.push(...statusMap.ONGOING);
+    }
 
     const query = {
       customerId: customerId,
