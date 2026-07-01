@@ -918,7 +918,7 @@ exports.getCustomerProjects = async (req, res) => {
     }
 
     let { customerId } = req.params;
-    let { page = 1, limit = 10, sortOrder, sortBy, search } = req.query;
+    let { page = 1, limit = 10, sortOrder, sortBy, search, statusTab } = req.query;
     page = parseInt(page);
     limit = parseInt(limit);
     const skip = (page - 1) * limit;
@@ -946,11 +946,18 @@ exports.getCustomerProjects = async (req, res) => {
       });
     }
 
+    const statusMap = {
+      ONGOING: ["Ongoing"],
+      COMPLETED: ["Completed"],
+      BILLED: ["Billed"],
+      COST: ["Ongoing", "Completed", "Billed"],
+    };
+    const normalizedTab = String(statusTab || "ONGOING").toUpperCase();
+    const statuses = statusMap[normalizedTab] || statusMap.ONGOING;
+
     const query = {
-      // customerPhone: customer.customerPhone,
-      // customerEmail: customer.customerEmail,
       customerId: customerId,
-      status: { $in: ["Ongoing", "Completed"] },
+      status: { $in: statuses },
     };
 
     if (search) {
@@ -972,6 +979,9 @@ exports.getCustomerProjects = async (req, res) => {
       .sort({ [sortBy]: sortOrder })
       .skip(skip)
       .limit(limit)
+      .select(
+        "customerName customerEmail jobAddress projectCode description billingType status projectStartDate projectCompletedDate customerFieldCopy"
+      )
       .lean();
 
     return res.send({
