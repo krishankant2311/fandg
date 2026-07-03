@@ -572,6 +572,48 @@ const toMoneyNumber = (value, fallback = 0) => {
   return Math.round((parsed + Number.EPSILON) * 100) / 100;
 };
 
+const normalizeOtherTreatmentsInput = (rows) =>
+  (Array.isArray(rows) ? rows : [])
+    .map((t) => {
+      if (!t) return null;
+
+      const rawDate = t.date ?? t.scheduleDate ?? t.scheduledDate;
+      const dateObj = rawDate ? new Date(rawDate) : null;
+      if (!dateObj || Number.isNaN(dateObj.getTime())) return null;
+
+      const treatment = String(t.treatment || t.mixName || "").trim();
+      if (!treatment) return null;
+
+      const qtyRaw = t.qty ?? t.quantity ?? 0;
+      const qty = Number(qtyRaw);
+      if (!Number.isFinite(qty) || qty < 0) return null;
+
+      const isMaterial = Boolean(t.materialId);
+      return {
+        ...t,
+        treatment,
+        mixName: t.mixName || undefined,
+        qty,
+        date: dateObj,
+        totalCostPerTank: toMoneyNumber(t.totalCostPerTank, 0),
+        totalPricePerTank: toMoneyNumber(t.totalPricePerTank, 0),
+        materialId: t.materialId ? String(t.materialId) : undefined,
+        mixId: t.mixId ? String(t.mixId) : undefined,
+        treatmentCatalogId: t.treatmentCatalogId
+          ? String(t.treatmentCatalogId)
+          : undefined,
+        isChemicalTreatment: isMaterial
+          ? false
+          : t.isChemicalTreatment === false
+            ? false
+            : true,
+        projectCode:
+          typeof t.projectCode === "string" ? t.projectCode.trim() : "",
+        status: t.status || "Scheduled",
+      };
+    })
+    .filter(Boolean);
+
 // Client PDF order: MULTI-PURPOSE ROOT DRENCH #1 … #7, then SOD SPRAY #…, then other mixes by pdfOrder.
 const sortChemicalMixesForDisplay = (docs) => {
   const drenchSeq = (name) => {
@@ -693,7 +735,7 @@ exports.createChemicalCustomer = async (req, res) => {
       description: description || "",
       isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
       annualTreatments: normalizedAnnualTreatments,
-      otherTreatments,
+      otherTreatments: normalizeOtherTreatmentsInput(otherTreatments),
     });
 
     return res.status(201).json({
@@ -860,6 +902,12 @@ exports.updateChemicalCustomer = async (req, res) => {
       });
 
 
+    const normalizedOtherTreatments = normalizeOtherTreatmentsInput(
+      hasOtherTreatmentsInPayload && Array.isArray(otherTreatments)
+        ? otherTreatments
+        : []
+    );
+
     if (!customerName || !String(customerName).trim()) {
       return res.status(400).json({
         success: false,
@@ -919,7 +967,7 @@ exports.updateChemicalCustomer = async (req, res) => {
       }
     }
     if (hasOtherTreatmentsInPayload) {
-      for (const t of otherTreatments || []) {
+      for (const t of normalizedOtherTreatments || []) {
         const code = t && typeof t.projectCode === "string" ? t.projectCode.trim() : "";
         const dateKey = getOtherDateKey(t);
         if (!pushOrValidate(code, dateKey)) {
@@ -993,7 +1041,7 @@ exports.updateChemicalCustomer = async (req, res) => {
     });
 
     // Check other treatments
-    (hasOtherTreatmentsInPayload ? otherTreatments : []).forEach((t, index) => {
+    (hasOtherTreatmentsInPayload ? normalizedOtherTreatments : []).forEach((t, index) => {
       const newCode =
         t && typeof t.projectCode === "string"
           ? t.projectCode.trim()
@@ -1073,7 +1121,9 @@ exports.updateChemicalCustomer = async (req, res) => {
         ...(hasAnnualTreatmentsInPayload
           ? { annualTreatments: normalizedAnnualTreatments }
           : {}),
-        ...(hasOtherTreatmentsInPayload ? { otherTreatments } : {}),
+        ...(hasOtherTreatmentsInPayload
+          ? { otherTreatments: normalizedOtherTreatments }
+          : {}),
       },
       { new: true }
     );
