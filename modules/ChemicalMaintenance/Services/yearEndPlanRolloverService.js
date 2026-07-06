@@ -216,6 +216,7 @@ const rolloverCustomerPlanRecord = async (
   const existingArchive = await ArchivedPlan.findOne({
     customerId: customer._id,
     planYear: currentYear,
+    archiveReason: { $ne: "schedule_update" },
   });
   if (existingArchive) {
     return {
@@ -252,6 +253,7 @@ const rolloverCustomerPlanRecord = async (
     expiredAt: new Date(`${currentYear}-12-31T23:59:59.000Z`),
     archivedAt: new Date(),
     archivedBy: archivedBy || undefined,
+    archiveReason: "rollover",
   });
 
   if (yearEndTreatments.length > 0) {
@@ -383,13 +385,16 @@ const restoreArchivedPlanRecord = async (archivedPlan) => {
   customer.planYear = archivedYear;
   const billing = resolveArchivedPlanBilling(archivedPlan);
   customer.contractTotal = billing.contractTotal;
-  customer.materialsUsedToDate = billing.usedAmount;
   customer.annualTreatments = JSON.parse(
     JSON.stringify(archivedPlan.annualTreatments || [])
   );
   customer.otherTreatments = JSON.parse(
     JSON.stringify(archivedPlan.otherTreatments || [])
   );
+  // Use actual completed treatments from the restored snapshot — not expire-time
+  // archive billing (which counts all active rows as used at rollover).
+  customer.materialsUsedToDate = 0;
+  customer.materialsUsedToDate = computeUsedAmount(customer);
   customer.isChemicalMaintenanceEnabled = !!archivedPlan.isChemicalMaintenanceEnabled;
   if (archivedPlan.description != null) {
     customer.description = archivedPlan.description;
@@ -410,8 +415,48 @@ const restoreArchivedPlanRecord = async (archivedPlan) => {
   };
 };
 
+/**
+ * Snapshot active plan before schedule update — does not change customer or plan year.
+ */
+const archiveCustomerPlanSnapshot = async (
+  customer,
+  { archivedBy = null } = {}
+) => {
+  if (!customer) return null;
+
+  const planYear = Number(customer.planYear) || getYearInTimeZone();
+  const contractTotal = toMoneyNumber(customer.contractTotal);
+  const yearEndTreatments = extractYearEndTreatments(customer);
+  const usedAmount = computeArchiveUsedAmount(customer, yearEndTreatments);
+  const remainingAmount = toMoneyNumber(Math.max(contractTotal - usedAmount, 0));
+
+  const archivedPlan = await ArchivedPlan.create({
+    customerId: customer._id,
+    customerName: customer.customerName,
+    customerEmail: customer.customerEmail,
+    customerPhone: customer.customerPhone,
+    jobAddress: customer.jobAddress,
+    planYear,
+    status: "Archived",
+    archiveReason: "schedule_update",
+    contractTotal,
+    usedAmount,
+    remainingAmount,
+    isChemicalMaintenanceEnabled: !!customer.isChemicalMaintenanceEnabled,
+    description: customer.description || "",
+    annualTreatments: JSON.parse(JSON.stringify(customer.annualTreatments || [])),
+    otherTreatments: JSON.parse(JSON.stringify(customer.otherTreatments || [])),
+    completedTreatments: yearEndTreatments,
+    archivedAt: new Date(),
+    archivedBy: archivedBy || undefined,
+  });
+
+  return archivedPlan;
+};
+
 module.exports = {
   rolloverCustomerPlanRecord,
+  archiveCustomerPlanSnapshot,
   processDuePlanRollovers,
   restoreArchivedPlanRecord,
   resolveArchivedPlanBilling,

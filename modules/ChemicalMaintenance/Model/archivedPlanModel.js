@@ -31,6 +31,11 @@ const archivedPlanSchema = new mongoose.Schema(
       enum: ["Expired", "Archived"],
       default: "Archived",
     },
+    archiveReason: {
+      type: String,
+      enum: ["rollover", "schedule_update"],
+      default: "rollover",
+    },
     contractTotal: { type: Number, min: 0, default: 0 },
     usedAmount: { type: Number, min: 0, default: 0 },
     remainingAmount: { type: Number, min: 0, default: 0 },

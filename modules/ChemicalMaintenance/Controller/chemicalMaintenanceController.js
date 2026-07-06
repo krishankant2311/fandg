@@ -550,6 +550,7 @@ const Staff = require("../../Staff/Model/staffModel");
 const Project = require("../../Projects/Model/projectModel");
 const {
   rolloverCustomerPlanRecord,
+  archiveCustomerPlanSnapshot,
   restoreArchivedPlanRecord,
   resolveArchivedPlanBilling,
 } = require("../Services/yearEndPlanRolloverService");
@@ -847,6 +848,7 @@ exports.updateChemicalCustomer = async (req, res) => {
       isChemicalMaintenanceEnabled,
       annualTreatments,
       otherTreatments,
+      archivePreviousPlan,
     } = req.body;
     const hasAnnualTreatmentsInPayload = Object.prototype.hasOwnProperty.call(
       req.body,
@@ -990,6 +992,13 @@ exports.updateChemicalCustomer = async (req, res) => {
       return res.status(404).json({
         success: false,
         message: "Customer not found",
+      });
+    }
+
+    let archivedPlanSnapshot = null;
+    if (archivePreviousPlan === true || archivePreviousPlan === "true") {
+      archivedPlanSnapshot = await archiveCustomerPlanSnapshot(existingCustomer, {
+        archivedBy: staff._id,
       });
     }
 
@@ -1316,6 +1325,7 @@ exports.updateChemicalCustomer = async (req, res) => {
       success: true,
       message: "Customer updated successfully",
       data: updated,
+      archivedPlan: archivedPlanSnapshot,
     });
   } catch (error) {
     console.error("Update chemical customer error:", error);
