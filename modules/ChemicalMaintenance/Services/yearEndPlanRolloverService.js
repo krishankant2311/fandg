@@ -444,7 +444,7 @@ const archiveCustomerPlanSnapshot = async (
     customerPhone: customer.customerPhone,
     jobAddress: customer.jobAddress,
     planYear,
-    status: "Previous",
+    status: "Archived",
     archiveReason: "schedule_update",
     contractTotal,
     usedAmount,

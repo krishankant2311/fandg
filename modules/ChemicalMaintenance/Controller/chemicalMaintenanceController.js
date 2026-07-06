@@ -860,6 +860,10 @@ exports.updateChemicalCustomer = async (req, res) => {
       req.body,
       "otherTreatments"
     );
+    const hasContractTotalInPayload = Object.prototype.hasOwnProperty.call(
+      req.body,
+      "contractTotal"
+    );
     // Normalize annualTreatments schedule dates (support both scheduleDate and scheduleDates[]),
     // and EXPAND multi-date annual treatments into multiple entries (1 per date).
     const normalizedAnnualTreatments = (
@@ -1126,9 +1130,11 @@ exports.updateChemicalCustomer = async (req, res) => {
         customerEmail,
         customerPhone,
         jobAddress,
-        contractTotal: toMoneyNumber(contractTotal, 0),
         description: description !== undefined ? description : undefined,
         isChemicalMaintenanceEnabled: !!isChemicalMaintenanceEnabled,
+        ...(hasContractTotalInPayload
+          ? { contractTotal: toMoneyNumber(contractTotal, 0) }
+          : {}),
         ...(hasAnnualTreatmentsInPayload
           ? { annualTreatments: normalizedAnnualTreatments }
           : {}),
@@ -1570,15 +1576,11 @@ exports.getArchivedPlans = async (req, res) => {
       limit = 50,
       sortby = "archivedAt",
       sortorder = -1,
-      archiveReason,
     } = req.query;
 
     const filter = {};
     if (planYear && planYear !== "all") {
       filter.planYear = Number(planYear);
-    }
-    if (archiveReason && String(archiveReason).trim() && archiveReason !== "all") {
-      filter.archiveReason = String(archiveReason).trim();
     }
     if (search && String(search).trim()) {
       const term = String(search).trim();
@@ -1753,14 +1755,6 @@ exports.restoreArchivedPlan = async (req, res) => {
     const plan = await ArchivedPlan.findById(req.params.id);
     if (!plan) {
       return res.status(404).json({ success: false, message: "Archived plan not found" });
-    }
-
-    if (plan.archiveReason === "schedule_update") {
-      return res.status(400).json({
-        success: false,
-        message:
-          "Schedule update snapshots cannot be restored. They are kept in Previous Customer Plans only.",
-      });
     }
 
     const result = await restoreArchivedPlanRecord(plan);
