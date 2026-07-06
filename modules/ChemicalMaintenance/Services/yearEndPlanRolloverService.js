@@ -146,6 +146,13 @@ const normalizeTreatmentKey = (name) =>
     .trim()
     .toLowerCase();
 
+const resolveOtherTreatmentName = (ot) => {
+  if (!ot) return "";
+  return String(
+    ot.treatment || ot.mixName || ot.treatmentName || ""
+  ).trim();
+};
+
 const emptyAnnualTreatmentRow = (name) => ({
   name: String(name || "").trim(),
   quantity: 0,
@@ -176,8 +183,8 @@ const buildFreshAnnualTreatments = (annualTreatments = [], otherTreatments = [])
     fresh.push(emptyAnnualTreatmentRow(name));
   };
 
-  (annualTreatments || []).forEach((at) => pushName(at.name));
-  (otherTreatments || []).forEach((ot) => pushName(ot.treatment || ot.mixName));
+  (annualTreatments || []).forEach((at) => pushName(at?.name));
+  (otherTreatments || []).forEach((ot) => pushName(resolveOtherTreatmentName(ot)));
 
   return fresh;
 };
@@ -437,7 +444,7 @@ const archiveCustomerPlanSnapshot = async (
     customerPhone: customer.customerPhone,
     jobAddress: customer.jobAddress,
     planYear,
-    status: "Archived",
+    status: "Previous",
     archiveReason: "schedule_update",
     contractTotal,
     usedAmount,

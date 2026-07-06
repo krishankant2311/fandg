@@ -28,7 +28,7 @@ const archivedPlanSchema = new mongoose.Schema(
     planYear: { type: Number, required: true },
     status: {
       type: String,
-      enum: ["Expired", "Archived"],
+      enum: ["Expired", "Archived", "Previous"],
       default: "Archived",
     },
     archiveReason: {

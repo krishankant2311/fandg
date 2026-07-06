@@ -582,7 +582,9 @@ const normalizeOtherTreatmentsInput = (rows) =>
       const dateObj = rawDate ? new Date(rawDate) : null;
       if (!dateObj || Number.isNaN(dateObj.getTime())) return null;
 
-      const treatment = String(t.treatment || t.mixName || "").trim();
+      const treatment = String(
+        t.treatment || t.mixName || t.treatmentName || ""
+      ).trim();
       if (!treatment) return null;
 
       const qtyRaw = t.qty ?? t.quantity ?? 0;
@@ -1568,11 +1570,15 @@ exports.getArchivedPlans = async (req, res) => {
       limit = 50,
       sortby = "archivedAt",
       sortorder = -1,
+      archiveReason,
     } = req.query;
 
     const filter = {};
     if (planYear && planYear !== "all") {
       filter.planYear = Number(planYear);
+    }
+    if (archiveReason && String(archiveReason).trim() && archiveReason !== "all") {
+      filter.archiveReason = String(archiveReason).trim();
     }
     if (search && String(search).trim()) {
       const term = String(search).trim();
@@ -1747,6 +1753,14 @@ exports.restoreArchivedPlan = async (req, res) => {
     const plan = await ArchivedPlan.findById(req.params.id);
     if (!plan) {
       return res.status(404).json({ success: false, message: "Archived plan not found" });
+    }
+
+    if (plan.archiveReason === "schedule_update") {
+      return res.status(400).json({
+        success: false,
+        message:
+          "Schedule update snapshots cannot be restored. They are kept in Previous Customer Plans only.",
+      });
     }
 
     const result = await restoreArchivedPlanRecord(plan);
