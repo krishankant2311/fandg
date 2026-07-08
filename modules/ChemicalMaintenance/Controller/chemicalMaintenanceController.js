@@ -755,7 +755,7 @@ exports.createChemicalCustomer = async (req, res) => {
   }
 };
 
-// Simple list endpoint (can be expanded later with pagination)
+// List customers — paginated when page/limit sent; full array otherwise (dashboard compat)
 exports.getChemicalCustomers = async (req, res) => {
   try {
     const token = req.token;
@@ -768,9 +768,66 @@ exports.getChemicalCustomers = async (req, res) => {
       });
     }
 
-    const customers = await ChemicalCustomer.find({ status: "Active" }).sort({
-      createdAt: -1,
-    });
+    const {
+      search = "",
+      page,
+      limit,
+      sortby = "updatedAt",
+      sortorder = -1,
+    } = req.query;
+
+    const filter = { status: "Active" };
+    if (search && String(search).trim()) {
+      const term = String(search).trim();
+      filter.$or = [
+        { customerName: { $regex: term, $options: "i" } },
+        { customerEmail: { $regex: term, $options: "i" } },
+        { customerPhone: { $regex: term, $options: "i" } },
+      ];
+    }
+
+    const allowedSort = [
+      "customerName",
+      "customerEmail",
+      "customerPhone",
+      "createdAt",
+      "updatedAt",
+      "planYear",
+    ];
+    const sortField = allowedSort.includes(String(sortby)) ? sortby : "updatedAt";
+    const sortDir = Number(sortorder) === 1 ? 1 : -1;
+    const sortSpec = { [sortField]: sortDir };
+
+    const wantsPagination = page !== undefined || limit !== undefined;
+
+    if (wantsPagination) {
+      const pageNum = Math.max(1, Number(page) || 1);
+      const limitNum = Math.min(200, Math.max(1, Number(limit) || 50));
+      const skip = (pageNum - 1) * limitNum;
+
+      const [customers, totalRecords] = await Promise.all([
+        ChemicalCustomer.find(filter)
+          .sort(sortSpec)
+          .skip(skip)
+          .limit(limitNum)
+          .lean(),
+        ChemicalCustomer.countDocuments(filter),
+      ]);
+
+      return res.status(200).json({
+        success: true,
+        message: "Chemical customers fetched successfully",
+        data: {
+          customers,
+          totalRecords,
+          totalPages: Math.max(1, Math.ceil(totalRecords / limitNum)),
+        },
+      });
+    }
+
+    const customers = await ChemicalCustomer.find(filter)
+      .sort(sortSpec)
+      .lean();
 
     return res.status(200).json({
       success: true,
