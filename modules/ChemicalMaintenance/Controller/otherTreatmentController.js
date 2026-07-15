@@ -20,6 +20,14 @@ const normalizeProgramType = (value, fallback = "other") => {
   return fallback;
 };
 
+const parseQuantity = (value) => {
+  if (value === undefined || value === null || value === "") return 1;
+  const n = Number.parseFloat(String(value).trim());
+  return Number.isFinite(n) && n > 0 ? n : null;
+};
+
+const normalizeUnits = (value) => String(value ?? "").trim();
+
 const upsertDefaultTreatments = async () => {
   let created = 0;
   let updated = 0;
@@ -81,6 +89,8 @@ exports.addOtherTreatment = async (req, res) => {
       lowerPrice,
       programType = "other",
       sortOrder = 0,
+      quantity,
+      units,
     } = req.body;
 
     if (!treatmentName || String(treatmentName).trim() === "") {
@@ -102,6 +112,19 @@ exports.addOtherTreatment = async (req, res) => {
     }
 
     const name = String(treatmentName).trim();
+    const normalizedProgram = normalizeProgramType(programType, "other");
+    const quantityNum = parseQuantity(quantity);
+    const unitsStr = normalizeUnits(units);
+
+    if (normalizedProgram === "other") {
+      if (quantityNum === null) {
+        return res.status(400).json({
+          success: false,
+          message: "Quantity must be a valid number greater than 0",
+        });
+      }
+    }
+
     const existing = await OtherTreatment.findOne({
       treatmentName: name,
       status: "Active",
@@ -118,8 +141,10 @@ exports.addOtherTreatment = async (req, res) => {
       cost: costNum,
       price: priceNum,
       lowerPrice: lowerPriceNum,
-      programType: normalizeProgramType(programType, "other"),
+      programType: normalizedProgram,
       sortOrder: Number(sortOrder) || 0,
+      quantity: normalizedProgram === "other" ? quantityNum : 1,
+      units: normalizedProgram === "other" ? unitsStr : "",
       status: "Active",
     };
 
@@ -235,6 +260,8 @@ exports.updateOtherTreatment = async (req, res) => {
       lowerPrice,
       programType,
       sortOrder,
+      quantity,
+      units,
     } = req.body;
 
     if (!treatmentName || String(treatmentName).trim() === "") {
@@ -255,6 +282,21 @@ exports.updateOtherTreatment = async (req, res) => {
     }
 
     const name = String(treatmentName).trim();
+    const existingDoc = await OtherTreatment.findOne({ _id: id, status: "Active" });
+    if (!existingDoc) {
+      return res.status(404).json({
+        success: false,
+        message: "Treatment not found",
+      });
+    }
+
+    const nextProgramType =
+      programType !== undefined &&
+      programType !== null &&
+      String(programType).trim() !== ""
+        ? normalizeProgramType(programType)
+        : normalizeProgramType(existingDoc.programType);
+
     const duplicate = await OtherTreatment.findOne({
       _id: { $ne: id },
       treatmentName: name,
@@ -272,14 +314,24 @@ exports.updateOtherTreatment = async (req, res) => {
       cost: costNum,
       price: priceNum,
       lowerPrice: lowerPriceNum,
+      programType: nextProgramType,
     };
-    if (
-      programType !== undefined &&
-      programType !== null &&
-      String(programType).trim() !== ""
-    ) {
-      update.programType = normalizeProgramType(programType);
+
+    if (nextProgramType === "other") {
+      const quantityNum = parseQuantity(quantity);
+      if (quantityNum === null) {
+        return res.status(400).json({
+          success: false,
+          message: "Quantity must be a valid number greater than 0",
+        });
+      }
+      update.quantity = quantityNum;
+      update.units = normalizeUnits(units);
+    } else {
+      update.quantity = 1;
+      update.units = "";
     }
+
     if (sortOrder !== undefined && sortOrder !== null && sortOrder !== "") {
       update.sortOrder = Number(sortOrder) || 0;
     }
