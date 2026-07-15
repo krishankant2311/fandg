@@ -31,17 +31,6 @@ const otherTreatmentSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    /** Per catalog item count for non-chemical materials (price/cost are per item). */
-    quantity: {
-      type: Number,
-      default: 1,
-      min: 0,
-    },
-    units: {
-      type: String,
-      default: "",
-      trim: true,
-    },
     status: {
       type: String,
       enum: ["Active", "Deleted"],
