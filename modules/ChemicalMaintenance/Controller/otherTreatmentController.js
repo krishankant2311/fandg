@@ -12,6 +12,14 @@ const parseMoney = (value) => {
   return Number.isFinite(n) && n >= 0 ? n : null;
 };
 
+const VALID_PROGRAM_TYPES = ["annual_program", "other", "other_chemical"];
+
+const normalizeProgramType = (value, fallback = "other") => {
+  const normalized = String(value ?? "").trim();
+  if (VALID_PROGRAM_TYPES.includes(normalized)) return normalized;
+  return fallback;
+};
+
 const upsertDefaultTreatments = async () => {
   let created = 0;
   let updated = 0;
@@ -110,8 +118,7 @@ exports.addOtherTreatment = async (req, res) => {
       cost: costNum,
       price: priceNum,
       lowerPrice: lowerPriceNum,
-      programType:
-        programType === "annual_program" ? "annual_program" : "other",
+      programType: normalizeProgramType(programType, "other"),
       sortOrder: Number(sortOrder) || 0,
       status: "Active",
     };
@@ -170,8 +177,8 @@ exports.getAllOtherTreatments = async (req, res) => {
       sortorder === "1" || sortorder === 1 || sortorder === "asc" ? 1 : -1;
 
     const filter = { status: "Active" };
-    if (programType === "annual_program" || programType === "other") {
-      filter.programType = programType;
+    if (VALID_PROGRAM_TYPES.includes(String(programType).trim())) {
+      filter.programType = String(programType).trim();
     }
     if (search && String(search).length >= 1) {
       filter.treatmentName = { $regex: search, $options: "i" };
@@ -266,8 +273,12 @@ exports.updateOtherTreatment = async (req, res) => {
       price: priceNum,
       lowerPrice: lowerPriceNum,
     };
-    if (programType === "annual_program" || programType === "other") {
-      update.programType = programType;
+    if (
+      programType !== undefined &&
+      programType !== null &&
+      String(programType).trim() !== ""
+    ) {
+      update.programType = normalizeProgramType(programType);
     }
     if (sortOrder !== undefined && sortOrder !== null && sortOrder !== "") {
       update.sortOrder = Number(sortOrder) || 0;

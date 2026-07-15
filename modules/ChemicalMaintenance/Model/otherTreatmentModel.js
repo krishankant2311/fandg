@@ -24,7 +24,7 @@ const otherTreatmentSchema = new mongoose.Schema(
     },
     programType: {
       type: String,
-      enum: ["annual_program", "other"],
+      enum: ["annual_program", "other", "other_chemical"],
       default: "other",
     },
     sortOrder: {
