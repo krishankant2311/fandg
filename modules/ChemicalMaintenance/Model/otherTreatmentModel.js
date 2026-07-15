@@ -31,6 +31,16 @@ const otherTreatmentSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    quantity: {
+      type: String,
+      default: "",
+      trim: true,
+    },
+    unit: {
+      type: String,
+      default: "",
+      trim: true,
+    },
     status: {
       type: String,
       enum: ["Active", "Deleted"],

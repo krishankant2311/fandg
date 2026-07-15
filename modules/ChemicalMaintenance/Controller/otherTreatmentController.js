@@ -20,6 +20,8 @@ const normalizeProgramType = (value, fallback = "other") => {
   return fallback;
 };
 
+const normalizeOptionalText = (value) => String(value ?? "").trim();
+
 const upsertDefaultTreatments = async () => {
   let created = 0;
   let updated = 0;
@@ -79,6 +81,8 @@ exports.addOtherTreatment = async (req, res) => {
       cost,
       price,
       lowerPrice,
+      quantity,
+      unit,
       programType = "other",
       sortOrder = 0,
     } = req.body;
@@ -118,6 +122,8 @@ exports.addOtherTreatment = async (req, res) => {
       cost: costNum,
       price: priceNum,
       lowerPrice: lowerPriceNum,
+      quantity: normalizeOptionalText(quantity),
+      unit: normalizeOptionalText(unit),
       programType: normalizeProgramType(programType, "other"),
       sortOrder: Number(sortOrder) || 0,
       status: "Active",
@@ -233,6 +239,8 @@ exports.updateOtherTreatment = async (req, res) => {
       cost,
       price,
       lowerPrice,
+      quantity,
+      unit,
       programType,
       sortOrder,
     } = req.body;
@@ -273,6 +281,12 @@ exports.updateOtherTreatment = async (req, res) => {
       price: priceNum,
       lowerPrice: lowerPriceNum,
     };
+    if (quantity !== undefined) {
+      update.quantity = normalizeOptionalText(quantity);
+    }
+    if (unit !== undefined) {
+      update.unit = normalizeOptionalText(unit);
+    }
     if (
       programType !== undefined &&
       programType !== null &&
