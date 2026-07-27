@@ -1,0 +1,90 @@
+{
+  "_id": "69a8a06b3f232f4d8d58fa85",
+  "customerName": "SWAN, MIKE & CAREY",
+  "customerEmail": "careyswan@me.com",
+  "customerPhone": "7138228583",
+  "jobAddress": "5949 Crab Orchard Rd. Houston, TX 77057",
+  "description": "",
+  "isChemicalMaintenanceEnabled": true,
+  "annualTreatments": [
+    {
+      "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+      "quantity": 0,
+      "scheduleDates": [],
+      "price": 0,
+      "cost": 0,
+      "projectCode": "",
+      "status": "Scheduled"
+    },
+    {
+      "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+      "quantity": 0,
+      "scheduleDates": [],
+      "price": 0,
+      "cost": 0,
+      "projectCode": "",
+      "status": "Scheduled"
+    },
+    {
+      "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+      "quantity": 0,
+      "scheduleDates": [],
+      "price": 0,
+      "cost": 0,
+      "projectCode": "",
+      "status": "Scheduled"
+    }
+  ],
+  "otherTreatments": [
+    {
+      "treatment": "DRENCH #1",
+      "qty": 0,
+      "date": "2026-02-23T00:00:00.000Z",
+      "chemicals": [],
+      "totalCostPerTank": 0,
+      "totalPricePerTank": 944.92,
+      "isChemicalTreatment": true,
+      "projectCode": "",
+      "status": "Completed"
+    },
+    {
+      "treatment": "FERTILIZER - OSMOCOTE",
+      "qty": 1,
+      "date": "2026-06-26T00:00:00.000Z",
+      "chemicals": [],
+      "totalCostPerTank": 70.5,
+      "totalPricePerTank": 70.5,
+      "isChemicalTreatment": true,
+      "projectCode": "SWAN-213-CNB",
+      "status": "Scheduled"
+    },
+    {
+      "treatment": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+      "qty": 0,
+      "date": "2026-02-12T06:30:00.000Z",
+      "chemicals": [],
+      "totalCostPerTank": 80,
+      "totalPricePerTank": 100,
+      "isChemicalTreatment": true,
+      "projectCode": "",
+      "status": "Completed"
+    },
+    {
+      "treatment": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+      "qty": 0,
+      "date": "2026-02-19T06:30:00.000Z",
+      "chemicals": [],
+      "totalCostPerTank": 80,
+      "totalPricePerTank": 100,
+      "isChemicalTreatment": true,
+      "projectCode": "",
+      "status": "Completed"
+    }
+  ],
+  "status": "Active",
+  "createdAt": "2026-03-04T21:13:15.555Z",
+  "updatedAt": "2026-07-06T22:24:35.152Z",
+  "__v": 0,
+  "contractTotal": 2000,
+  "materialsUsedToDate": 1367.92
+}

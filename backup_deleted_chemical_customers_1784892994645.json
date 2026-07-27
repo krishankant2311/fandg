@@ -1,0 +1,6075 @@
+[
+  {
+    "_id": "6989be4f68216ce97ed2f4b4",
+    "customerName": "Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$ Deepak #$^*^#$",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "9599123205nhuyhhihhihiu",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-09T11:00:31.577Z",
+    "updatedAt": "2026-02-09T11:06:59.969Z",
+    "__v": 0
+  },
+  {
+    "_id": "6989bc7a68216ce97ed2f4a3",
+    "customerName": "r",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "5165498498798798798798798798778",
+    "jobAddress": "gw",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-09T10:52:42.269Z",
+    "updatedAt": "2026-02-09T11:04:40.096Z",
+    "__v": 0
+  },
+  {
+    "_id": "69805316bf27c679e7f6058a",
+    "customerName": "kk",
+    "customerEmail": "kk@gmail.com",
+    "customerPhone": "78687",
+    "jobAddress": "5949 CRAB ORCHARD RD. HOUSTON, TX 77057",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 5,
+        "scheduleDate": "2026-02-12T00:00:00.000Z",
+        "price": 490,
+        "cost": 78.4,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-01-11T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 1,
+        "scheduleDate": "2026-02-03T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Completed"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-02T07:32:38.623Z",
+    "updatedAt": "2026-07-06T22:00:31.161Z",
+    "__v": 0
+  },
+  {
+    "_id": "698c23bcc5a4b87d44963755",
+    "customerName": "Krishankant kk",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "113156456464646",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-02-19T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-11T06:37:48.964Z",
+    "updatedAt": "2026-07-06T22:00:09.452Z",
+    "__v": 0
+  },
+  {
+    "_id": "698c625dbbbfe0f0eb25734b",
+    "customerName": "fer",
+    "customerEmail": "wefg@gmail.cm",
+    "customerPhone": "9244694946",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-11T11:05:01.191Z",
+    "updatedAt": "2026-07-06T22:00:02.664Z",
+    "__v": 0
+  },
+  {
+    "_id": "698c68b6bbbfe0f0eb2573bf",
+    "customerName": "testing F&G",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "939696969",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-11T11:32:06.709Z",
+    "updatedAt": "2026-07-06T21:59:37.107Z",
+    "__v": 0
+  },
+  {
+    "_id": "698c6287bbbfe0f0eb257352",
+    "customerName": "^&@(&)@(*@$",
+    "customerEmail": "ghh@gmail.com",
+    "customerPhone": "9999999999",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-11T11:05:43.252Z",
+    "updatedAt": "2026-02-11T11:11:18.462Z",
+    "__v": 0
+  },
+  {
+    "_id": "698da1e22cc8166e0fae2d84",
+    "customerName": "ty",
+    "customerEmail": "",
+    "customerPhone": "",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-12T09:48:18.115Z",
+    "updatedAt": "2026-07-06T21:59:54.606Z",
+    "__v": 0
+  },
+  {
+    "_id": "698da73e2cc8166e0fae2dcb",
+    "customerName": "hr e",
+    "customerEmail": "",
+    "customerPhone": "",
+    "jobAddress": "noida sec 8",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-12T10:11:10.376Z",
+    "updatedAt": "2026-07-06T21:59:47.780Z",
+    "__v": 0
+  },
+  {
+    "_id": "698b0d47d3415e074efcb7ee",
+    "customerName": "kk",
+    "customerEmail": "kk@gmail.com",
+    "customerPhone": "74646",
+    "jobAddress": "rtytry",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-10T10:49:43.991Z",
+    "updatedAt": "2026-02-10T11:24:51.192Z",
+    "__v": 0
+  },
+  {
+    "_id": "698c754bbbbfe0f0eb257472",
+    "customerName": "abhi",
+    "customerEmail": "abhi@gmail.com",
+    "customerPhone": "8888888888",
+    "jobAddress": "Noida Sector 59",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-02-12T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 4,
+        "scheduleDate": "2026-02-16T00:00:00.000Z",
+        "price": 400,
+        "cost": 320,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 6,
+        "scheduleDate": "+275760-02-11T00:00:00.000Z",
+        "price": 600,
+        "cost": 480,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 8,
+        "scheduleDate": "2026-03-06T00:00:00.000Z",
+        "price": 800,
+        "cost": 640,
+        "status": "Paused"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 8,
+        "scheduleDate": "2026-02-11T00:00:00.000Z",
+        "price": 800,
+        "cost": 640,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 4,
+        "scheduleDate": "2026-02-20T00:00:00.000Z",
+        "price": 400,
+        "cost": 320,
+        "status": "Completed"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 7,
+        "scheduleDate": "2026-02-22T00:00:00.000Z",
+        "price": 700,
+        "cost": 560,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-11T12:25:47.522Z",
+    "updatedAt": "2026-07-06T22:00:20.437Z",
+    "__v": 0
+  },
+  {
+    "_id": "698f1310a6f9821ee360e73f",
+    "customerName": "Mona",
+    "customerEmail": "mona@gmail.com",
+    "customerPhone": "9874563210",
+    "jobAddress": "Noida Sector 59",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 4,
+        "scheduleDate": "2026-02-12T00:00:00.000Z",
+        "price": 266.6666666666667,
+        "cost": 213.33333333333334,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "Any Treatment",
+        "qty": 1,
+        "date": "2026-03-04T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 500,
+        "totalPricePerTank": 250,
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-02-13T12:03:28.615Z",
+    "updatedAt": "2026-07-06T22:07:43.726Z",
+    "__v": 0
+  },
+  {
+    "_id": "699d36c4bc936092c69c3bc1",
+    "customerName": "abhinandan daksh",
+    "customerEmail": "nandan@gmail.com",
+    "customerPhone": "9012349567",
+    "jobAddress": "testing",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-24T05:27:32.398Z",
+    "updatedAt": "2026-07-06T22:07:52.941Z",
+    "__v": 0
+  },
+  {
+    "_id": "6981e026cdb6ecb26102cda9",
+    "customerName": "abhinandan",
+    "customerEmail": "abhinandan@gmail.com",
+    "customerPhone": "6578641",
+    "jobAddress": "5949 CRAB ORCHARD RD. HOUSTON, TX 77057",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-02-10T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-02-10T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "Other",
+        "qty": 1,
+        "date": "2026-02-10T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 500,
+        "totalPricePerTank": 100,
+        "status": "Completed"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-02-03T11:46:46.261Z",
+    "updatedAt": "2026-07-06T22:09:17.211Z",
+    "__v": 0
+  },
+  {
+    "_id": "6989d2659fb6cec2fad71544",
+    "customerName": "deepak singh",
+    "customerEmail": "deepakmsingh@jewarinternational.com",
+    "customerPhone": "16464646487",
+    "jobAddress": "5616+4849849+84",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 10,
+        "scheduleDate": "2026-02-10T00:00:00.000Z",
+        "price": 1000,
+        "cost": 800,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": "2026-02-10T00:00:00.000Z",
+        "price": 400,
+        "cost": 320,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": "2026-02-25T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": "2026-03-04T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": "2026-02-23T00:00:00.000Z",
+        "price": 900,
+        "cost": 720,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 8,
+        "scheduleDate": "2026-02-28T00:00:00.000Z",
+        "price": 800,
+        "cost": 640,
+        "status": "Completed"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-09T12:26:13.836Z",
+    "updatedAt": "2026-07-06T22:08:00.980Z",
+    "__v": 0
+  },
+  {
+    "_id": "699d3733bc936092c69c3bcc",
+    "customerName": "abhi daksh",
+    "customerEmail": "abhi@gmail.com",
+    "customerPhone": "9012505049",
+    "jobAddress": "job",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-02-25T00:00:00.000Z",
+        "price": 140,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-24T05:29:23.166Z",
+    "updatedAt": "2026-07-06T22:09:11.311Z",
+    "__v": 0
+  },
+  {
+    "_id": "6989bacb68216ce97ed2f49c",
+    "customerName": "%!$%1",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "5",
+    "jobAddress": "56g67",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-09T10:45:31.482Z",
+    "updatedAt": "2026-02-10T11:26:54.785Z",
+    "__v": 0
+  },
+  {
+    "_id": "699dc62203c61825bb3b3dfe",
+    "customerName": "Krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "8859632652",
+    "jobAddress": "testing",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 9,
+        "scheduleDate": "2026-02-26T00:00:00.000Z",
+        "price": 900,
+        "cost": 400,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 5,
+        "scheduleDate": "2026-02-27T00:00:00.000Z",
+        "price": 500,
+        "cost": 400,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-24T15:39:14.383Z",
+    "updatedAt": "2026-07-06T22:07:01.988Z",
+    "__v": 0
+  },
+  {
+    "_id": "6989c00c68216ce97ed2f4f3",
+    "customerName": "Deepak Sharma",
+    "customerEmail": "deepakmishra@jewarinternational.com",
+    "customerPhone": "25624964848",
+    "jobAddress": "Noida Sector 63",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-09T11:07:56.258Z",
+    "updatedAt": "2026-07-23T09:37:19.728Z",
+    "__v": 0
+  },
+  {
+    "_id": "699d37b2bc936092c69c3bd7",
+    "customerName": "abhi daksh",
+    "customerEmail": "abhi@gmail.com",
+    "customerPhone": "9012530020",
+    "jobAddress": "nosndoic",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-02-26T00:00:00.000Z",
+        "price": 100,
+        "cost": 551840,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-24T05:31:30.615Z",
+    "updatedAt": "2026-07-06T22:07:34.774Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a18d5eacc8dcaab3b7bfd2",
+    "customerName": "testttttiiinnnggggg",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "testinggg",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 5,
+        "scheduleDate": "2026-03-10T00:00:00.000Z",
+        "price": 500,
+        "cost": 400,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-03-12T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "test-fandg",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 2,
+        "scheduleDate": "2026-03-03T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-27T12:26:06.185Z",
+    "updatedAt": "2026-07-06T22:07:17.981Z",
+    "__v": 1,
+    "description": ""
+  },
+  {
+    "_id": "69a192f8af653a574634255d",
+    "customerName": "testinngggggg",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "testingg",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-03-06T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "TESTCODE",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-03-11T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "testing-fandg",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "DRENCH #7:(DROUGHT / SOAKER MIX)",
+        "qty": 2,
+        "date": "2026-03-11T00:00:00.000Z",
+        "mixName": "DRENCH #7:(DROUGHT / SOAKER MIX)",
+        "mixId": "6979f8c7e37cf283d02f1461",
+        "chemicals": [
+          {
+            "chemicalName": "H2o",
+            "quantity": 9,
+            "measure": "Litre",
+            "brandName": "ABC Chemicals",
+            "type": "Liquid",
+            "cost": 120,
+            "price": 180,
+            "costPerOz": 13.33,
+            "pricePerOz": 20
+          },
+          {
+            "chemicalName": "Chlorine",
+            "quantity": 100,
+            "measure": "Litre",
+            "brandName": "ABC Chemicals",
+            "type": "Liquid",
+            "cost": 120,
+            "price": 180,
+            "costPerOz": 1.2,
+            "pricePerOz": 1.8
+          }
+        ],
+        "totalCostPerTank": 239.97,
+        "totalPricePerTank": 360,
+        "projectCode": "testing-fandgg",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-02-27T12:50:00.588Z",
+    "updatedAt": "2026-07-06T22:07:09.172Z",
+    "__v": 0
+  },
+  {
+    "_id": "69a188c6acc8dcaab3b7bfc7",
+    "customerName": "krishna",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "testing",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-02-27T00:00:00.000Z",
+        "price": 140,
+        "cost": 160,
+        "projectCode": "abhi-8869-abhi",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 5,
+        "scheduleDate": "2026-02-28T00:00:00.000Z",
+        "price": 350,
+        "cost": 400,
+        "projectCode": "krish-kk-test",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-02-27T12:06:30.499Z",
+    "updatedAt": "2026-07-06T22:07:27.330Z",
+    "__v": 0
+  },
+  {
+    "_id": "69c518074de8626a6f965ac7",
+    "customerName": "krish",
+    "customerEmail": "krish@123.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "20",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-03-26T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-03-26T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1.24,
+        "scheduleDates": [
+          "2026-03-27T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-03-27T00:00:00.000Z",
+        "price": 124,
+        "cost": 99.2,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "test",
+        "qty": 1,
+        "date": "2026-03-27T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 50,
+        "totalPricePerTank": 50,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "treatment": "test2",
+        "qty": 1,
+        "date": "2026-03-27T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 100,
+        "totalPricePerTank": 100,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "treatment": "test3",
+        "qty": 1,
+        "date": "2026-03-27T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 29.83,
+        "totalPricePerTank": 30,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-03-26T11:27:03.813Z",
+    "updatedAt": "2026-07-08T19:44:01.444Z",
+    "__v": 0,
+    "contractTotal": 0
+  },
+  {
+    "_id": "69dfd5d8635ca857776fddd8",
+    "customerName": "test1",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "123123311233",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-15T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-15T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "test-fandg-123",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T18:15:52.177Z",
+    "updatedAt": "2026-07-06T22:10:56.741Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dfd50c635ca857776fddcf",
+    "customerName": "testing",
+    "customerEmail": "test@123.com",
+    "customerPhone": "85858585585",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z",
+          "2026-04-24T00:00:00.000Z",
+          "2026-04-22T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z",
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T18:12:28.906Z",
+    "updatedAt": "2026-07-06T22:11:12.102Z",
+    "__v": 0
+  },
+  {
+    "_id": "69cbe6eadceeb3a7edc42fe3",
+    "customerName": "Customer",
+    "customerEmail": "test@ad",
+    "customerPhone": "713",
+    "jobAddress": "Customer",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-10T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-10T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "test-409-nb",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-03-31T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-03-31T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-01T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-01T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "DRENCH #1",
+        "qty": 1,
+        "date": "2026-04-07T00:00:00.000Z",
+        "mixName": "DRENCH #1",
+        "mixId": "6979f18a06f0becdb130c6ab",
+        "chemicals": [
+          {
+            "chemicalName": "Safari",
+            "quantity": 998,
+            "measure": "UNIT",
+            "brandName": "aaa",
+            "type": "INSECTICIDE",
+            "cost": 998,
+            "price": 49998,
+            "costPerOz": 1,
+            "pricePerOz": 50.1
+          },
+          {
+            "chemicalName": "Zypro",
+            "quantity": 3100,
+            "measure": "UNIT",
+            "brandName": "ss",
+            "type": "INSECTICIDE",
+            "cost": 1000,
+            "price": 49999,
+            "costPerOz": 0.32,
+            "pricePerOz": 16.13
+          }
+        ],
+        "totalCostPerTank": 1990,
+        "totalPricePerTank": 1990,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "test",
+        "qty": 1,
+        "date": "2026-03-31T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 100,
+        "totalPricePerTank": 100,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-03-31T15:23:23.092Z",
+    "updatedAt": "2026-07-06T22:11:05.651Z",
+    "__v": 2
+  },
+  {
+    "_id": "69cbc38235f1992e30f1bec9",
+    "customerName": "TEST",
+    "customerEmail": "test200@gmail.com",
+    "customerPhone": "123",
+    "jobAddress": "TEST",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDate": "2026-04-01T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDate": "2026-04-02T00:00:00.000Z",
+        "price": 140,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "DRENCH #1",
+        "qty": 1,
+        "date": "2026-04-02T00:00:00.000Z",
+        "mixName": "DRENCH #1",
+        "mixId": "6979f18a06f0becdb130c6ab",
+        "chemicals": [
+          {
+            "chemicalName": "Safari",
+            "quantity": 998,
+            "measure": "UNIT",
+            "brandName": "aaa",
+            "type": "INSECTICIDE",
+            "cost": 998,
+            "price": 49998,
+            "costPerOz": 1,
+            "pricePerOz": 50.1
+          },
+          {
+            "chemicalName": "Zypro",
+            "quantity": 3100,
+            "measure": "UNIT",
+            "brandName": "ss",
+            "type": "INSECTICIDE",
+            "cost": 1000,
+            "price": 49999,
+            "costPerOz": 0.32,
+            "pricePerOz": 16.13
+          }
+        ],
+        "totalCostPerTank": 1990,
+        "totalPricePerTank": 1990,
+        "projectCode": "TEST-402-CNB",
+        "status": "Completed"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-03-31T12:52:18.937Z",
+    "updatedAt": "2026-07-06T22:10:28.991Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dfd656635ca857776fe716",
+    "customerName": "test2",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8859000000",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-15T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-15T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "tushar-12345",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T18:17:58.052Z",
+    "updatedAt": "2026-07-06T22:08:32.763Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dfe6a803b4459f35518a65",
+    "customerName": "test23",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8585858585",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z",
+          "2026-04-17T00:00:00.000Z",
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "krish-2311-test",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z",
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T19:27:36.494Z",
+    "updatedAt": "2026-07-06T22:08:25.010Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dfe57d03b4459f35518a5c",
+    "customerName": "krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z",
+          "2026-04-17T00:00:00.000Z",
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z",
+          "2026-04-17T00:00:00.000Z",
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T19:22:37.545Z",
+    "updatedAt": "2026-04-16T12:47:24.339Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dff08d03b4459f3551a6b4",
+    "customerName": "testcustomer",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8585858585",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "krish-1234",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 5,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 500,
+        "cost": 400,
+        "projectCode": "krish-1234",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T20:09:49.502Z",
+    "updatedAt": "2026-07-06T22:10:49.866Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e0db34419ec9a79d912d66",
+    "customerName": "test15",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "5555555555",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T12:51:00.241Z",
+    "updatedAt": "2026-04-16T12:53:27.023Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e09389550456f0fe66978d",
+    "customerName": "test321",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "2525252525",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1.01,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 101,
+        "cost": 80.8,
+        "projectCode": "test-krish-2310",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1.01,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 101,
+        "cost": 80.8,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1.01,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 101,
+        "cost": 80.8,
+        "projectCode": "",
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T07:45:13.455Z",
+    "updatedAt": "2026-04-16T12:47:16.466Z",
+    "__v": 0
+  },
+  {
+    "_id": "69dffc270d2017884ef49908",
+    "customerName": "test2311",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8585858585",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "krish-test-1",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 4,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 400,
+        "cost": 320,
+        "projectCode": "krish-test-1",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-15T20:59:19.503Z",
+    "updatedAt": "2026-04-16T12:47:28.433Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e0928e0d2017884ef5b229",
+    "customerName": "test123",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "2525252525",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z",
+          "2026-04-17T00:00:00.000Z",
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T07:41:02.482Z",
+    "updatedAt": "2026-04-16T12:47:33.395Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e0e2b1419ec9a79d91527b",
+    "customerName": "test11",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "25252525",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-21T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-21T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T13:22:57.519Z",
+    "updatedAt": "2026-07-06T22:11:44.943Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e0dbeb419ec9a79d913646",
+    "customerName": "test20",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8585858585",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "krish-12345",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T12:54:03.823Z",
+    "updatedAt": "2026-07-06T22:10:43.322Z",
+    "__v": 0,
+    "contractTotal": 2000
+  },
+  {
+    "_id": "69ea691eca4ffca948223301",
+    "customerName": "Altest",
+    "customerEmail": "al@al.com",
+    "customerPhone": "33423423",
+    "jobAddress": "123 Main",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-23T18:46:54.670Z",
+    "updatedAt": "2026-07-23T09:37:14.977Z",
+    "__v": 0,
+    "contractTotal": 2000
+  },
+  {
+    "_id": "69e09792550456f0fe66c1e6",
+    "customerName": "abhitest",
+    "customerEmail": "abhi@gmail.com",
+    "customerPhone": "5252525252",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "abhi-test123",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "test-8859",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T08:02:26.841Z",
+    "updatedAt": "2026-07-06T22:09:02.466Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef193927b9dc53ea67ac48",
+    "customerName": "test",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 2000,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-27T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-27T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-29T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-29T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:07:21.203Z",
+    "updatedAt": "2026-07-06T22:11:30.230Z",
+    "__v": 2,
+    "planYear": 2026,
+    "materialsUsedToDate": 0
+  },
+  {
+    "_id": "69ef1d013abef247d1356a95",
+    "customerName": "krish test",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "5252525252",
+    "jobAddress": "test",
+    "contractTotal": 5000,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:23:29.609Z",
+    "updatedAt": "2026-04-27T13:39:17.210Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef190527b9dc53ea67a6e9",
+    "customerName": "test11",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 3,
+        "scheduleDates": [
+          "2026-04-29T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-29T00:00:00.000Z",
+        "price": 300,
+        "cost": 240,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:06:29.701Z",
+    "updatedAt": "2026-07-06T22:11:37.604Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e0debe419ec9a79d915250",
+    "customerName": "test00",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "2020202020",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-29T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-29T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-24T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-25T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-25T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "Krish-112233",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [
+          "2026-04-25T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-25T00:00:00.000Z",
+        "price": 0,
+        "cost": 0,
+        "projectCode": "Krish-11223344",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T13:06:06.355Z",
+    "updatedAt": "2026-07-06T22:10:36.385Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e5f9adbaff2968eb829692",
+    "customerName": "krish",
+    "customerEmail": "krishankant@jewarinternational.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-21T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-21T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "Krish-111",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-23T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-23T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-24T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-22T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-22T00:00:00.000Z",
+        "price": 140,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-24T00:00:00.000Z",
+        "price": 140,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-20T10:02:21.253Z",
+    "updatedAt": "2026-07-23T09:36:35.732Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e096de550456f0fe66b683",
+    "customerName": "testkrish123",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "krish-8859",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "krish-8859",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-19T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-19T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T07:59:26.479Z",
+    "updatedAt": "2026-07-06T22:08:15.040Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef1e5c0cc5f478c02480dc",
+    "customerName": "krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:29:16.270Z",
+    "updatedAt": "2026-04-27T11:08:20.145Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e1207c419ec9a79d915286",
+    "customerName": "Tushar Verma",
+    "customerEmail": "tushar@jewarinternational.com",
+    "customerPhone": "9873512303",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-16T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-16T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "tushar-123456",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-18T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-18T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-17T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-17T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "tushar-1234",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-24T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-16T17:46:36.734Z",
+    "updatedAt": "2026-07-23T09:37:02.984Z",
+    "__v": 0,
+    "contractTotal": 5000
+  },
+  {
+    "_id": "69ef1e710cc5f478c02480df",
+    "customerName": "krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:29:37.479Z",
+    "updatedAt": "2026-04-27T11:07:38.931Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef1d123abef247d1356a98",
+    "customerName": "krish test",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "5252525252",
+    "jobAddress": "test",
+    "contractTotal": 4999.99,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-29T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-29T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:23:46.568Z",
+    "updatedAt": "2026-04-27T11:09:01.678Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef1f620cc5f478c02480e4",
+    "customerName": "krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:33:38.148Z",
+    "updatedAt": "2026-04-27T11:07:16.908Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef620029b636a8b99556af",
+    "customerName": "krish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "contractTotal": 4500,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T13:17:52.974Z",
+    "updatedAt": "2026-04-27T13:38:54.940Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef20fa0cc5f478c02480f1",
+    "customerName": "krish1",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "25252525",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T08:40:26.193Z",
+    "updatedAt": "2026-04-27T11:07:10.470Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef63df29b636a8b99556c2",
+    "customerName": "krish12",
+    "customerEmail": "krishna@gmail.com",
+    "customerPhone": "8057078996",
+    "jobAddress": "test",
+    "contractTotal": 200,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T13:25:51.388Z",
+    "updatedAt": "2026-04-27T13:38:48.424Z",
+    "__v": 0
+  },
+  {
+    "_id": "69e91b0af3c243b2dcde0692",
+    "customerName": "FGTEST",
+    "customerEmail": "test200@gmail.com",
+    "customerPhone": "713",
+    "jobAddress": "TEST",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 3,
+        "scheduleDates": [
+          "2026-04-22T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-22T00:00:00.000Z",
+        "price": 210,
+        "cost": 240,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 3,
+        "scheduleDates": [
+          "2026-04-23T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-23T00:00:00.000Z",
+        "price": 210,
+        "cost": 240,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 3,
+        "scheduleDates": [
+          "2026-04-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-24T00:00:00.000Z",
+        "price": 210,
+        "cost": 240,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-25T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-25T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "DRENCH #4",
+        "qty": 1,
+        "date": "2026-04-26T00:00:00.000Z",
+        "mixName": "DRENCH #4",
+        "mixId": "69e0b9d1133873dc60f176a1",
+        "chemicals": [
+          {
+            "chemicalName": "RENOVAEPA not required FERTILIZER",
+            "quantity": 48,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RENOVAEPA not required FERTILIZER",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 24,
+            "price": 69.81818181818181,
+            "costPerOz": 0.5,
+            "pricePerOz": 1.4545454545454546
+          },
+          {
+            "chemicalName": "KICKSTANDEPA not required ROOT STIMULATOR",
+            "quantity": 32,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KICKSTANDEPA not required ROOT STIMULATOR",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 13.76,
+            "price": 40.02909090909091,
+            "costPerOz": 0.43,
+            "pricePerOz": 1.250909090909091
+          },
+          {
+            "chemicalName": "HERITAGE - WETTABLE",
+            "quantity": 4,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HERITAGE - WETTABLE",
+            "epaRegNo": "100-1093",
+            "type": "FUNGICIDE",
+            "cost": 79.24,
+            "price": 230.51636363636362,
+            "costPerOz": 19.81,
+            "pricePerOz": 57.629090909090905
+          },
+          {
+            "chemicalName": "HYDRA HUME ( HUMIC ACID )EPA not required FERTILIZER EFFICIENCY",
+            "quantity": 64,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HYDRA HUME ( HUMIC ACID )EPA not required FERTILIZER EFFICIENCY",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 48,
+            "price": 139.63636363636363,
+            "costPerOz": 0.75,
+            "pricePerOz": 2.1818181818181817
+          }
+        ],
+        "totalCostPerTank": 165,
+        "totalPricePerTank": 82.5,
+        "projectCode": "TEST-427-CNB",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "DRENCH #4",
+        "qty": 2,
+        "date": "2026-04-29T00:00:00.000Z",
+        "mixName": "DRENCH #4",
+        "mixId": "69e0b9d1133873dc60f176a1",
+        "chemicals": [
+          {
+            "chemicalName": "RENOVAEPA not required FERTILIZER",
+            "quantity": 48,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RENOVAEPA not required FERTILIZER",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 24,
+            "price": 69.81818181818181,
+            "costPerOz": 0.5,
+            "pricePerOz": 1.4545454545454546
+          },
+          {
+            "chemicalName": "KICKSTANDEPA not required ROOT STIMULATOR",
+            "quantity": 32,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KICKSTANDEPA not required ROOT STIMULATOR",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 13.76,
+            "price": 40.02909090909091,
+            "costPerOz": 0.43,
+            "pricePerOz": 1.250909090909091
+          },
+          {
+            "chemicalName": "HERITAGE - WETTABLE",
+            "quantity": 4,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HERITAGE - WETTABLE",
+            "epaRegNo": "100-1093",
+            "type": "FUNGICIDE",
+            "cost": 79.24,
+            "price": 230.51636363636362,
+            "costPerOz": 19.81,
+            "pricePerOz": 57.629090909090905
+          },
+          {
+            "chemicalName": "HYDRA HUME ( HUMIC ACID )EPA not required FERTILIZER EFFICIENCY",
+            "quantity": 64,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HYDRA HUME ( HUMIC ACID )EPA not required FERTILIZER EFFICIENCY",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 48,
+            "price": 139.63636363636363,
+            "costPerOz": 0.75,
+            "pricePerOz": 2.1818181818181817
+          }
+        ],
+        "totalCostPerTank": 165,
+        "totalPricePerTank": 165,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-04-22T19:01:30.728Z",
+    "updatedAt": "2026-07-23T09:36:43.326Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ef419a6de9730a3d6fcd57",
+    "customerName": "krish test",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "5000",
+    "jobAddress": "test",
+    "contractTotal": 4000,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-04-28T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-28T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-04-27T10:59:38.392Z",
+    "updatedAt": "2026-04-27T11:07:02.189Z",
+    "__v": 0
+  },
+  {
+    "_id": "69fb0d6abf45438a5c811f08",
+    "customerName": "krishna",
+    "customerEmail": "krishna@123gmail.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-07T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-07T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "test-f&G1234",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-12T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-12T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-05-06T09:44:10.271Z",
+    "updatedAt": "2026-07-23T09:37:07.860Z",
+    "__v": 0
+  },
+  {
+    "_id": "69ea2cad28ee7172886f39a4",
+    "customerName": "423test",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "713",
+    "jobAddress": "test",
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-23T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-23T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-04-27T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-04-27T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "test-426-cnb",
+        "status": "Completed"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "ROOT DRENCH",
+        "qty": 2,
+        "date": "2026-04-27T00:00:00.000Z",
+        "mixName": "ROOT DRENCH",
+        "mixId": "69df4116650fa9f776980cd2",
+        "chemicals": [
+          {
+            "chemicalName": "Fenak plus",
+            "quantity": 7,
+            "measure": "SACK",
+            "brandName": "Test",
+            "epaRegNo": "",
+            "type": "Test",
+            "cost": 12,
+            "price": 25,
+            "costPerOz": 1.71,
+            "pricePerOz": 3.57
+          },
+          {
+            "chemicalName": "Monorin",
+            "quantity": 1,
+            "measure": "SACK",
+            "brandName": "#%*%(@^%(^(",
+            "epaRegNo": "",
+            "type": "hkv",
+            "cost": 12,
+            "price": 120,
+            "costPerOz": 12,
+            "pricePerOz": 120
+          }
+        ],
+        "totalCostPerTank": 23.97,
+        "totalPricePerTank": 23.97,
+        "projectCode": "test-426-cnb",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "SOD SPRAY #4",
+        "qty": 2,
+        "date": "2026-04-30T00:00:00.000Z",
+        "mixName": "SOD SPRAY #4",
+        "mixId": "69e0ba5086e5ac49eeefe9d3",
+        "chemicals": [
+          {
+            "chemicalName": "CORON 28-0-0",
+            "quantity": 320,
+            "measure": "OZ / 100 GAL",
+            "brandName": "CORON 28-0-0",
+            "epaRegNo": "EPA not required",
+            "type": "BASIC FERTILIZER",
+            "cost": 44.8,
+            "price": 116.93485193621868,
+            "costPerOz": 0.14,
+            "pricePerOz": 0.36542141230068337
+          },
+          {
+            "chemicalName": "LEXICON",
+            "quantity": 8,
+            "measure": "OZ / 100 GAL",
+            "brandName": "LEXICON",
+            "epaRegNo": "7969-350",
+            "type": "TURF FUNGICIDE ( group 7 & 11 )",
+            "cost": 196,
+            "price": 511.58997722095665,
+            "costPerOz": 24.5,
+            "pricePerOz": 63.94874715261958
+          },
+          {
+            "chemicalName": "KINETIC",
+            "quantity": 8,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KINETIC",
+            "epaRegNo": "EPA not required",
+            "type": "FOLIAR PENTRATION",
+            "cost": 5.04,
+            "price": 13.1551708428246,
+            "costPerOz": 0.63,
+            "pricePerOz": 1.644396355353075
+          }
+        ],
+        "totalCostPerTank": 245.84,
+        "totalPricePerTank": 641.68,
+        "projectCode": "",
+        "status": "Paused"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-04-23T14:29:01.531Z",
+    "updatedAt": "2026-07-06T22:09:33.409Z",
+    "__v": 0,
+    "contractTotal": 50
+  },
+  {
+    "_id": "69fb1dfe824af20d84bce1ab",
+    "customerName": "krishankant",
+    "customerEmail": "krishankant@jewarinternational.com",
+    "customerPhone": "8859079001",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-07T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-07T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "krish_test123",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-08T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-08T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "krish_test125",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-05-06T10:54:54.433Z",
+    "updatedAt": "2026-07-23T09:36:49.985Z",
+    "__v": 0
+  },
+  {
+    "_id": "69fb0df4bf45438a5c811f1a",
+    "customerName": "krishnatest",
+    "customerEmail": "krishna@gmail.com",
+    "customerPhone": "8057079001",
+    "jobAddress": "test",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-05-05T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-05T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "MAY15-test",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-05-06T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-06T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-05-13T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-13T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-05-06T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-06T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [
+          "2026-05-15T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-15T00:00:00.000Z",
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-05-06T09:46:28.918Z",
+    "updatedAt": "2026-07-06T22:09:40.961Z",
+    "__v": 0
+  },
+  {
+    "_id": "69fb95a2b4960faa04c3bde7",
+    "customerName": "raul",
+    "customerEmail": "raul@com",
+    "customerPhone": "713",
+    "jobAddress": "713",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-07T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-07T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "raul-506-cnb",
+        "status": "Scheduled"
+      },
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-08T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-08T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-09T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-09T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "SOD SPRAY #4",
+        "qty": 1,
+        "date": "2026-05-11T00:00:00.000Z",
+        "mixName": "SOD SPRAY #4",
+        "mixId": "69e0ba5086e5ac49eeefe9d3",
+        "chemicals": [
+          {
+            "chemicalName": "CORON 28-0-0",
+            "quantity": 320,
+            "measure": "OZ / 100 GAL",
+            "brandName": "CORON 28-0-0",
+            "epaRegNo": "EPA not required",
+            "type": "BASIC FERTILIZER",
+            "cost": 44.8,
+            "price": 116.93485193621868,
+            "costPerOz": 0.14,
+            "pricePerOz": 0.36542141230068337
+          },
+          {
+            "chemicalName": "LEXICON",
+            "quantity": 8,
+            "measure": "OZ / 100 GAL",
+            "brandName": "LEXICON",
+            "epaRegNo": "7969-350",
+            "type": "TURF FUNGICIDE ( group 7 & 11 )",
+            "cost": 196,
+            "price": 511.58997722095665,
+            "costPerOz": 24.5,
+            "pricePerOz": 63.94874715261958
+          },
+          {
+            "chemicalName": "KINETIC",
+            "quantity": 8,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KINETIC",
+            "epaRegNo": "EPA not required",
+            "type": "FOLIAR PENTRATION",
+            "cost": 5.04,
+            "price": 13.1551708428246,
+            "costPerOz": 0.63,
+            "pricePerOz": 1.644396355353075
+          }
+        ],
+        "totalCostPerTank": 245.84,
+        "totalPricePerTank": 245.84,
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-05-06T19:25:22.711Z",
+    "updatedAt": "2026-07-23T09:36:55.235Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a267295775ac69a641b3589",
+    "customerName": "test",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "100",
+    "jobAddress": "100",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 2,
+        "scheduleDates": [
+          "2026-06-09T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-06-09T00:00:00.000Z",
+        "price": 200,
+        "cost": 160,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-06-26T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-06-26T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "TEST-626-CNB",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "IRIS – BI-COLOR, 5GAL",
+        "qty": 5,
+        "date": "2026-06-26T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 14.85,
+        "totalPricePerTank": 29.7,
+        "projectCode": "TEST-626-CNB",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-06-08T07:43:18.002Z",
+    "updatedAt": "2026-07-06T22:11:22.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a15b2bcb91ad230f9495317",
+    "customerName": "FG",
+    "customerEmail": "fg@fg.com",
+    "customerPhone": "713",
+    "jobAddress": "713",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-27T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-27T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-28T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-28T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "DRENCH #1",
+        "qty": 1,
+        "date": "2026-05-29T00:00:00.000Z",
+        "mixName": "DRENCH #1",
+        "mixId": "6979f18a06f0becdb130c6ab",
+        "chemicals": [
+          {
+            "chemicalName": "SAFARI",
+            "quantity": 32,
+            "measure": "OZ / 100 GAL",
+            "brandName": "SAFARI",
+            "epaRegNo": "86203-11-59639",
+            "type": "INSECTICIDE",
+            "cost": 272.64,
+            "price": 642.08,
+            "costPerOz": 8.52,
+            "pricePerOz": 20.0651
+          },
+          {
+            "chemicalName": "ZYPRO",
+            "quantity": 20,
+            "measure": "OZ / 100 GAL",
+            "brandName": "ZYPRO",
+            "epaRegNo": "EPA not required",
+            "type": "SOIL AMENDMENTS - ENZYMES",
+            "cost": 18,
+            "price": 42.39,
+            "costPerOz": 0.9,
+            "pricePerOz": 2.1196
+          },
+          {
+            "chemicalName": "MEDALLION",
+            "quantity": 1,
+            "measure": "OZ / 100 GAL",
+            "brandName": "MEDALLION",
+            "epaRegNo": "67545-AZ-1",
+            "type": "FUNGICIDE ( FOR ROOT DISEASE )",
+            "cost": 22,
+            "price": 51.81,
+            "costPerOz": 22,
+            "pricePerOz": 51.8114
+          },
+          {
+            "chemicalName": "SUBDUE MAX",
+            "quantity": 1,
+            "measure": "OZ / 100 GAL",
+            "brandName": "SUBDUE MAX",
+            "epaRegNo": "100-796",
+            "type": "PREVENTATIVE FUNGICIDE",
+            "cost": 3.98,
+            "price": 9.37,
+            "costPerOz": 3.98,
+            "pricePerOz": 9.3732
+          },
+          {
+            "chemicalName": "AXILO MIX 5 (QUICK GREEN)",
+            "quantity": 24,
+            "measure": "OZ / 100 GAL",
+            "brandName": "AXILO MIX 5 (QUICK GREEN)",
+            "epaRegNo": "EPA not required",
+            "type": "FERTILIZER - MINOR ELEMENTS",
+            "cost": 15.12,
+            "price": 35.61,
+            "costPerOz": 0.63,
+            "pricePerOz": 1.4837
+          },
+          {
+            "chemicalName": "RENOVA",
+            "quantity": 48,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RENOVA",
+            "epaRegNo": "EPA not required",
+            "type": "FERTILIZER",
+            "cost": 26.4,
+            "price": 62.17,
+            "costPerOz": 0.55,
+            "pricePerOz": 1.2953
+          },
+          {
+            "chemicalName": "KICKSTAND - RTU (NEW MATERIAL)",
+            "quantity": 32,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KICKSTAND - RTU (NEW MATERIAL)",
+            "epaRegNo": "EPA not required",
+            "type": "ROOT STIMULATOR",
+            "cost": 16.32,
+            "price": 38.44,
+            "costPerOz": 0.51,
+            "pricePerOz": 1.2011
+          },
+          {
+            "chemicalName": "HYDRA HUME (HUMIC ACID)",
+            "quantity": 64,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HYDRA HUME (HUMIC ACID)",
+            "epaRegNo": "EPA not required",
+            "type": "FERTILIZER EFFICIENCY",
+            "cost": 48,
+            "price": 113.04,
+            "costPerOz": 0.75,
+            "pricePerOz": 1.7663
+          }
+        ],
+        "totalCostPerTank": 422.46,
+        "totalPricePerTank": 422.46,
+        "projectCode": "FG-529-NB",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-05-26T14:48:28.979Z",
+    "updatedAt": "2026-07-24T10:00:15.008Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a186029f214cd62f1d449fc",
+    "customerName": "AL",
+    "customerEmail": "al@al.com",
+    "customerPhone": "713",
+    "jobAddress": "713",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-05-28T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-05-28T00:00:00.000Z",
+        "price": 70,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-06-24T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-06-24T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "AL-623-CNB",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "SOD SPRAY #5",
+        "qty": 1,
+        "date": "2026-05-28T00:00:00.000Z",
+        "mixName": "SOD SPRAY #5",
+        "mixId": "69e0bc4d94c9c3f2187f29a9",
+        "chemicals": [
+          {
+            "chemicalName": "CORON 28-0-0",
+            "quantity": 320,
+            "measure": "OZ / 100 GAL",
+            "brandName": "CORON 28-0-0",
+            "epaRegNo": "EPA not required",
+            "type": "BASIC FERTILIZER",
+            "cost": 51.2,
+            "price": 125.1050997782705,
+            "costPerOz": 0.16,
+            "pricePerOz": 0.3909534368070953
+          },
+          {
+            "chemicalName": "RENOVAEPA not required FERTILIZER",
+            "quantity": 64,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RENOVAEPA not required FERTILIZER",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 32,
+            "price": 78.19068736141907,
+            "costPerOz": 0.5,
+            "pricePerOz": 1.221729490022173
+          },
+          {
+            "chemicalName": "RECEPTOR",
+            "quantity": 15,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RECEPTOR",
+            "epaRegNo": "5905-594",
+            "type": "ROOT STIMULANT",
+            "cost": 8.25,
+            "price": 20.158536585365855,
+            "costPerOz": 0.55,
+            "pricePerOz": 1.3439024390243903
+          },
+          {
+            "chemicalName": "ACELEPRYN",
+            "quantity": 12,
+            "measure": "OZ / 100 GAL",
+            "brandName": "ACELEPRYN",
+            "epaRegNo": "100-1680",
+            "type": "TURF SYSTEMIC INSECTICIDE",
+            "cost": 75,
+            "price": 183.25942350332593,
+            "costPerOz": 6.25,
+            "pricePerOz": 15.271618625277162
+          },
+          {
+            "chemicalName": "ZYPROEPA not required SOIL AMENDMENT WITH ENZYMES",
+            "quantity": 12,
+            "measure": "OZ / 100 GAL",
+            "brandName": "ZYPROEPA not required SOIL AMENDMENT WITH ENZYMES",
+            "epaRegNo": "",
+            "type": "",
+            "cost": 10.8,
+            "price": 26.389356984478937,
+            "costPerOz": 0.9,
+            "pricePerOz": 2.1991130820399114
+          },
+          {
+            "chemicalName": "HERITAGE - WETTABLE",
+            "quantity": 8,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HERITAGE - WETTABLE",
+            "epaRegNo": "100-1093",
+            "type": "FUNGICIDE",
+            "cost": 158.48,
+            "price": 387.2393791574279,
+            "costPerOz": 19.81,
+            "pricePerOz": 48.404922394678486
+          },
+          {
+            "chemicalName": "KINETIC",
+            "quantity": 4,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KINETIC",
+            "epaRegNo": "EPA not required",
+            "type": "FOLIAR PENTRATION",
+            "cost": 2.52,
+            "price": 6.157516629711751,
+            "costPerOz": 0.63,
+            "pricePerOz": 1.5393791574279378
+          }
+        ],
+        "totalCostPerTank": 338.25,
+        "totalPricePerTank": 338.25,
+        "projectCode": "AL-528-CNB",
+        "status": "Completed"
+      },
+      {
+        "treatment": "IRIS – BUTTERFLY, 5GAL",
+        "qty": 12,
+        "date": "2026-06-24T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 21.45,
+        "totalPricePerTank": 21.45,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-05-28T15:32:57.019Z",
+    "updatedAt": "2026-07-24T09:59:22.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "6a3e4a5a6cdd0dd18e9c01d3",
+    "customerName": "labor test",
+    "customerEmail": "labor@gmail.com",
+    "customerPhone": "123456789",
+    "jobAddress": "labor",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 1.25,
+        "scheduleDates": [
+          "2026-06-26T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-06-26T00:00:00.000Z",
+        "price": 125,
+        "cost": 100,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "SOD SPRAY #1",
+        "qty": 1,
+        "date": "2026-06-25T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 151.8,
+        "totalPricePerTank": 303.6,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "DRENCH #3",
+        "qty": 0.12,
+        "date": "2026-06-23T00:00:00.000Z",
+        "mixName": "DRENCH #3",
+        "mixId": "69e0bc4c94c9c3f2187f2993",
+        "chemicals": [
+          {
+            "chemicalName": "ZYLAM",
+            "quantity": 72,
+            "measure": "OZ / 100 GAL",
+            "brandName": "ZYLAM",
+            "epaRegNo": "2217-937",
+            "type": "INSECTICIDE",
+            "cost": 247.68,
+            "price": 495.36,
+            "costPerOz": 3.44,
+            "pricePerOz": 6.88
+          },
+          {
+            "chemicalName": "PAGEANT",
+            "quantity": 16,
+            "measure": "OZ / 100 GAL",
+            "brandName": "PAGEANT",
+            "epaRegNo": "7969-251",
+            "type": "FUNGICIDE ( FOR ROOT DISEASE )",
+            "cost": 84.96,
+            "price": 169.92,
+            "costPerOz": 5.31,
+            "pricePerOz": 10.62
+          },
+          {
+            "chemicalName": "MEDALLION",
+            "quantity": 1,
+            "measure": "OZ / 100 GAL",
+            "brandName": "MEDALLION",
+            "epaRegNo": "67545-AZ-1",
+            "type": "FUNGICIDE ( FOR ROOT DISEASE )",
+            "cost": 22,
+            "price": 44,
+            "costPerOz": 22,
+            "pricePerOz": 44
+          },
+          {
+            "chemicalName": "HERITAGE - WETTABLE",
+            "quantity": 4,
+            "measure": "OZ / 100 GAL",
+            "brandName": "HERITAGE - WETTABLE",
+            "epaRegNo": "100-1093",
+            "type": "ORNAMENTAL FUNGICIDE",
+            "cost": 79.24,
+            "price": 158.48,
+            "costPerOz": 19.81,
+            "pricePerOz": 39.62
+          },
+          {
+            "chemicalName": "AXILO MIX 5 (QUICK GREEN)",
+            "quantity": 24,
+            "measure": "OZ / 100 GAL",
+            "brandName": "AXILO MIX 5 (QUICK GREEN)",
+            "epaRegNo": "EPA not required",
+            "type": "FERTILIZER - MINOR ELEMENTS",
+            "cost": 15.12,
+            "price": 30.24,
+            "costPerOz": 0.63,
+            "pricePerOz": 1.26
+          },
+          {
+            "chemicalName": "RENOVA",
+            "quantity": 48,
+            "measure": "OZ / 100 GAL",
+            "brandName": "RENOVA",
+            "epaRegNo": "EPA not required",
+            "type": "FERTILIZER",
+            "cost": 26.4,
+            "price": 52.8,
+            "costPerOz": 0.55,
+            "pricePerOz": 1.1
+          },
+          {
+            "chemicalName": "KICKSTAND - RTU (NEW MATERIAL)",
+            "quantity": 32,
+            "measure": "OZ / 100 GAL",
+            "brandName": "KICKSTAND - RTU (NEW MATERIAL)",
+            "epaRegNo": "EPA not required",
+            "type": "ROOT STIMULATOR",
+            "cost": 16.32,
+            "price": 32.64,
+            "costPerOz": 0.51,
+            "pricePerOz": 1.02
+          }
+        ],
+        "totalCostPerTank": 491.71999999999997,
+        "totalPricePerTank": 983.4399999999999,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "status": "Deleted",
+    "createdAt": "2026-06-26T09:46:02.400Z",
+    "updatedAt": "2026-07-08T10:06:38.570Z",
+    "__v": 22,
+    "materialsUsedToDate": 546.61,
+    "planYear": 2026,
+    "completedTreatmentsHistory": []
+  },
+  {
+    "_id": "6a467e8b84826cd9dba69cba",
+    "customerName": "KrishTEST",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "123456789",
+    "jobAddress": "TEST",
+    "contractTotal": 5004,
+    "materialsUsedToDate": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "#3 STIRRUPS, 6\" X 18\"",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL DRENCH #2",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "planYear": 2027,
+    "completedTreatmentsHistory": [
+      {
+        "planYear": 2026,
+        "archivedAt": "2026-07-02T15:17:25.609Z",
+        "treatments": [
+          {
+            "type": "annual",
+            "treatment": "ROOT DRENCH (PER 100 GAL. TANK)",
+            "qty": 1.25,
+            "date": "2026-07-07T00:00:00.000Z",
+            "price": 87.5,
+            "cost": 100,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "annual",
+            "treatment": "ROOT DRENCH (PER 100 GAL. TANK)",
+            "qty": 1.25,
+            "date": "2026-07-02T00:00:00.000Z",
+            "price": 87.5,
+            "cost": 100,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "#3 STIRRUPS, 6\" X 18\"",
+            "qty": 1.25,
+            "date": "2026-07-16T00:00:00.000Z",
+            "price": 37.5,
+            "cost": 18.75,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "FUNGAL DRENCH #2",
+            "qty": 1.25,
+            "date": "2026-07-10T00:00:00.000Z",
+            "price": 125,
+            "cost": 62.4375,
+            "status": "Completed",
+            "projectCode": ""
+          }
+        ]
+      }
+    ],
+    "createdAt": "2026-07-02T15:06:51.147Z",
+    "updatedAt": "2026-07-02T15:20:34.790Z",
+    "__v": 3
+  },
+  {
+    "_id": "6a4b76aa78e366de7825aced",
+    "customerName": "test",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "100",
+    "jobAddress": "test",
+    "contractTotal": 5000,
+    "materialsUsedToDate": 157.5,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 1,
+        "scheduleDates": [
+          "2026-07-23T00:00:00.000Z"
+        ],
+        "scheduleDate": "2026-07-23T00:00:00.000Z",
+        "price": 100,
+        "cost": 80,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [
+      {
+        "treatment": "# 16 DIRECT BURIAL IRRIGATION CONTROL CABLE (RED) - PER FT.",
+        "qty": 2,
+        "date": "2026-07-08T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 0.12,
+        "totalPricePerTank": 0.24,
+        "materialId": "6734dc33445f7ddd4a0f01d3",
+        "isChemicalTreatment": false,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "#8 THHN 120 VOLT WIRE WHITE- PER FEET",
+        "qty": 23,
+        "date": "2026-07-24T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 0.6,
+        "totalPricePerTank": 1.19,
+        "materialId": "67e6ed44dd1a0c678fb4d9e0",
+        "isChemicalTreatment": false,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "FUNGAL TREATMENT (Headway G -BAG)",
+        "qty": 2.01,
+        "date": "2026-07-10T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 80,
+        "totalPricePerTank": 100,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "treatment": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "qty": 2.25,
+        "date": "2026-07-15T00:00:00.000Z",
+        "chemicals": [],
+        "totalCostPerTank": 80,
+        "totalPricePerTank": 70,
+        "isChemicalTreatment": true,
+        "projectCode": "",
+        "status": "Completed"
+      }
+    ],
+    "status": "Deleted",
+    "planYear": 2026,
+    "completedTreatmentsHistory": [],
+    "createdAt": "2026-07-06T09:34:34.085Z",
+    "updatedAt": "2026-07-08T10:06:08.937Z",
+    "__v": 10
+  },
+  {
+    "_id": "6a4b8d82244a240cf2a98b4e",
+    "customerName": "test1",
+    "customerEmail": "test@gmail.com",
+    "customerPhone": "123",
+    "jobAddress": "test",
+    "contractTotal": 5000,
+    "materialsUsedToDate": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "planYear": 2026,
+    "completedTreatmentsHistory": [],
+    "createdAt": "2026-07-06T11:12:02.147Z",
+    "updatedAt": "2026-07-23T09:36:08.201Z",
+    "__v": 6
+  },
+  {
+    "_id": "6a3e53066cdd0dd18e9c029a",
+    "customerName": "kkrish",
+    "customerEmail": "krish@gmail.com",
+    "customerPhone": "123",
+    "jobAddress": "hiufr",
+    "contractTotal": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": false,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT (Headway G -BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "OSMOCOTE FERTILIZER (PER 40LBS. BAG)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "HERBICIDE (PER 2 GAL. BOTTLE)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "TOP CHOICE -ANT CONTROL",
+        "quantity": 0,
+        "scheduleDates": [],
+        "scheduleDate": null,
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "createdAt": "2026-06-26T10:23:02.275Z",
+    "updatedAt": "2026-06-29T06:50:07.020Z",
+    "__v": 2,
+    "planYear": 2028
+  },
+  {
+    "_id": "6a4769187ae1de5104f7e2d5",
+    "customerName": "test",
+    "customerEmail": "test@123",
+    "customerPhone": "123654",
+    "jobAddress": "tesr",
+    "contractTotal": 5500,
+    "materialsUsedToDate": 0,
+    "description": "",
+    "isChemicalMaintenanceEnabled": true,
+    "annualTreatments": [
+      {
+        "name": "ROOT DRENCH (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL TREATMENT - LIQUID (PER 100 GAL. TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "INSECTICIDE TREATMENT (PER 100G GAL.TANK)",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "#8 THHN 120 VOLT WIRE RED- PER FEET",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "#8 THHN 120 VOLT WIRE ORANGE- PER FEET",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "FUNGAL DRENCH #3",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      },
+      {
+        "name": "1 1/2\" GASKET",
+        "quantity": 0,
+        "scheduleDates": [],
+        "price": 0,
+        "cost": 0,
+        "projectCode": "",
+        "status": "Scheduled"
+      }
+    ],
+    "otherTreatments": [],
+    "status": "Deleted",
+    "planYear": 2027,
+    "completedTreatmentsHistory": [
+      {
+        "planYear": 2026,
+        "archivedAt": "2026-07-06T16:41:26.529Z",
+        "treatments": [
+          {
+            "type": "annual",
+            "treatment": "ROOT DRENCH (PER 100 GAL. TANK)",
+            "qty": 1,
+            "date": "2026-07-07T00:00:00.000Z",
+            "price": 70,
+            "cost": 80,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "annual",
+            "treatment": "FUNGAL TREATMENT (Headway G -BAG)",
+            "qty": 1,
+            "date": "2026-07-29T00:00:00.000Z",
+            "price": 100,
+            "cost": 80,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "annual",
+            "treatment": "HERBICIDE (PER 2 GAL. BOTTLE)",
+            "qty": 2.24,
+            "date": "2026-07-09T00:00:00.000Z",
+            "price": 224.00000000000003,
+            "cost": 179.20000000000002,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "annual",
+            "treatment": "TOP CHOICE -ANT CONTROL",
+            "qty": 20,
+            "date": "2026-07-09T00:00:00.000Z",
+            "price": 2000,
+            "cost": 1600,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "#8 THHN 120 VOLT WIRE RED- PER FEET",
+            "qty": 25,
+            "date": "2026-07-07T00:00:00.000Z",
+            "price": 29.75,
+            "cost": 15,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "#8 THHN 120 VOLT WIRE ORANGE- PER FEET",
+            "qty": 2,
+            "date": "2026-07-08T00:00:00.000Z",
+            "price": 2.38,
+            "cost": 1.2,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "#8 THHN 120 VOLT WIRE ORANGE- PER FEET",
+            "qty": 2,
+            "date": "2026-07-11T00:00:00.000Z",
+            "price": 2.38,
+            "cost": 1.2,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "FUNGAL DRENCH #3",
+            "qty": 2.21,
+            "date": "2026-07-10T00:00:00.000Z",
+            "price": 1065.3968,
+            "cost": 532.6984,
+            "status": "Completed",
+            "projectCode": ""
+          },
+          {
+            "type": "other",
+            "treatment": "1 1/2\" GASKET",
+            "qty": 2.24,
+            "date": "2026-07-08T00:00:00.000Z",
+            "price": 26.880000000000003,
+            "cost": 13.440000000000001,
+            "status": "Completed",
+            "projectCode": ""
+          }
+        ]
+      }
+    ],
+    "createdAt": "2026-07-03T07:47:36.474Z",
+    "updatedAt": "2026-07-23T09:36:14.459Z",
+    "__v": 7
+  }
+]

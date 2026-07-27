@@ -3,8 +3,7 @@ require("dotenv").config();
 
 const MONGO_URI =
     process.env.MONGO_URI ||
-    "mongodb+srv://abhinandan_db_user:MqVfTUZp9pq1bR8G@cluster0.qtbcn0b.mongodb.net/fandgdummy?retryWrites=true&w=majority&appName=Cluster0";
-
+    "mongodb://fandgadmin:Fandg1234@50.172.153.160.host.secureserver.net:27017/database?authSource=admin";
 const connectDB = async () => {
     try {
         const mongooseOptions = {
@@ -22,7 +21,7 @@ const connectDB = async () => {
 
         const connect = await mongoose.connect(MONGO_URI, mongooseOptions);
         const instance = connect.connection.host;
-        console.log(`MongoDB connected at ${instance}`);
+        console.log(`MongoDB connected at ${instance} (db: ${mongoose.connection.name})`);
     } catch (error) {
         console.log(error);
         process.exit(1);
