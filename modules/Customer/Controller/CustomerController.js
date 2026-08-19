@@ -990,7 +990,7 @@ exports.getCustomerProjects = async (req, res) => {
       .skip(skip)
       .limit(limit)
       .select(
-        "customerName customerEmail jobAddress projectCode description billingType status projectStartDate projectCompletedDate customerFieldCopy"
+        "customerName customerEmail jobAddress projectCode jobName description billingType status projectStartDate projectCompletedDate customerFieldCopy"
       )
       .lean();
 

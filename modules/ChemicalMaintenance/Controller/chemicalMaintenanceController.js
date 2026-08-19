@@ -613,6 +613,7 @@ const normalizeOtherTreatmentsInput = (rows) =>
         projectCode:
           typeof t.projectCode === "string" ? t.projectCode.trim() : "",
         status: t.status || "Scheduled",
+        omitFromContractTotal: Boolean(t.omitFromContractTotal),
       };
     })
     .filter(Boolean);

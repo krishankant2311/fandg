@@ -22,7 +22,7 @@ const computeUsedAmount = (customer) => {
     .reduce((sum, at) => sum + Number(at.price || 0), 0);
 
   const otherUsed = (customer.otherTreatments || [])
-    .filter((ot) => isCompletedStatus(ot.status))
+    .filter((ot) => isCompletedStatus(ot.status) && !ot.omitFromContractTotal)
     .reduce((sum, ot) => {
       const qty = Number(ot.qty || 0);
       const pricePerTank = Number(ot.totalPricePerTank || 0);

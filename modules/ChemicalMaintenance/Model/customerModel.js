@@ -233,6 +233,8 @@ const otherTreatmentSchema = new mongoose.Schema(
     projectCode: { type: String, trim: true },
     // Treatment status (free text, no enum)
     status: { type: String, trim: true },
+    // When true, excluded from contract / billing summary totals (shown separately)
+    omitFromContractTotal: { type: Boolean, default: false },
   },
   { _id: false }
 );
